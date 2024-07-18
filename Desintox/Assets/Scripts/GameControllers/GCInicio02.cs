@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GCInicio02 : MonoBehaviour
 {
@@ -10,19 +12,34 @@ public class GCInicio02 : MonoBehaviour
     //Link a la página de Unity ---> https://docs.unity3d.com/ScriptReference/Touch.html
     //Link a un video con información resumida ---> https://www.youtube.com/watch?v=2pw_rm4uTu8
     //La posición del toque se puede registrar con las coordenadas de los pixeles.
+    public GameObject canvas_principal;
+    public GameObject canvas_opciones;
+    public TextMeshProUGUI texto_volumen;
+    public Slider slider_volumen;
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+        texto_volumen.text = slider_volumen.value.ToString();
     }
 
     public void Boton_Iniciar_Partida()
     {
         StartCoroutine(CargarEscena());
+    }
+
+    public void Boton_Opciones()
+    {
+        canvas_principal.SetActive(false);
+        canvas_opciones.SetActive(true);
+    }
+    public void Boton_Regresar()
+    {
+        canvas_principal.SetActive(true);
+        canvas_opciones.SetActive(false);
     }
     public void Boton_Salir()
     {
