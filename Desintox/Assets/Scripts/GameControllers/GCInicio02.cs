@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,11 @@ public class GCInicio02 : MonoBehaviour
     public void Boton_Iniciar_Partida()
     {
         StartCoroutine(CargarEscena());
+    }
+    public void Boton_Salir()
+    {
+        Debug.Log("Saliendo");
+        Application.Quit(); //En principio no se ocupa cambio en esta línea para Android.
     }
 
     private IEnumerator CargarEscena()
