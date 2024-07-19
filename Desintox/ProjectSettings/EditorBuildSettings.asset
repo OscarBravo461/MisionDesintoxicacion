@@ -9,9 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/UdeMorelia.unity
+    guid: 0525910a896738f4f94398ebbb03943e
+  - enabled: 1
+    path: Assets/Scenes/Inicio.01.unity
+    guid: ea2677fe13abf3746b5aa115ba6e150c
+  - enabled: 1
     path: Assets/Scenes/Inicio.02.unity
     guid: fb4de91a03cecda468853adb2442dabb
   - enabled: 1
     path: Assets/Scenes/NuevoJuego.unity
     guid: 8e773dd092ba8be48b7addd0a3132b4c
+  - enabled: 1
+    path: Assets/Scenes/Avatar.unity
+    guid: fb21151fe5f4f704687576a4b541cfb9
+  - enabled: 1
+    path: Assets/Scenes/Personalizacion.unity
+    guid: 202a5b3c676222a45af2cfb60aba9170
   m_configObjects: {}

@@ -23,31 +23,31 @@ public class GCInicio02 : MonoBehaviour
 
     void Update()
     {
-        texto_volumen.text = slider_volumen.value.ToString();
+        texto_volumen.text = slider_volumen.value.ToString(); //Actualiza el valor en el cuadrado sobre el slider del sonido para ver el volumen
     }
 
-    public void Boton_Iniciar_Partida()
+    public void Boton_Iniciar_Partida()//Se activa al presionar el boton 'Iniciar Partida ' del menu principal
     {
-        StartCoroutine(CargarEscena());
+        StartCoroutine(CargarEscena());//Inicia la corrutina encargada de cambiar de escena y presentar posibles efectos de transición
     }
 
-    public void Boton_Opciones()
+    public void Boton_Opciones()//Se activa al presionar el boton 'opciones' del menu principal
     {
-        canvas_principal.SetActive(false);
-        canvas_opciones.SetActive(true);
+        canvas_principal.SetActive(false);//Apaga el canvas principal
+        canvas_opciones.SetActive(true);//Enciende el canvas que contiene las opciones
     }
-    public void Boton_Regresar()
+    public void Boton_Regresar()//Se activa al presionar el boton 'regresar' en el menu de opciones
     {
-        canvas_principal.SetActive(true);
-        canvas_opciones.SetActive(false);
+        canvas_principal.SetActive(true);//Apaga el canvas de las opciones
+        canvas_opciones.SetActive(false);//Enciende el canvas principal
     }
-    public void Boton_Salir()
+    public void Boton_Salir()//Se activa al presionar el boton 'Salir' del menu principal
     {
         Debug.Log("Saliendo");
         Application.Quit(); //En principio no se ocupa cambio en esta línea para Android.
     }
 
-    private IEnumerator CargarEscena()
+    private IEnumerator CargarEscena()//Corrutina de cambio de escena y carga de efectos
     {
         //Aquí podemos agregar algún tipo de efecto como fundido o algo que se vea más chido.
         yield return new WaitForSeconds(1f); //Este esperará para que se pueda ver el efecto antes de cambiar la escena.
