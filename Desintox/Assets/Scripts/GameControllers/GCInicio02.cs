@@ -43,7 +43,7 @@ public class GCInicio02 : MonoBehaviour
     }
     public void Boton_Salir()//Se activa al presionar el boton 'Salir' del menu principal
     {
-        Debug.Log("Saliendo");
+        //Debug.Log("Saliendo");
         Application.Quit(); //En principio no se ocupa cambio en esta línea para Android.
     }
 
