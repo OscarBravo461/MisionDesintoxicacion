@@ -13,7 +13,7 @@ public class ButtonController : MonoBehaviour
 
     void Start()
     {
-        foreach (Button button in buttons)
+        foreach (Button button in buttons)//Se repite mucho, aqui si faltaria explicar que es que
         {
             button.onClick.AddListener(() => OnButtonClick(button));
         }
