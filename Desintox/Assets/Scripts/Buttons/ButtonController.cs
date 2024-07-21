@@ -4,30 +4,27 @@ using UnityEngine.EventSystems;
 
 public class ButtonController : MonoBehaviour
 {
-    // Arreglo de botones que queremos controlar
     public Button[] buttons;
-
-    // Escala normal y escala cuando se selecciona un botón
-    public Vector3 normalScale = Vector3.one;
+    public Vector3 normalScale = new Vector3(1, 1, 1);
     public Vector3 selectedScale = new Vector3(1.2f, 1.2f, 1.2f);
-
-    // Referencia al controlador del botón de confirmación (supongo que existe en otro lugar)
     public ConfirmButtonController confirmButtonController;
 
-    // Botón actualmente seleccionado
     private Button selectedButton;
 
     void Start()
     {
-        // Asignamos una función al evento OnClick de cada botón
-        foreach (Button button in buttons)
+        foreach (Button button in buttons)//Se repite mucho, aqui si faltaria explicar que es que
+        {
             button.onClick.AddListener(() => OnButtonClick(button));
+        }
     }
 
     void OnButtonClick(Button clickedButton)
     {
         if (selectedButton != null)
+        {
             selectedButton.transform.localScale = normalScale;
+        }
 
         if (selectedButton == clickedButton)
         {
@@ -37,7 +34,6 @@ public class ButtonController : MonoBehaviour
         }
         else
         {
-            // Si se hizo clic en un botón diferente, lo marcamos como seleccionado
             clickedButton.transform.localScale = selectedScale;
             selectedButton = clickedButton;
             confirmButtonController.EnableConfirmButton();
@@ -48,7 +44,6 @@ public class ButtonController : MonoBehaviour
     {
         if (selectedButton != null)
         {
-            // Deseleccionamos todos los botones y restauramos su escala normal
             selectedButton.transform.localScale = normalScale;
             selectedButton = null;
             confirmButtonController.DisableConfirmButton();
