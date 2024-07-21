@@ -10,23 +10,27 @@ public class ConfirmButtonController : MonoBehaviour
 
     void Start()
     {
-        DisableConfirmButton(); // Asegúrate de que el botón esté desactivado al inicio
+        // Al inicio, desactivamos el botón de confirmación
+        DisableConfirmButton();
     }
 
     public void EnableConfirmButton()
     {
+        // Habilita el botón de confirmación
         confirmButton.interactable = true;
-        confirmButtonCanvasGroup.alpha = 1f; // Sin transparencia
+        confirmButtonCanvasGroup.alpha = 1f; // Opacidad completa (sin transparencia)
     }
 
     public void DisableConfirmButton()
     {
+        // Deshabilita el botón de confirmación
         confirmButton.interactable = false;
-        confirmButtonCanvasGroup.alpha = 0.5f; // Transparencia
+        confirmButtonCanvasGroup.alpha = 0.5f; // Opacidad reducida (transparencia)
     }
 
     public void OnConfirmButtonClick()
     {
+        // Si el botón de confirmación está habilitado, carga la siguiente escena
         if (confirmButton.interactable)
         {
             SceneManager.LoadScene(nextSceneName);
