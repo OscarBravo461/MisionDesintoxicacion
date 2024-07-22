@@ -7,12 +7,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GCInicio02 : MonoBehaviour
-{
     //Input.GetTouch(0); ---> De esta manera se puede registar la entrada táctil.
     //Link a la página de Unity ---> https://docs.unity3d.com/ScriptReference/Touch.html
     //Link a un video con información resumida ---> https://www.youtube.com/watch?v=2pw_rm4uTu8
     //La posición del toque se puede registrar con las coordenadas de los pixeles.
+public class GCInicio02 : MonoBehaviour
+{    
     public GameObject canvas_principal;
     public GameObject canvas_opciones;
     public TextMeshProUGUI texto_volumen;
