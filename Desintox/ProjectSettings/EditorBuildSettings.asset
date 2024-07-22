@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/NuevoJuego.unity
     guid: 8e773dd092ba8be48b7addd0a3132b4c
   - enabled: 1
+    path: Assets/Scenes/Avatar.unity
+    guid: fb21151fe5f4f704687576a4b541cfb9
+  - enabled: 1
     path: Assets/Scenes/Personalizacion.unity
     guid: 202a5b3c676222a45af2cfb60aba9170
   m_configObjects: {}
