@@ -15,7 +15,7 @@ C:/Users/oscar/Desintox/MisionDesintoxicacion/Desintox
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-57928
+63938
 Successfully changed project path to: C:/Users/oscar/Desintox/MisionDesintoxicacion/Desintox
 C:/Users/oscar/Desintox/MisionDesintoxicacion/Desintox
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,13 +49,13 @@ C:/Users/oscar/Desintox/MisionDesintoxicacion/Desintox
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [8200] Host "[IP] 192.168.1.91 [Port] 0 [Flags] 2 [Guid] 853739540 [EditorId] 853739540 [Version] 1048832 [Id] WindowsEditor(7,Delta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [1192] Host "[IP] 192.168.1.91 [Port] 0 [Flags] 2 [Guid] 2453732906 [EditorId] 2453732906 [Version] 1048832 [Id] WindowsEditor(7,Delta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [8200] Host "[IP] 192.168.1.91 [Port] 0 [Flags] 2 [Guid] 853739540 [EditorId] 853739540 [Version] 1048832 [Id] WindowsEditor(7,Delta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [1192] Host "[IP] 192.168.1.91 [Port] 0 [Flags] 2 [Guid] 2453732906 [EditorId] 2453732906 [Version] 1048832 [Id] WindowsEditor(7,Delta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 7 workers.
-Refreshing native plugins compatible for Editor in 85.95 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 108.21 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.01 ms.
 Initialize engine version: 2022.3.26f1 (ec6cd8118806)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/oscar/Desintox/MisionDesintoxicacion/Desintox/Assets
@@ -70,51 +70,51 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56144
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56236
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009413 seconds.
-- Loaded All Assemblies, in  0.879 seconds
+Registered in 0.018524 seconds.
+- Loaded All Assemblies, in  1.027 seconds
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 849 ms
+Android Extension - Scanning For ADB Devices 820 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.801 seconds
-Domain Reload Profiling: 2679ms
-	BeginReloadAssembly (257ms)
+- Finished resetting the current domain, in  1.962 seconds
+Domain Reload Profiling: 2986ms
+	BeginReloadAssembly (320ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (92ms)
-	RebuildNativeTypeToScriptingClass (20ms)
-	initialDomainReloadingComplete (133ms)
-	LoadAllAssembliesAndSetupDomain (374ms)
-		LoadAssemblies (257ms)
+		CreateAndSetChildDomain (3ms)
+	RebuildCommonClasses (84ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (131ms)
+	LoadAllAssembliesAndSetupDomain (473ms)
+		LoadAssemblies (317ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (367ms)
-			TypeCache.Refresh (364ms)
-				TypeCache.ScanAssembly (322ms)
+		AnalyzeDomain (464ms)
+			TypeCache.Refresh (453ms)
+				TypeCache.ScanAssembly (401ms)
 			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (1802ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (1963ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1648ms)
+		SetupLoadedEditorAssemblies (1779ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (1254ms)
+			InitializePlatformSupportModulesInManaged (1268ms)
 			SetLoadedEditorAssemblies (9ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (14ms)
-			ProcessInitializeOnLoadAttributes (314ms)
-			ProcessInitializeOnLoadMethodAttributes (57ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (374ms)
+			ProcessInitializeOnLoadMethodAttributes (125ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -122,8 +122,116 @@ Domain Reload Profiling: 2679ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.011 seconds
-Refreshing native plugins compatible for Editor in 75.42 ms, found 6 plugins.
+Symbol file data-000001C5E0A35860 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0A35860 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0BEEA50 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnityEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0A3C870 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F7E0A30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0CE7010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0D3CC20 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E07E8020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0709C40 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Collections.BurstCompatibilityGen.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F7FE190 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E07E8020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0709C40 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0709C40 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0D52430 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0C03E60 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0821840 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0C03E60 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F8061A0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Collections.DocCodeSamples.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F618BD0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0F17020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F7E0A30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F8061A0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0A3C870 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0C0C270 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnityResonance.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0482A30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0482A30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0F4E630 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0B02240 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0D64840 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F8061A0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C73AF56C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0B02240 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C73AF56C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E084F050 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F8061A0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F181030 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Collections.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F1A7C40 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E084F050 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnity.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F1A7C40 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F1A7C40 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C73AF56C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F8061A0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnityResonanceEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F8061A0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77E9F0080 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0A3C870 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77EA51490 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0627E40 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0627E40 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0627E40 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.CodeGen.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0A3C870 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77EFCAD50 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F003D60 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F264C60 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0F97E50 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  2.171 seconds
+Refreshing native plugins compatible for Editor in 67.34 ms, found 6 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
@@ -132,47 +240,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.645 seconds
-Domain Reload Profiling: 3673ms
-	BeginReloadAssembly (309ms)
+- Finished resetting the current domain, in  1.571 seconds
+Domain Reload Profiling: 3740ms
+	BeginReloadAssembly (376ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (13ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (59ms)
-	RebuildCommonClasses (55ms)
-	RebuildNativeTypeToScriptingClass (18ms)
-	initialDomainReloadingComplete (65ms)
-	LoadAllAssembliesAndSetupDomain (1581ms)
-		LoadAssemblies (685ms)
+		CreateAndSetChildDomain (63ms)
+	RebuildCommonClasses (70ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (73ms)
+	LoadAllAssembliesAndSetupDomain (1631ms)
+		LoadAssemblies (1163ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1042ms)
-			TypeCache.Refresh (932ms)
-				TypeCache.ScanAssembly (595ms)
-			ScanForSourceGeneratedMonoScriptInfo (83ms)
-			ResolveRequiredComponents (25ms)
-	FinalizeReload (1646ms)
+		AnalyzeDomain (702ms)
+			TypeCache.Refresh (615ms)
+				TypeCache.ScanAssembly (537ms)
+			ScanForSourceGeneratedMonoScriptInfo (70ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1573ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1116ms)
+		SetupLoadedEditorAssemblies (1069ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (119ms)
-			SetLoadedEditorAssemblies (81ms)
+			InitializePlatformSupportModulesInManaged (64ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (244ms)
-			ProcessInitializeOnLoadAttributes (614ms)
-			ProcessInitializeOnLoadMethodAttributes (53ms)
-			AfterProcessingInitializeOnLoad (5ms)
+			BeforeProcessingInitializeOnLoad (131ms)
+			ProcessInitializeOnLoadAttributes (739ms)
+			ProcessInitializeOnLoadMethodAttributes (116ms)
+			AfterProcessingInitializeOnLoad (12ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 26.76 ms, found 6 plugins.
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 32.11 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4219 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 137 unused Assets / (282.0 KB). Loaded Objects now: 4611.
-Memory consumption went from 155.2 MB to 154.9 MB.
-Total: 6.244900 ms (FindLiveObjects: 0.487600 ms CreateObjectMapping: 0.256500 ms MarkObjects: 4.739700 ms  DeleteObjects: 0.759300 ms)
+Unloading 137 unused Assets / (282.5 KB). Loaded Objects now: 4611.
+Memory consumption went from 155.0 MB to 154.7 MB.
+Total: 8.817100 ms (FindLiveObjects: 1.026600 ms CreateObjectMapping: 0.865500 ms MarkObjects: 6.392200 ms  DeleteObjects: 0.529700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -190,17 +298,125 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 503436.826764 seconds.
-  path: Assets/Scripts/Buttons
-  artifactKey: Guid(6b5774c7e5b7b4d43938ac5984866586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Buttons using Guid(6b5774c7e5b7b4d43938ac5984866586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8dd2770f4116c37cd41498624d2d9d3') in 0.007321 seconds
+  Time since last request: 585718.725230 seconds.
+  path: Assets/Scenes/NuevoJuego.unity
+  artifactKey: Guid(8e773dd092ba8be48b7addd0a3132b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/NuevoJuego.unity using Guid(8e773dd092ba8be48b7addd0a3132b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01160bdb99658462e9bb32bdd56c36d6') in 0.015862 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.063 seconds
-Refreshing native plugins compatible for Editor in 26.20 ms, found 6 plugins.
+Symbol file data-000001C5E1EC8040 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1EC8040 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAF07840 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnityEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1ECF050 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F976010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1044010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0C21030 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EB079020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Collections.BurstCompatibilityGen.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F976010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E72060 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F976010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F976010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E23B8030 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77FCC9220 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Collections.DocCodeSamples.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E200BC20 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0BAF020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77FCC9220 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77EED9600 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77FCC9220 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77EED9600 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnityResonance.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F2AF690 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F2AF690 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C78032A6F0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAF07840 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77EED9600 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77EED9600 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F976010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77EF65030 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F976010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EB0D5050 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F976010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E23B8030 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Collections.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAC06FA0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E23DEC40 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnity.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F976010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAC06FA0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F976010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0C0C430 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnityResonanceEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F976010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E20DA010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77EE3F710 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAE58020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAEE6060 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAFFB230 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAE90A30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.CodeGen.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAC06FA0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAC06FA0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAF07840 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E72060 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAEF6070 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.616 seconds
+Refreshing native plugins compatible for Editor in 22.00 ms, found 6 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
@@ -208,46 +424,46 @@ Native extension for Android target not found
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.276 seconds
-Domain Reload Profiling: 4337ms
-	BeginReloadAssembly (899ms)
+- Finished resetting the current domain, in  2.633 seconds
+Domain Reload Profiling: 3249ms
+	BeginReloadAssembly (216ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (111ms)
+		DisableScriptedObjects (12ms)
 		BackupInstance (0ms)
-		ReleaseScriptingObjects (1ms)
-		CreateAndSetChildDomain (482ms)
-	RebuildCommonClasses (52ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (49ms)
-	LoadAllAssembliesAndSetupDomain (1044ms)
-		LoadAssemblies (1102ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (56ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (292ms)
+		LoadAssemblies (381ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (105ms)
-			TypeCache.Refresh (51ms)
-				TypeCache.ScanAssembly (4ms)
-			ScanForSourceGeneratedMonoScriptInfo (35ms)
-			ResolveRequiredComponents (17ms)
-	FinalizeReload (2277ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (2634ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (680ms)
+		SetupLoadedEditorAssemblies (961ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (69ms)
-			SetLoadedEditorAssemblies (13ms)
+			InitializePlatformSupportModulesInManaged (72ms)
+			SetLoadedEditorAssemblies (10ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (98ms)
-			ProcessInitializeOnLoadAttributes (448ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (1ms)
+			BeforeProcessingInitializeOnLoad (129ms)
+			ProcessInitializeOnLoadAttributes (670ms)
+			ProcessInitializeOnLoadMethodAttributes (74ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
-Refreshing native plugins compatible for Editor in 22.52 ms, found 6 plugins.
+		AwakeInstancesAfterBackupRestoration (27ms)
+Refreshing native plugins compatible for Editor in 28.36 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4199 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 109 unused Assets / (254.6 KB). Loaded Objects now: 4616.
-Memory consumption went from 149.8 MB to 149.6 MB.
-Total: 6.494200 ms (FindLiveObjects: 0.380100 ms CreateObjectMapping: 0.134300 ms MarkObjects: 5.541300 ms  DeleteObjects: 0.436400 ms)
+Unloading 109 unused Assets / (254.4 KB). Loaded Objects now: 4616.
+Memory consumption went from 149.6 MB to 149.3 MB.
+Total: 9.697100 ms (FindLiveObjects: 1.358300 ms CreateObjectMapping: 0.357200 ms MarkObjects: 7.282600 ms  DeleteObjects: 0.694500 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -267,8 +483,116 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.556 seconds
-Refreshing native plugins compatible for Editor in 46.35 ms, found 6 plugins.
+Symbol file data-000001C5EB220020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C780159010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1598740 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnityEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F99E010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E12CA010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77EEC6DF0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E17EF010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EB079020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Collections.BurstCompatibilityGen.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E12CA010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E06C2020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F641010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C780900550 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C7A0FB8010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77FCC9220 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Collections.DocCodeSamples.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E200BC20 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EA4B8010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EB220020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F99E010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnityResonance.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F2AF690 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F2AF690 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C7807EBC70 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1598740 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1E55C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F99E010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EB220020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EAD59030 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EB220020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C7A103C010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77FAF4040 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E221B030 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Collections.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C7806A7FF0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5EB165010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnity.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77F641010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C7806A7FF0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C780900550 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C7802ABC20 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\FMODUnityResonanceEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77FAF4040 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E20DA010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C77FAF4040 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E17EF010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E11EF020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C7A0AA9B10 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C780900550 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.CodeGen.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1D1D010 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C780900550 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E1598740 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E06C2020 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001C5E0DAA030 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.627 seconds
+Refreshing native plugins compatible for Editor in 18.08 ms, found 6 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
@@ -276,46 +600,46 @@ Native extension for Android target not found
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.971 seconds
-Domain Reload Profiling: 4522ms
-	BeginReloadAssembly (552ms)
+- Finished resetting the current domain, in  1.789 seconds
+Domain Reload Profiling: 2412ms
+	BeginReloadAssembly (218ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (18ms)
+		DisableScriptedObjects (15ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (90ms)
-	RebuildCommonClasses (125ms)
-	RebuildNativeTypeToScriptingClass (28ms)
-	initialDomainReloadingComplete (77ms)
-	LoadAllAssembliesAndSetupDomain (767ms)
-		LoadAssemblies (1103ms)
+		CreateAndSetChildDomain (61ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (34ms)
+	LoadAllAssembliesAndSetupDomain (309ms)
+		LoadAssemblies (392ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (66ms)
-			TypeCache.Refresh (39ms)
+		AnalyzeDomain (24ms)
+			TypeCache.Refresh (10ms)
 				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (22ms)
-	FinalizeReload (2972ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1790ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1068ms)
+		SetupLoadedEditorAssemblies (914ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (114ms)
-			SetLoadedEditorAssemblies (12ms)
+			InitializePlatformSupportModulesInManaged (65ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (212ms)
-			ProcessInitializeOnLoadAttributes (663ms)
-			ProcessInitializeOnLoadMethodAttributes (59ms)
+			BeforeProcessingInitializeOnLoad (127ms)
+			ProcessInitializeOnLoadAttributes (635ms)
+			ProcessInitializeOnLoadMethodAttributes (71ms)
 			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (2ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (24ms)
-Refreshing native plugins compatible for Editor in 13.62 ms, found 6 plugins.
+		AwakeInstancesAfterBackupRestoration (25ms)
+Refreshing native plugins compatible for Editor in 34.30 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4200 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 109 unused Assets / (254.8 KB). Loaded Objects now: 4620.
-Memory consumption went from 150.1 MB to 149.8 MB.
-Total: 3.272200 ms (FindLiveObjects: 0.381800 ms CreateObjectMapping: 0.142700 ms MarkObjects: 2.496800 ms  DeleteObjects: 0.249200 ms)
+Unloading 109 unused Assets / (254.5 KB). Loaded Objects now: 4620.
+Memory consumption went from 149.8 MB to 149.6 MB.
+Total: 13.846300 ms (FindLiveObjects: 3.525100 ms CreateObjectMapping: 3.768500 ms MarkObjects: 5.654600 ms  DeleteObjects: 0.892700 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
