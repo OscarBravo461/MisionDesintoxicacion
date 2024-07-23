@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 C:\GitHubRepositories\MisionDesintoxicacion\Desintox
+=======
+C:\Github\MisionDesintoxicacion\Desintox
+>>>>>>> main
