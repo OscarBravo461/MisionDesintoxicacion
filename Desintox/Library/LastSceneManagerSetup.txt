@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/NuevoJuego.unity
-=======
-- path: Assets/Scenes/Inicio.01.unity
->>>>>>> main
+- path: Assets/Scenes/Inicio.02.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
