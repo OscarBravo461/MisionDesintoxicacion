@@ -15,7 +15,7 @@ C:/Users/oscar/Desintox/MisionDesintoxicacion/Desintox
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61143
+57629
 Successfully changed project path to: C:/Users/oscar/Desintox/MisionDesintoxicacion/Desintox
 C:/Users/oscar/Desintox/MisionDesintoxicacion/Desintox
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/oscar/Desintox/MisionDesintoxicacion/Desintox
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [14408] Host "[IP] 192.168.1.91 [Port] 0 [Flags] 2 [Guid] 2648262250 [EditorId] 2648262250 [Version] 1048832 [Id] WindowsEditor(7,Delta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [9488] Host "[IP] 192.168.1.91 [Port] 0 [Flags] 2 [Guid] 1190432069 [EditorId] 1190432069 [Version] 1048832 [Id] WindowsEditor(7,Delta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [14408] Host "[IP] 192.168.1.91 [Port] 0 [Flags] 2 [Guid] 2648262250 [EditorId] 2648262250 [Version] 1048832 [Id] WindowsEditor(7,Delta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [9488] Host "[IP] 192.168.1.91 [Port] 0 [Flags] 2 [Guid] 1190432069 [EditorId] 1190432069 [Version] 1048832 [Id] WindowsEditor(7,Delta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 7 workers.
-Refreshing native plugins compatible for Editor in 20.73 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 50.32 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.26f1 (ec6cd8118806)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/Resources/UnitySubsystems
@@ -70,51 +70,51 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56944
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56428
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007522 seconds.
-- Loaded All Assemblies, in  0.403 seconds
+Registered in 0.009098 seconds.
+- Loaded All Assemblies, in  0.635 seconds
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 258 ms
+Android Extension - Scanning For ADB Devices 584 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.676 seconds
-Domain Reload Profiling: 1079ms
-	BeginReloadAssembly (138ms)
+- Finished resetting the current domain, in  1.251 seconds
+Domain Reload Profiling: 1885ms
+	BeginReloadAssembly (184ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (64ms)
-	LoadAllAssembliesAndSetupDomain (155ms)
-		LoadAssemblies (136ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (86ms)
+	LoadAllAssembliesAndSetupDomain (301ms)
+		LoadAssemblies (186ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (152ms)
-			TypeCache.Refresh (150ms)
-				TypeCache.ScanAssembly (135ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (294ms)
+			TypeCache.Refresh (289ms)
+				TypeCache.ScanAssembly (257ms)
+			ScanForSourceGeneratedMonoScriptInfo (2ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (677ms)
+	FinalizeReload (1251ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (610ms)
+		SetupLoadedEditorAssemblies (1147ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (399ms)
-			SetLoadedEditorAssemblies (6ms)
+			InitializePlatformSupportModulesInManaged (827ms)
+			SetLoadedEditorAssemblies (14ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (129ms)
-			ProcessInitializeOnLoadMethodAttributes (74ms)
+			BeforeProcessingInitializeOnLoad (6ms)
+			ProcessInitializeOnLoadAttributes (232ms)
+			ProcessInitializeOnLoadMethodAttributes (68ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -122,20 +122,20 @@ Domain Reload Profiling: 1079ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-Symbol file data-0000017FFA8A9850 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file data-000001858B26C1C0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Assembly-CSharp.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017FFA067C10 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file data-000001858B32D230 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017FF997EE00 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file data-000001858C4F9C30 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Rider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017FF9AE9500 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file data-000001858BFB8820 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017FB4132E60 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file data-000001858AF83800 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017FB41A0BC0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.CodeGen.dll
+Symbol file data-0000018546D737D0 doesn't match image C:\Users\oscar\Desintox\MisionDesintoxicacion\Desintox\Library\ScriptAssemblies\Unity.Burst.CodeGen.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.931 seconds
-Refreshing native plugins compatible for Editor in 43.66 ms, found 6 plugins.
+- Loaded All Assemblies, in  1.470 seconds
+Refreshing native plugins compatible for Editor in 59.88 ms, found 6 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
@@ -144,47 +144,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.722 seconds
-Domain Reload Profiling: 1651ms
-	BeginReloadAssembly (222ms)
+- Finished resetting the current domain, in  1.108 seconds
+Domain Reload Profiling: 2575ms
+	BeginReloadAssembly (285ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (8ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (31ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (39ms)
-	LoadAllAssembliesAndSetupDomain (625ms)
-		LoadAssemblies (528ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (84ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (79ms)
+	LoadAllAssembliesAndSetupDomain (998ms)
+		LoadAssemblies (747ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (242ms)
-			TypeCache.Refresh (204ms)
-				TypeCache.ScanAssembly (173ms)
-			ScanForSourceGeneratedMonoScriptInfo (23ms)
-			ResolveRequiredComponents (14ms)
-	FinalizeReload (722ms)
+		AnalyzeDomain (426ms)
+			TypeCache.Refresh (351ms)
+				TypeCache.ScanAssembly (284ms)
+			ScanForSourceGeneratedMonoScriptInfo (59ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1109ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (530ms)
+		SetupLoadedEditorAssemblies (704ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (47ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (66ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (76ms)
-			ProcessInitializeOnLoadAttributes (347ms)
-			ProcessInitializeOnLoadMethodAttributes (51ms)
+			BeforeProcessingInitializeOnLoad (91ms)
+			ProcessInitializeOnLoadAttributes (471ms)
+			ProcessInitializeOnLoadMethodAttributes (64ms)
 			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 12.17 ms, found 6 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 18.92 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4223 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 137 unused Assets / (282.2 KB). Loaded Objects now: 4615.
-Memory consumption went from 155.4 MB to 155.2 MB.
-Total: 5.827000 ms (FindLiveObjects: 0.407600 ms CreateObjectMapping: 0.157000 ms MarkObjects: 4.858300 ms  DeleteObjects: 0.402500 ms)
+Unloading 137 unused Assets / (282.3 KB). Loaded Objects now: 4615.
+Memory consumption went from 155.5 MB to 155.3 MB.
+Total: 7.924100 ms (FindLiveObjects: 1.613000 ms CreateObjectMapping: 0.353900 ms MarkObjects: 5.424500 ms  DeleteObjects: 0.530300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -202,9 +202,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 719602.278207 seconds.
-  path: Assets/Non Prefabs/Unidem_logo.png
-  artifactKey: Guid(12e92cd186278cc4482496c336d946ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Non Prefabs/Unidem_logo.png using Guid(12e92cd186278cc4482496c336d946ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f652e096b76373c546a32a5528f49b35') in 0.250886 seconds
+  Time since last request: 694046.683488 seconds.
+  path: Assets/Scenes/NuevoJuego.unity
+  artifactKey: Guid(8e773dd092ba8be48b7addd0a3132b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/NuevoJuego.unity using Guid(8e773dd092ba8be48b7addd0a3132b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37d3cce68721e4c2775b37e23bc54269') in 0.006641 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 0
