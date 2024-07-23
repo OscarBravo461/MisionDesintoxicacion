@@ -1,25 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
+using System.Collections;
 
 public class ButtonController : MonoBehaviour
 {
-    // Arreglo de botones que queremos controlar
-    public Button[] buttons;
+    public Button[] buttons; // Arreglo de botones
+    public Vector3 normalScale = new Vector3(1, 1, 1); // Escala normal del botón
+    public Vector3 selectedScale = new Vector3(1.2f, 1.2f, 1.2f); // Escala cuando se selecciona el botón
+    public float animationDuration = 0.2f; // Duración de la animación
+    public ConfirmButtonController confirmButtonController; // Referencia al controlador del botón de confirmación
+    public GameController gameController; // Referencia al GameController
 
-    // Escala normal y escala cuando se selecciona un botón
-    public Vector3 normalScale = new Vector3(1, 1, 1);
-    public Vector3 selectedScale = new Vector3(1.2f, 1.2f, 1.2f);
-
-    // Referencia al controlador del botón de confirmación (supongo que existe en otro lugar)
-    public ConfirmButtonController confirmButtonController;
-
-    // Botón actualmente seleccionado
-    private Button selectedButton;
+    private Button selectedButton; // Botón actualmente seleccionado
 
     void Start()
     {
-        // Asignamos una función al evento OnClick de cada botón
+        // Asignamos un listener a cada botón
         foreach (Button button in buttons)
         {
             button.onClick.AddListener(() => OnButtonClick(button));
@@ -28,35 +24,18 @@ public class ButtonController : MonoBehaviour
 
     void OnButtonClick(Button clickedButton)
     {
-        if (selectedButton != null)
+        if (selectedButton != clickedButton)
         {
-            // Restauramos la escala normal del botón previamente seleccionado
-            selectedButton.transform.localScale = normalScale;
-        }
+            if (selectedButton != null)
+            {
+                // Detenemos la animación anterior si existe en el GameController
+                gameController.StartRestoreNormalScaleAnimation(selectedButton); // Restauramos la escala normal
+            }
 
-        if (selectedButton == clickedButton)
-        {
-            // Si el botón seleccionado es el mismo que se hizo clic, lo deseleccionamos
-            selectedButton = null;
-            confirmButtonController.DisableConfirmButton();
-        }
-        else
-        {
-            // Si se hizo clic en un botón diferente, lo marcamos como seleccionado
-            clickedButton.transform.localScale = selectedScale;
+            // Escalamos el botón recién seleccionado en el GameController
+            gameController.StartScaleAnimation(clickedButton, selectedScale);
             selectedButton = clickedButton;
-            confirmButtonController.EnableConfirmButton();
-        }
-    }
-
-    public void DeselectAllButtons()
-    {
-        if (selectedButton != null)
-        {
-            // Deseleccionamos todos los botones y restauramos su escala normal
-            selectedButton.transform.localScale = normalScale;
-            selectedButton = null;
-            confirmButtonController.DisableConfirmButton();
+            confirmButtonController.EnableConfirmButton(); // Habilitamos el botón de confirmación
         }
     }
 }

@@ -6,7 +6,6 @@ public class ConfirmButtonController : MonoBehaviour
 {
     public Button confirmButton;
     public CanvasGroup confirmButtonCanvasGroup;
-    public string nextSceneName;
 
     void Start()
     {
@@ -28,12 +27,4 @@ public class ConfirmButtonController : MonoBehaviour
         confirmButtonCanvasGroup.alpha = 0.5f; // Opacidad reducida (transparencia)
     }
 
-    public void OnConfirmButtonClick()
-    {
-        // Si el botón de confirmación está habilitado, carga la siguiente escena
-        if (confirmButton.interactable)
-        {
-            SceneManager.LoadScene(nextSceneName);
-        }
-    }
 }
