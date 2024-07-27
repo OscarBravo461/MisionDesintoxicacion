@@ -62,7 +62,10 @@ public class Player_1 : MonoBehaviour
         while (!isOnSeccion)
         {
             Vector3 SeccionObjetivo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            while (MoverDeCasilla(SeccionObjetivo)) { yield return null; }
+            if(SeccionObjetivo.x < -8 && SeccionObjetivo.x > -12 && SeccionObjetivo.y > 3 && SeccionObjetivo.y < 6)
+            {
+                while (MoverDeCasilla(SeccionObjetivo)) { yield return null; }
+            }
 
             yield return new WaitForSeconds(0.2f);
         }
