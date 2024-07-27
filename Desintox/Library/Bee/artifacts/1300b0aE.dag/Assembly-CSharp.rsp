@@ -389,6 +389,7 @@
 "Assets/Scripts/Buttons/GameController.cs"
 "Assets/Scripts/GameControllers/GCInicio02.cs"
 "Assets/Scripts/Players/Player_1.cs"
+"Assets/Scripts/Rutas/Ruta_Seccion_Ciudad.cs"
 "Assets/Scripts/Rutas/Ruta_Seccion_Escuela.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"

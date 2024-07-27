@@ -3150,7 +3150,7 @@ GameObject:
   - component: {fileID: 1028735556}
   - component: {fileID: 1028735557}
   m_Layer: 0
-  m_Name: CasillaC (14)
+  m_Name: CasillaC (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3919,7 +3919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dedbac7e85bf8ac4a9a7248629cf696a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rutaActual: {fileID: 1449718157}
+  rutaEscuela: {fileID: 1449718157}
+  rutaCiudad: {fileID: 1696797086}
   pasos: 0
 --- !u!58 &1283408334
 CircleCollider2D:
@@ -4078,7 +4079,7 @@ GameObject:
   - component: {fileID: 1307882731}
   - component: {fileID: 1307882732}
   m_Layer: 0
-  m_Name: CasillaC (17)
+  m_Name: CasillaC (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4436,6 +4437,7 @@ Transform:
   - {fileID: 628741287}
   - {fileID: 1571277467}
   - {fileID: 150882961}
+  - {fileID: 1623533442}
   - {fileID: 1843831794}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5251,7 +5253,7 @@ GameObject:
   - component: {fileID: 1479818992}
   - component: {fileID: 1479818993}
   m_Layer: 0
-  m_Name: CasillaC (16)
+  m_Name: CasillaC (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5735,6 +5737,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593165093}
   m_CullTransparentMesh: 1
+--- !u!1 &1623533441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1623533442}
+  - component: {fileID: 1623533443}
+  m_Layer: 0
+  m_Name: ColliderCiudad
+  m_TagString: Ciudad
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1623533442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623533441}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.3, y: 11, z: -3.0434165}
+  m_LocalScale: {x: 40.0977, y: 18.01823, z: 30.453176}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1359349105}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1623533443
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623533441}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1633038292
 GameObject:
   m_ObjectHideFlags: 0
@@ -6159,6 +6238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1696797085}
+  - component: {fileID: 1696797086}
   m_Layer: 0
   m_Name: Seccion_Ciudad
   m_TagString: Untagged
@@ -6192,12 +6272,42 @@ Transform:
   - {fileID: 1937127108}
   - {fileID: 743468532}
   - {fileID: 1441460968}
-  - {fileID: 1028735556}
-  - {fileID: 1971675022}
-  - {fileID: 1479818992}
   - {fileID: 1307882731}
+  - {fileID: 1479818992}
+  - {fileID: 1971675022}
+  - {fileID: 1028735556}
   m_Father: {fileID: 1843831794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1696797086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696797084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d81888bbbf6d34e9a863101473a12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listaDeCasillas_Ciudad:
+  - {fileID: 357080815}
+  - {fileID: 1444637845}
+  - {fileID: 31133460}
+  - {fileID: 1469726032}
+  - {fileID: 1418915906}
+  - {fileID: 2125800537}
+  - {fileID: 737128193}
+  - {fileID: 1768774849}
+  - {fileID: 1182633482}
+  - {fileID: 1149383093}
+  - {fileID: 1937127108}
+  - {fileID: 743468532}
+  - {fileID: 1441460968}
+  - {fileID: 1307882731}
+  - {fileID: 1479818992}
+  - {fileID: 1971675022}
+  - {fileID: 1028735556}
 --- !u!1 &1700172993
 GameObject:
   m_ObjectHideFlags: 0
@@ -7035,7 +7145,7 @@ GameObject:
   - component: {fileID: 1971675022}
   - component: {fileID: 1971675023}
   m_Layer: 0
-  m_Name: CasillaC (15)
+  m_Name: CasillaC (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
