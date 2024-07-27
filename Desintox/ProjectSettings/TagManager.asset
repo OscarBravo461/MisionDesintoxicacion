@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Escuela
   - Ciudad
+  - Plaza
+  - Parque
   layers:
   - Default
   - TransparentFX

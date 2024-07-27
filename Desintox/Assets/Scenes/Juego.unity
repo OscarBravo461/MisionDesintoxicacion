@@ -571,6 +571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 82489880}
+  - component: {fileID: 82489881}
   m_Layer: 0
   m_Name: Seccion_Plaza
   m_TagString: Untagged
@@ -606,6 +607,32 @@ Transform:
   - {fileID: 1279199842}
   m_Father: {fileID: 1843831794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &82489881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82489879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b252ad255f7ec24a9d73ad7624a185f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listaDeCasillas_Plaza:
+  - {fileID: 1779257557}
+  - {fileID: 774751728}
+  - {fileID: 1728922727}
+  - {fileID: 662432700}
+  - {fileID: 1286077396}
+  - {fileID: 567088285}
+  - {fileID: 1000301872}
+  - {fileID: 1648438979}
+  - {fileID: 1348975643}
+  - {fileID: 1681903359}
+  - {fileID: 1589704950}
+  - {fileID: 83287113}
+  - {fileID: 1279199842}
 --- !u!1 &83287112
 GameObject:
   m_ObjectHideFlags: 0
@@ -3223,6 +3250,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1122346740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1122346742}
+  - component: {fileID: 1122346741}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1122346741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122346740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c98d76300737a45ba3052f7727ecc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turno: 1
+--- !u!4 &1122346742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122346740}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.859262, y: 0.69302046, z: -10.296529}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1147435238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,6 +3723,83 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1262306159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1262306160}
+  - component: {fileID: 1262306161}
+  m_Layer: 0
+  m_Name: ColliderParque
+  m_TagString: Parque
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1262306160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262306159}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.2, y: -13.9, z: -3.0434165}
+  m_LocalScale: {x: 28.442305, y: 28.442305, z: 28.442305}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1359349105}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1262306161
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262306159}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008888125, y: -0.015237063}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0685673, y: 0.8882616}
+  m_EdgeRadius: 0
 --- !u!1 &1265824037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3921,7 +4070,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rutaEscuela: {fileID: 1449718157}
   rutaCiudad: {fileID: 1696797086}
+  rutaPlaza: {fileID: 82489881}
+  rutaParque: {fileID: 1944764945}
   pasos: 0
+  gc: {fileID: 1122346741}
 --- !u!58 &1283408334
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4068,6 +4220,88 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1302668190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1302668191}
+  - component: {fileID: 1302668192}
+  m_Layer: 0
+  m_Name: ColliderPlaza
+  m_TagString: Plaza
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1302668191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302668190}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.48, y: -12.23, z: -3.0434165}
+  m_LocalScale: {x: 24.175962, y: 16.828457, z: 28.442305}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1359349105}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1302668192
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302668190}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.0015753638, y: 0.7248224}
+      - {x: -0.5434735, y: -0.11296353}
+      - {x: -0.79484516, y: -0.608711}
+      - {x: 0.7234421, y: -0.59594154}
+      - {x: 0.66498363, y: -0.23456727}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1307882730
 GameObject:
   m_ObjectHideFlags: 0
@@ -4438,6 +4672,8 @@ Transform:
   - {fileID: 1571277467}
   - {fileID: 150882961}
   - {fileID: 1623533442}
+  - {fileID: 1302668191}
+  - {fileID: 1262306160}
   - {fileID: 1843831794}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6318,9 +6554,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1700172995}
   - component: {fileID: 1700172994}
+  - component: {fileID: 1700172996}
+  - component: {fileID: 1700172997}
+  - component: {fileID: 1700172998}
   m_Layer: 0
   m_Name: Player (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6392,6 +6631,86 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1700172996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700172993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0aaf5f675e28c5498fe06f31b0382ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rutaEscuela: {fileID: 1449718157}
+  rutaCiudad: {fileID: 1696797086}
+  rutaPlaza: {fileID: 82489881}
+  rutaParque: {fileID: 1944764945}
+  pasos: 0
+  gc: {fileID: 1122346741}
+--- !u!50 &1700172997
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700172993}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &1700172998
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700172993}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1725677018
 GameObject:
   m_ObjectHideFlags: 0
@@ -7092,6 +7411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1944764944}
+  - component: {fileID: 1944764945}
   m_Layer: 0
   m_Name: Seccion_Parque
   m_TagString: Untagged
@@ -7134,6 +7454,39 @@ Transform:
   - {fileID: 1243869633}
   m_Father: {fileID: 1843831794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1944764945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944764943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e54fb8f6516355d409a47b902564a260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listaDeCasillas_Parque:
+  - {fileID: 1352861682}
+  - {fileID: 457453628}
+  - {fileID: 644841596}
+  - {fileID: 2062962401}
+  - {fileID: 1522642344}
+  - {fileID: 63429168}
+  - {fileID: 1688673362}
+  - {fileID: 1667788785}
+  - {fileID: 849176665}
+  - {fileID: 816506296}
+  - {fileID: 943190012}
+  - {fileID: 588141919}
+  - {fileID: 516132565}
+  - {fileID: 878151763}
+  - {fileID: 432036953}
+  - {fileID: 37218539}
+  - {fileID: 1464839731}
+  - {fileID: 688952672}
+  - {fileID: 1378433197}
+  - {fileID: 1243869633}
 --- !u!1 &1971675021
 GameObject:
   m_ObjectHideFlags: 0
@@ -7836,3 +8189,4 @@ SceneRoots:
   - {fileID: 488358464}
   - {fileID: 1359349105}
   - {fileID: 1863000552}
+  - {fileID: 1122346742}
