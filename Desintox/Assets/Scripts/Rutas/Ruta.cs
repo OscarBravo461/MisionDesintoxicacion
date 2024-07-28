@@ -7,7 +7,7 @@ public class Ruta : MonoBehaviour
     Transform[] casillas;
     public List<Transform> listaDeCasillas = new List<Transform>();
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmos() //Se utiliza para dibujar la línea guía
     {
         Gizmos.color = Color.blue;
         FillNodes();
@@ -23,7 +23,7 @@ public class Ruta : MonoBehaviour
         }
     }
 
-    void FillNodes()
+    void FillNodes() //Se utiliza para obtener todos los transforms (coordenadas) de cada casilla y ponerlos en una lista
     {
         listaDeCasillas.Clear();
         casillas = GetComponentsInChildren<Transform>();
