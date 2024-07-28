@@ -12,7 +12,7 @@ public class Player_2 : MonoBehaviour
     Vector3 SectorCiudad = new Vector3(10.3f, 4.7f, 0f);
     Vector3 SectorPlaza = new Vector3(-10.4f, -4.7f, 0f);
     Vector3 SectorParque = new Vector3(10.4f, -4.7f, 0f);
-    Vector3 VueltaAlPuenteP1 = new Vector3(-2f, 2f, 0f);
+    Vector3 VueltaAlPuente = new Vector3(2f, 2f, 0f);
     public Ruta_Seccion_Escuela rutaEscuela;
     public Ruta_Seccion_Ciudad rutaCiudad;
     public Ruta_Seccion_Plaza rutaPlaza;
@@ -86,7 +86,7 @@ public class Player_2 : MonoBehaviour
             if (posicionEnRuta % rutaEscuela.listaDeCasillas_Escuela.Count == 0)
             {
                 //Podría ponerse una evaluación en caso de que este script se use en general para todos los players, si no sobra
-                    while (MoverDeCasilla(VueltaAlPuenteP1)) { yield return null; }
+                    while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                     isOnSeccion = false;
                     seccionElegida = 0;
             }
@@ -115,12 +115,13 @@ public class Player_2 : MonoBehaviour
 
             if (posicionEnRuta % rutaCiudad.listaDeCasillas_Ciudad.Count == 0)
             {
-                    while (MoverDeCasilla(VueltaAlPuenteP1)) { yield return null; }
+                    while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                     isOnSeccion = false;
                     seccionElegida = 0;
             }
         }
         seMueve = false;
+        gc.turno = 1;
     }
     IEnumerator MovimientoSeccionPlaza()
     {
@@ -143,12 +144,13 @@ public class Player_2 : MonoBehaviour
 
             if (posicionEnRuta % rutaPlaza.listaDeCasillas_Plaza.Count == 0)
             {
-                while (MoverDeCasilla(VueltaAlPuenteP1)) { yield return null; }
+                while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
                 seccionElegida = 0;
             }
         }
         seMueve = false;
+        gc.turno = 1;
     }
     IEnumerator MovimientoSeccionParque()
     {
@@ -171,12 +173,13 @@ public class Player_2 : MonoBehaviour
 
             if (posicionEnRuta % rutaParque.listaDeCasillas_Parque.Count == 0)
             {
-                while (MoverDeCasilla(VueltaAlPuenteP1)) { yield return null; }
+                while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
                 seccionElegida = 0;
             }
         }
         seMueve = false;
+        gc.turno = 1;
     }
     IEnumerator MovimientoDeSeccion()
     {
@@ -213,7 +216,7 @@ public class Player_2 : MonoBehaviour
 
     bool MoverDeCasilla(Vector3 objetivo)
     {
-        return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, 6f * Time.deltaTime));
+        return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, 12f * Time.deltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

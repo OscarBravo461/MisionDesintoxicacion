@@ -8,11 +8,11 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Player : MonoBehaviour
 {
     //Touch touch;
-    Vector3 SectorEscuela = new Vector3(-10.3f, 4.7f, 0f);
-    Vector3 SectorCiudad = new Vector3(10.3f, 4.7f, 0f);
-    Vector3 SectorPlaza = new Vector3(-10.4f, -4.7f, 0f);
-    Vector3 SectorParque = new Vector3(10.4f, -4.7f, 0f);
-    Vector3 VueltaAlPuenteP1 = new Vector3(-2f, 2f, 0f);
+    public Vector3 SectorEscuela = new Vector3(-10.3f, 4.7f, 0f);
+    public Vector3 SectorCiudad = new Vector3(10.3f, 4.7f, 0f);
+    public Vector3 SectorPlaza = new Vector3(-10.4f, -4.7f, 0f);
+    public Vector3 SectorParque = new Vector3(10.4f, -4.7f, 0f);
+    public Vector3 VueltaAlPuente = new Vector3(-2f, 2f, 0f);
     public Ruta_Seccion_Escuela rutaEscuela;
     public Ruta_Seccion_Ciudad rutaCiudad;
     public Ruta_Seccion_Plaza rutaPlaza;
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(gc.turno == 1)
+        if (gc.turno == 1)
         {
             if (!isOnSeccion)
             {
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    IEnumerator MovimientoSeccionEscuela()
+    public IEnumerator MovimientoSeccionEscuela()
     {
         if(seMueve)
         {
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
             if (posicionEnRuta % rutaEscuela.listaDeCasillas_Escuela.Count == 0)
             {
                 //Podría ponerse una evaluación en caso de que este script se use en general para todos los players, si no sobra
-                    while (MoverDeCasilla(VueltaAlPuenteP1)) { yield return null; }
+                    while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                     isOnSeccion = false;
                     seccionElegida = 0;
             }
@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
         seMueve = false;
         gc.turno = 2;
     }
-    IEnumerator MovimientoSeccionCiudad()
+    public IEnumerator MovimientoSeccionCiudad()
     {
         if (seMueve)
         {
@@ -115,14 +115,15 @@ public class Player : MonoBehaviour
 
             if (posicionEnRuta % rutaCiudad.listaDeCasillas_Ciudad.Count == 0)
             {
-                    while (MoverDeCasilla(VueltaAlPuenteP1)) { yield return null; }
+                    while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                     isOnSeccion = false;
                     seccionElegida = 0;
             }
         }
         seMueve = false;
+        gc.turno = 2;
     }
-    IEnumerator MovimientoSeccionPlaza()
+    public IEnumerator MovimientoSeccionPlaza()
     {
         if (seMueve)
         {
@@ -143,14 +144,15 @@ public class Player : MonoBehaviour
 
             if (posicionEnRuta % rutaPlaza.listaDeCasillas_Plaza.Count == 0)
             {
-                while (MoverDeCasilla(VueltaAlPuenteP1)) { yield return null; }
+                while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
                 seccionElegida = 0;
             }
         }
         seMueve = false;
+        gc.turno = 2;
     }
-    IEnumerator MovimientoSeccionParque()
+    public IEnumerator MovimientoSeccionParque()
     {
         if (seMueve)
         {
@@ -171,14 +173,15 @@ public class Player : MonoBehaviour
 
             if (posicionEnRuta % rutaParque.listaDeCasillas_Parque.Count == 0)
             {
-                while (MoverDeCasilla(VueltaAlPuenteP1)) { yield return null; }
+                while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
                 seccionElegida = 0;
             }
         }
         seMueve = false;
+        gc.turno = 2;
     }
-    IEnumerator MovimientoDeSeccion()
+    public IEnumerator MovimientoDeSeccion()
     {
         if (seMueve)
         {
@@ -213,7 +216,7 @@ public class Player : MonoBehaviour
 
     bool MoverDeCasilla(Vector3 objetivo)
     {
-        return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, 6f * Time.deltaTime));
+        return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, 12f * Time.deltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
