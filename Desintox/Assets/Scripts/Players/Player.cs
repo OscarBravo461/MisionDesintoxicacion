@@ -5,19 +5,22 @@ using UnityEngine;
 using static System.Collections.Specialized.BitVector32;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
+//Pienso que se podría hacer de una forma en la que este sea un método base y que mediante herencia se pasara a los demás ya que así solo tendriamos que cambiar los vectores y
+//poner el update en cada uno de los players pero sin repetir absolutamente todo esto, pero no supe como poder cambiar los vectores (pipipipipipipi) y tampoco el tema de los turnos
+//entonces mejor lo deje como una posibilidad
 public class Player : MonoBehaviour
 {
-    //Touch touch;
-    public Vector3 SectorEscuela = new Vector3(-10.3f, 4.7f, 0f);
-    public Vector3 SectorCiudad = new Vector3(10.3f, 4.7f, 0f);
-    public Vector3 SectorPlaza = new Vector3(-10.4f, -4.7f, 0f);
-    public Vector3 SectorParque = new Vector3(10.4f, -4.7f, 0f);
-    public Vector3 VueltaAlPuente = new Vector3(-2f, 2f, 0f);
-    public Ruta_Seccion_Escuela rutaEscuela;
-    public Ruta_Seccion_Ciudad rutaCiudad;
-    public Ruta_Seccion_Plaza rutaPlaza;
-    public Ruta_Seccion_Parque rutaParque;
-    public int pasos;
+    //Touch touch; --> Aspectos que podremos ocupar al momento de hacerlo para android
+    Vector3 SectorEscuela = new Vector3(-9.2f, 5.3f, 0f);
+    Vector3 SectorCiudad = new Vector3(8.9f, 5.3f, 0f);
+    Vector3 SectorPlaza = new Vector3(-9.2f, -3.7f, 0f);
+    Vector3 SectorParque = new Vector3(8.9f, -3.7f, 0f);
+    Vector3 VueltaAlPuente = new Vector3(-2f, 2f, 0f);
+    public Ruta rutaEscuela;
+    public Ruta rutaCiudad;
+    public Ruta rutaPlaza;
+    public Ruta rutaParque;
+    public int pasos; //Esta variable es la que controla cuánto avanza el jugador ---> Cambiar por el dado
     public GCJuego gc;
     int posicionEnRuta;
     bool seMueve = false;
@@ -28,11 +31,11 @@ public class Player : MonoBehaviour
     {
         if (gc.turno == 1)
         {
-            if (!isOnSeccion)
+            if (!isOnSeccion) //Evualua si se seleccionó una sección
             {
-                if (Input.GetMouseButtonDown(0)) // Input.touchcount > 0
+                if (Input.GetMouseButtonDown(0)) // Input.touchcount > 0 --> Aspectos que podremos ocupar al momento de hacerlo para android
                 {
-                    //touch = Input.GetTouch(0);
+                    //touch = Input.GetTouch(0); --> Aspectos que podremos ocupar al momento de hacerlo para android
                     StartCoroutine(MovimientoDeSeccion());
                 }
             }
@@ -76,24 +79,24 @@ public class Player : MonoBehaviour
         {
             posicionEnRuta++;
 
-            posicionEnRuta %= rutaEscuela.listaDeCasillas_Escuela.Count;
-            Vector3 siguientePosicion = rutaEscuela.listaDeCasillas_Escuela[posicionEnRuta].position;
-            while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+            posicionEnRuta %= rutaEscuela.listaDeCasillas.Count; //Evalua si se encuentra en la última casilla antes de completar la sección para permitir que avance al convertirse en 0 de nuevo
+            Vector3 siguientePosicion = rutaEscuela.listaDeCasillas[posicionEnRuta].position;
+            while (MoverDeCasilla(siguientePosicion)) { yield return null; } //Ejecuta el recorrido
 
             yield return new WaitForSeconds(0.2f);
             pasos--;
 
-            if (posicionEnRuta % rutaEscuela.listaDeCasillas_Escuela.Count == 0)
+            if (posicionEnRuta % rutaEscuela.listaDeCasillas.Count == 0)//Evalua si se llego de nuevo al inicio de la sección para que el player vuelva al puente
             {
-                //Podría ponerse una evaluación en caso de que este script se use en general para todos los players, si no sobra
-                    while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
-                    isOnSeccion = false;
-                    seccionElegida = 0;
+                while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
+                isOnSeccion = false;
+                seccionElegida = 0;
             }
         }
         seMueve = false;
         gc.turno = 2;
     }
+        //Todos los métodos tienen la misma lógica, solo adecuada a cada sección
     public IEnumerator MovimientoSeccionCiudad()
     {
         if (seMueve)
@@ -106,14 +109,14 @@ public class Player : MonoBehaviour
         {
             posicionEnRuta++;
 
-            posicionEnRuta %= rutaCiudad.listaDeCasillas_Ciudad.Count;
-            Vector3 siguientePosicion = rutaCiudad.listaDeCasillas_Ciudad[posicionEnRuta].position;
+            posicionEnRuta %= rutaCiudad.listaDeCasillas.Count;
+            Vector3 siguientePosicion = rutaCiudad.listaDeCasillas[posicionEnRuta].position;
             while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
             yield return new WaitForSeconds(0.2f);
             pasos--;
 
-            if (posicionEnRuta % rutaCiudad.listaDeCasillas_Ciudad.Count == 0)
+            if (posicionEnRuta % rutaCiudad.listaDeCasillas.Count == 0)
             {
                     while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                     isOnSeccion = false;
@@ -135,14 +138,14 @@ public class Player : MonoBehaviour
         {
             posicionEnRuta++;
 
-            posicionEnRuta %= rutaPlaza.listaDeCasillas_Plaza.Count;
-            Vector3 siguientePosicion = rutaPlaza.listaDeCasillas_Plaza[posicionEnRuta].position;
+            posicionEnRuta %= rutaPlaza.listaDeCasillas.Count;
+            Vector3 siguientePosicion = rutaPlaza.listaDeCasillas[posicionEnRuta].position;
             while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
             yield return new WaitForSeconds(0.2f);
             pasos--;
 
-            if (posicionEnRuta % rutaPlaza.listaDeCasillas_Plaza.Count == 0)
+            if (posicionEnRuta % rutaPlaza.listaDeCasillas.Count == 0)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
@@ -164,14 +167,14 @@ public class Player : MonoBehaviour
         {
             posicionEnRuta++;
 
-            posicionEnRuta %= rutaParque.listaDeCasillas_Parque.Count;
-            Vector3 siguientePosicion = rutaParque.listaDeCasillas_Parque[posicionEnRuta].position;
+            posicionEnRuta %= rutaParque.listaDeCasillas.Count;
+            Vector3 siguientePosicion = rutaParque.listaDeCasillas[posicionEnRuta].position;
             while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
             yield return new WaitForSeconds(0.2f);
             pasos--;
 
-            if (posicionEnRuta % rutaParque.listaDeCasillas_Parque.Count == 0)
+            if (posicionEnRuta % rutaParque.listaDeCasillas.Count == 0)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
@@ -181,7 +184,7 @@ public class Player : MonoBehaviour
         seMueve = false;
         gc.turno = 2;
     }
-    public IEnumerator MovimientoDeSeccion()
+    public IEnumerator MovimientoDeSeccion() //Evalua donde se toco con el mouse para mover al jugador de una sección a otra
     {
         if (seMueve)
         {
@@ -191,7 +194,7 @@ public class Player : MonoBehaviour
 
         while (!isOnSeccion)
         {
-            Vector3 SeccionObjetivo = Camera.main.ScreenToWorldPoint(Input.mousePosition); //touch.position
+            Vector3 SeccionObjetivo = Camera.main.ScreenToWorldPoint(Input.mousePosition); //touch.position --> Aspectos que podremos ocupar al momento de hacerlo para android
             if (SeccionObjetivo.x < -8 && SeccionObjetivo.x > -12 && SeccionObjetivo.y > 3 && SeccionObjetivo.y < 6)
             {
                 while (MoverDeCasilla(SectorEscuela)) { yield return null; }
@@ -214,9 +217,11 @@ public class Player : MonoBehaviour
         seMueve = false;
     }
 
-    bool MoverDeCasilla(Vector3 objetivo)
+    bool MoverDeCasilla(Vector3 objetivo) //Es el método que ejecuta el movimiento
     {
-        return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, 12f * Time.deltaTime));
+        return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, 12f * Time.deltaTime));//Está línea evalua si la posición actual del jugador es distinta
+                                                                                                                          //a la del objetivo, si si,
+                                                                                                                          //entonces devuelve el valor true y hace que se mueva
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -241,10 +246,5 @@ public class Player : MonoBehaviour
                 break;
         }
     }
-    void Start()
-    {
-        
-    }
-
 }
 

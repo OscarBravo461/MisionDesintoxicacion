@@ -8,15 +8,15 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Player_2 : MonoBehaviour
 {
     //Touch touch;
-    Vector3 SectorEscuela = new Vector3(-10.3f, 4.7f, 0f);
-    Vector3 SectorCiudad = new Vector3(10.3f, 4.7f, 0f);
-    Vector3 SectorPlaza = new Vector3(-10.4f, -4.7f, 0f);
-    Vector3 SectorParque = new Vector3(10.4f, -4.7f, 0f);
+    Vector3 SectorEscuela = new Vector3(-11.5f, 5.3f, 0f);
+    Vector3 SectorCiudad = new Vector3(11.3f, 5.3f, 0f);
+    Vector3 SectorPlaza = new Vector3(-11.5f, -3.7f, 0f);
+    Vector3 SectorParque = new Vector3(11.3f, -3.7f, 0f);
     Vector3 VueltaAlPuente = new Vector3(2f, 2f, 0f);
-    public Ruta_Seccion_Escuela rutaEscuela;
-    public Ruta_Seccion_Ciudad rutaCiudad;
-    public Ruta_Seccion_Plaza rutaPlaza;
-    public Ruta_Seccion_Parque rutaParque;
+    public Ruta rutaEscuela;
+    public Ruta rutaCiudad;
+    public Ruta rutaPlaza;
+    public Ruta rutaParque;
     public int pasos;
     public GCJuego gc;
     int posicionEnRuta;
@@ -76,14 +76,14 @@ public class Player_2 : MonoBehaviour
         {
             posicionEnRuta++;
 
-            posicionEnRuta %= rutaEscuela.listaDeCasillas_Escuela.Count;
-            Vector3 siguientePosicion = rutaEscuela.listaDeCasillas_Escuela[posicionEnRuta].position;
+            posicionEnRuta %= rutaEscuela.listaDeCasillas.Count;
+            Vector3 siguientePosicion = rutaEscuela.listaDeCasillas[posicionEnRuta].position;
             while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
             yield return new WaitForSeconds(0.2f);
             pasos--;
 
-            if (posicionEnRuta % rutaEscuela.listaDeCasillas_Escuela.Count == 0)
+            if (posicionEnRuta % rutaEscuela.listaDeCasillas.Count == 0)
             {
                 //Podría ponerse una evaluación en caso de que este script se use en general para todos los players, si no sobra
                     while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
@@ -92,7 +92,7 @@ public class Player_2 : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 1;
+        gc.turno = 3;
     }
     IEnumerator MovimientoSeccionCiudad()
     {
@@ -106,14 +106,14 @@ public class Player_2 : MonoBehaviour
         {
             posicionEnRuta++;
 
-            posicionEnRuta %= rutaCiudad.listaDeCasillas_Ciudad.Count;
-            Vector3 siguientePosicion = rutaCiudad.listaDeCasillas_Ciudad[posicionEnRuta].position;
+            posicionEnRuta %= rutaCiudad.listaDeCasillas.Count;
+            Vector3 siguientePosicion = rutaCiudad.listaDeCasillas[posicionEnRuta].position;
             while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
             yield return new WaitForSeconds(0.2f);
             pasos--;
 
-            if (posicionEnRuta % rutaCiudad.listaDeCasillas_Ciudad.Count == 0)
+            if (posicionEnRuta % rutaCiudad.listaDeCasillas.Count == 0)
             {
                     while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                     isOnSeccion = false;
@@ -121,7 +121,7 @@ public class Player_2 : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 1;
+        gc.turno = 3;
     }
     IEnumerator MovimientoSeccionPlaza()
     {
@@ -135,14 +135,14 @@ public class Player_2 : MonoBehaviour
         {
             posicionEnRuta++;
 
-            posicionEnRuta %= rutaPlaza.listaDeCasillas_Plaza.Count;
-            Vector3 siguientePosicion = rutaPlaza.listaDeCasillas_Plaza[posicionEnRuta].position;
+            posicionEnRuta %= rutaPlaza.listaDeCasillas.Count;
+            Vector3 siguientePosicion = rutaPlaza.listaDeCasillas[posicionEnRuta].position;
             while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
             yield return new WaitForSeconds(0.2f);
             pasos--;
 
-            if (posicionEnRuta % rutaPlaza.listaDeCasillas_Plaza.Count == 0)
+            if (posicionEnRuta % rutaPlaza.listaDeCasillas.Count == 0)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
@@ -150,7 +150,7 @@ public class Player_2 : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 1;
+        gc.turno = 3;
     }
     IEnumerator MovimientoSeccionParque()
     {
@@ -164,14 +164,14 @@ public class Player_2 : MonoBehaviour
         {
             posicionEnRuta++;
 
-            posicionEnRuta %= rutaParque.listaDeCasillas_Parque.Count;
-            Vector3 siguientePosicion = rutaParque.listaDeCasillas_Parque[posicionEnRuta].position;
+            posicionEnRuta %= rutaParque.listaDeCasillas.Count;
+            Vector3 siguientePosicion = rutaParque.listaDeCasillas[posicionEnRuta].position;
             while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
             yield return new WaitForSeconds(0.2f);
             pasos--;
 
-            if (posicionEnRuta % rutaParque.listaDeCasillas_Parque.Count == 0)
+            if (posicionEnRuta % rutaParque.listaDeCasillas.Count == 0)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
@@ -179,7 +179,7 @@ public class Player_2 : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 1;
+        gc.turno = 3;
     }
     IEnumerator MovimientoDeSeccion()
     {
@@ -241,10 +241,5 @@ public class Player_2 : MonoBehaviour
                 break;
         }
     }
-    void Start()
-    {
-        
-    }
-
 }
 
