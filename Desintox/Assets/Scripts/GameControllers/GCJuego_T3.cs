@@ -35,6 +35,7 @@ public class GCJuego_T3 : MonoBehaviour
     public int sit5 = 0;
     public int sit6 = 0;
     //Declaro la camara que se va a estar enfocando en ese momento
+    //Para todo lo que involucra el cambio de camara utilice este tuto https://www.youtube.com/watch?v=-Aj2wulC660
     public int camara_principal=0;
     //Declaro un arreglo con las camaras que van a estar en el juego (se añaden mediante Unity)
     public GameObject[] Camaras;
