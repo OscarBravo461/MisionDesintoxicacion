@@ -27,21 +27,26 @@ public class GCJuego_T3 : MonoBehaviour
     public int n2 = 0;
     public int n3 = 0;
     public int n4 = 0;
-
+    //Variables para determinar cada que suceda uno de los resultados posibles
     public int sit1 = 0;
     public int sit2 = 0;
     public int sit3 = 0;
     public int sit4 = 0;    
     public int sit5 = 0;
     public int sit6 = 0;
-    public int repe = 0;
-    
+    //Declaro la camara que se va a estar enfocando en ese momento
+    public int camara_principal=0;
+    //Declaro un arreglo con las camaras que van a estar en el juego (se añaden mediante Unity)
+    public GameObject[] Camaras;
+
     //Funcionamiento del boton
     public void generar_random_jugadores()
     {
-        //Se decide el resutlado de los dados dependiendo del turno del jugador correspondiente ademas de hacerse comprobaciones por si hay repeticiones
+        //Bajo este switch funciona el boton cambiando cada caso con lo que se necesite en el momento
         switch (turno)
         {
+            //Los primero 4 casos deciden el numero de los dados de cada jugador
+            //Tambien se detecta si se repiten los numeros y evita que un numero se repita 3 veces
             case 1:
                 int r1 =UnityEngine.Random.Range(1, 4);
                 n1= r1;
@@ -54,7 +59,6 @@ public class GCJuego_T3 : MonoBehaviour
                 n2=r2;
                 if (n1 == n2)
                 {
-                    repe++;
                     sit1++;
                     Debug.Log("sit1 Happen");
                 }
@@ -68,7 +72,6 @@ public class GCJuego_T3 : MonoBehaviour
                 n3 = r3;
                 if (n1 == n3)
                 {
-                    repe++;
                     sit2++;
                     if (sit1==1)
                     {
@@ -80,7 +83,6 @@ public class GCJuego_T3 : MonoBehaviour
                 }
                 if (n2 == n3)
                 {
-                    repe++;
                     sit3++;
                     if (sit1 == 1)
                     {
@@ -99,7 +101,6 @@ public class GCJuego_T3 : MonoBehaviour
                 n4 = r4;
                 if (n1 == n4)
                 {
-                    repe++;
                     sit4++;
                     if (sit1 == 1)
                     {
@@ -117,7 +118,6 @@ public class GCJuego_T3 : MonoBehaviour
                 }
                 if (n2 == n4)
                 {
-                    repe++;
                     sit5++;
                     if (sit1 == 1)
                     {
@@ -135,7 +135,6 @@ public class GCJuego_T3 : MonoBehaviour
                 }
                 if (n3 == n4)
                 {
-                    repe++;
                     sit6++;
                     if (sit3 == 1)
                     {
@@ -154,8 +153,8 @@ public class GCJuego_T3 : MonoBehaviour
                 }
                 Nj4.text = "" + r4;
                 turno = 0;
-                Debug.Log("Se repitio " + repe + "veces");
-
+                //A partir de aqui los siguientes if deciden el curso de accion dependiendo la repeticion que hubo
+                //si hubieron dos respeticiones todos los jugadores vuelven a tirar
                 if (sit1 == 1)
                 {
                     if (sit6 == 1)
@@ -196,6 +195,7 @@ public class GCJuego_T3 : MonoBehaviour
                         Debug.Log("Jugadores 1 y 3 repiten tirada");
                         turno = 6;
                         JD.text = ("Es turno del Jugador 1");
+                        //Se deciden los primeros y segundos lugares de los resultados
                         if (n2 > n4)
                         {
                             T2.text = ("1");
@@ -224,6 +224,7 @@ public class GCJuego_T3 : MonoBehaviour
                         Debug.Log("Jugadores 2 y 3 repiten tirada");
                         turno = 7;
                         JD.text = ("Es turno del Jugador 2");
+                        //Se deciden los primeros y segundos lugares de los resultados
                         if (n1 > n4)
                         {
                             T1.text = ("1");
@@ -243,6 +244,7 @@ public class GCJuego_T3 : MonoBehaviour
                     Debug.Log("Jugadores 1 y 4 repiten tirada");
                     turno = 8;
                     JD.text = ("Es turno del Jugador 1");
+                    //Se deciden los primeros y segundos lugares de los resultados
                     if (n2 > n3)
                     {
                         T2.text = ("1");
@@ -261,6 +263,7 @@ public class GCJuego_T3 : MonoBehaviour
                     Debug.Log("Jugadores 2 y 4 repiten tirada");
                     turno = 9;
                     JD.text = ("Es turno del Jugador 2");
+                    //Se deciden los primeros y segundos lugares de los resultados
                     if (n1 > n3)
                     {
                         T1.text = ("1");
@@ -279,6 +282,7 @@ public class GCJuego_T3 : MonoBehaviour
                     Debug.Log("Jugadores 3 y 4 repiten tirada");
                     turno = 10;
                     JD.text = ("Es turno del Jugador 3");
+                    //Se deciden los primeros y segundos lugares de los resultados
                     if (n1 > n2)
                     {
                         T1.text = ("1");
@@ -299,6 +303,7 @@ public class GCJuego_T3 : MonoBehaviour
                 sit5 = 0;
                 sit6 = 0;
                 break;
+                //Estos casos ejecutan los nuevos tiros para determinar el orden de los otros dos jugadores
             case 5:
                 if(turno2== 1)
                 {
@@ -315,6 +320,7 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 == n2)
                     {
                         Debug.Log("Se repitio el tiro del J2");
+                        //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                         goto case 5;
                     }
                     Nj2.text = "" + r2;
@@ -349,6 +355,7 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 == n3)
                     {
                         Debug.Log("Se repitio el tiro del J3");
+                        //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                         goto case 6;
                     }
                     Nj3.text = "" + r3;
@@ -383,6 +390,7 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n2 == n3)
                     {
                         Debug.Log("Se repitio el tiro del J3");
+                        //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                         goto case 7;
                     }
                     Nj3.text = "" + r3;
@@ -417,6 +425,7 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 == n4)
                     {
                         Debug.Log("Se repitio el tiro del J4");
+                        //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                         goto case 8;
                     }
                     Nj4.text = "" + r4;
@@ -451,6 +460,7 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n2 == n4)
                     {
                         Debug.Log("Se repitio el tiro del J4");
+                        //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                         goto case 9;
                     }
                     Nj4.text = "" + r4;
@@ -485,6 +495,7 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n3 == n4)
                     {
                         Debug.Log("Se repitio el tiro del J4");
+                        //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                         goto case 10;
                     }
                     Nj4.text = "" + r4;
@@ -509,13 +520,30 @@ public class GCJuego_T3 : MonoBehaviour
 
 
     }
+    //Metodo que hace el cambio de camara segun el indicado en la variable publica de camara principal
+    public void cambio_de_camara()
+    {
+        //for que pasa por cada camara para descativarlas y activar la que se use en el momento
+        //Seria buena idea poner una trancision aqui para que el cambio de camara no se vea tan brusco
+        for (int i = 0; i <= 4; i++)
+        {
+            Camaras[i].gameObject.SetActive(false);
+            if (camara_principal == i)
+            {
+                Camaras[i].gameObject.SetActive(true);
+                Debug.Log("Se activo la camara "+i);
+            }
+        }
+    }
+
     void Start()
     {
+        //Pone de antemano el nombre del primer jugador que tira los dados
                 JD.text = "Es turno del jugador 1";
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
