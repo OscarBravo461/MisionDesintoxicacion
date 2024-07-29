@@ -1,9 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using static System.Collections.Specialized.BitVector32;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 //Pienso que se podría hacer de una forma en la que este sea un método base y que mediante herencia se pasara a los demás ya que así solo tendriamos que cambiar los vectores y
 //poner el update en cada uno de los players pero sin repetir absolutamente todo esto, pero no supe como poder cambiar los vectores (pipipipipipipi) y tampoco el tema de los turnos
