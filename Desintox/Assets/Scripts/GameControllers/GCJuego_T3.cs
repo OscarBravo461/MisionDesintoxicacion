@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GCJuego_T3 : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class GCJuego_T3 : MonoBehaviour
     public int sit4 = 0;    
     public int sit5 = 0;
     public int sit6 = 0;
+    public int repe = 0;
     //Declaro la camara que se va a estar enfocando en ese momento
     //Para todo lo que involucra el cambio de camara utilice este tuto https://www.youtube.com/watch?v=-Aj2wulC660
     public int camara_principal=0;
@@ -62,6 +64,7 @@ public class GCJuego_T3 : MonoBehaviour
                 {
                     sit1++;
                     Debug.Log("sit1 Happen");
+                    repe++;
                 }
                 Nj2.text = ""+r2;
 
@@ -71,7 +74,7 @@ public class GCJuego_T3 : MonoBehaviour
             case 3:
                 int r3 =UnityEngine.Random.Range(1, 4);
                 n3 = r3;
-                if (n1 == n3)
+                if (n1 == n3 && repe>0)
                 {
                     sit2++;
                     if (sit1==1)
@@ -80,9 +83,10 @@ public class GCJuego_T3 : MonoBehaviour
                         Debug.Log("Se repitio el caso 3  sit2");
                         goto case 3;
                     }
+                    repe++;
                     Debug.Log("sit2 Happen");
                 }
-                if (n2 == n3)
+                if (n2 == n3 && repe > 0)
                 {
                     sit3++;
                     if (sit1 == 1)
@@ -91,6 +95,7 @@ public class GCJuego_T3 : MonoBehaviour
                         Debug.Log("Se repitio el caso 3 sit3");
                         goto case 3;
                     }
+                    repe++;
                     Debug.Log("sit3 Happen");
                 }
                 JD.text = "Es turno del jugador 4";
@@ -100,7 +105,7 @@ public class GCJuego_T3 : MonoBehaviour
             case 4:
                 int r4 =UnityEngine.Random.Range(1, 4);
                 n4 = r4;
-                if (n1 == n4)
+                if (n1 == n4 && repe > 0)
                 {
                     sit4++;
                     if (sit1 == 1)
@@ -115,9 +120,10 @@ public class GCJuego_T3 : MonoBehaviour
                         Debug.Log("Se repitio el caso 4 sit4 2");
                         goto case 4;
                     }
+                    repe++;
                     Debug.Log("sit4 Happen");
                 }
-                if (n2 == n4)
+                if (n2 == n4 && repe > 0)
                 {
                     sit5++;
                     if (sit1 == 1)
@@ -132,9 +138,10 @@ public class GCJuego_T3 : MonoBehaviour
                         Debug.Log("Se repitio el caso 4 sit5 2");
                         goto case 4;
                     }
+                    repe++;
                     Debug.Log("sit5 Happen");
                 }
-                if (n3 == n4)
+                if (n3 == n4 && repe > 0)
                 {
                     sit6++;
                     if (sit3 == 1)
@@ -149,6 +156,7 @@ public class GCJuego_T3 : MonoBehaviour
                         Debug.Log("Se repitio el caso 4 sit6 2");
                         goto case 4;
                     }
+                    repe++;
                     Debug.Log("sit6 Happen");
 
                 }
