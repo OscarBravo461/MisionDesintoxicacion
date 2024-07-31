@@ -386,6 +386,7 @@
 "Assets/Scripts/Buttons/ConfirmButtonController.cs"
 "Assets/Scripts/Buttons/GameController.cs"
 "Assets/Scripts/GameControllers/GCInicio02.cs"
+"Assets/Scripts/GameControllers/GCJuego.cs"
 "Assets/Scripts/Pantallas emergentes/preguntas.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
