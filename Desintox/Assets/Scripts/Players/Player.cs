@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     int posicionEnRuta;
     bool seMueve = false;
     bool isOnSeccion;
+    bool vueltaEscuela = false;
     int seccionElegida;
 
     void Update()
@@ -73,20 +74,29 @@ public class Player : MonoBehaviour
 
         while(pasos > 0)
         {
-            posicionEnRuta++;
+            if(vueltaEscuela == false)
+            {
+                posicionEnRuta++;
 
-            posicionEnRuta %= rutaEscuela.listaDeCasillas.Count; //Evalua si se encuentra en la última casilla antes de completar la sección para permitir que avance al convertirse en 0 de nuevo
-            Vector3 siguientePosicion = rutaEscuela.listaDeCasillas[posicionEnRuta].position;
-            while (MoverDeCasilla(siguientePosicion)) { yield return null; } //Ejecuta el recorrido
+                posicionEnRuta %= rutaEscuela.listaDeCasillas.Count; //Evalua si se encuentra en la última casilla antes de completar la sección para permitir que avance al convertirse en 0 de nuevo
+                Vector3 siguientePosicion = rutaEscuela.listaDeCasillas[posicionEnRuta].position;
+                while (MoverDeCasilla(siguientePosicion)) { yield return null; } //Ejecuta el recorrido
 
-            yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.2f);
+            }
             pasos--;
 
-            if (posicionEnRuta % rutaEscuela.listaDeCasillas.Count == 0)//Evalua si se llego de nuevo al inicio de la sección para que el player vuelva al puente
+            if (vueltaEscuela == true)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
                 seccionElegida = 0;
+            }
+
+            if (posicionEnRuta % rutaEscuela.listaDeCasillas.Count == 0)//Evalua si se llego de nuevo al inicio de la sección para que el player vuelva al puente
+            {
+                
+                vueltaEscuela = true;
             }
         }
         seMueve = false;
