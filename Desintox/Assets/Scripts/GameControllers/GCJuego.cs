@@ -5,10 +5,10 @@ using UnityEngine;
 public class GCJuego : MonoBehaviour
 {
     //RandomsUnity -->  https://rusbenguzman.medium.com/generating-random-numbers-in-unity-spanish-ddd63e7795e
-    public int size = 10;
+    public int size = 6;
     private int[] uniqueNumbers;
     public Canvas preguntas;
-    private int Counter = 0;
+    private int Counter = -1;
 
     void Start()
     {
@@ -41,23 +41,23 @@ public class GCJuego : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V)&& Counter<uniqueNumbers.Length)
         {
             bool isActive = !preguntas.gameObject.activeSelf;
             if (preguntas != null)
             {
-                preguntas.gameObject.SetActive(!preguntas.gameObject.activeSelf);
+                preguntas.gameObject.SetActive(true);
             }
             if (isActive)
             {
                 Counter++;
-                Debug.Log("Canvas opened " + Counter + " times");
+                Debug.Log("Canvas opened " + (Counter+1)+ " times");
 
                 // Enviar el conteo al otro script
-                preguntas anotherScript = FindObjectOfType<preguntas>();
-                if (anotherScript != null)
+                preguntas otherScript = FindObjectOfType<preguntas>();
+                if (otherScript != null)
                 {
-                    anotherScript.UpdateCounter(Counter);
+                    otherScript.UpdateCounter(Counter);
                 }
             }
         }
