@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +12,7 @@ public class preguntas : MonoBehaviour
     private int[] receivedNumbers;
     public TextMeshProUGUI Question_txt;
     private bool isQuestionAnswered;
-    int Counter;
+    int Counter=0;
     public Canvas Preguntas;
     public string[] Questionario = new string[]{
         "Test_true",
@@ -18,7 +20,6 @@ public class preguntas : MonoBehaviour
         "Test_true",
         "Test_false",
         "Test_true",
-        "Test_false"
     };
     public bool[] Results = new bool[]{
         true,
@@ -26,7 +27,6 @@ public class preguntas : MonoBehaviour
         true,
         false,
         true,
-        false,
     };
 
     void Start()
@@ -38,10 +38,8 @@ public class preguntas : MonoBehaviour
     }
     void OnEnable()
     {
-        // Mostrar la pregunta y resetear los colores de los botones cada vez que se active el canvas
-        DisplayQuestion();
         ResetButtons();
-
+        DisplayQuestion();
     }
     public void ReceiveNumbers(int[] numbers)
     {
@@ -49,11 +47,6 @@ public class preguntas : MonoBehaviour
 
     }
 
-    public void UpdateCounter(int count)
-    {
-        Counter = count;
-        Debug.Log("pregunta no." + (Counter+1));
-    }
     void ResetButtons()
     {
         True.image.color = Color.white;
@@ -63,19 +56,26 @@ public class preguntas : MonoBehaviour
     }
     void DisplayQuestion()
     {
-        Question_txt.text = Questionario[receivedNumbers[Counter]];
+        if (receivedNumbers != null)
+        {
+                Question_txt.text = Questionario[receivedNumbers[Counter]];
+                Debug.Log($"Index: {receivedNumbers[Counter]}, Pregunta actual: {Questionario[receivedNumbers[Counter]]}, Respuesta correcta: {Results[receivedNumbers[Counter]]}");
 
-        // Imprimir la respuesta correcta para la pregunta actual
-        Debug.Log("Respuesta correcta para la pregunta actual: " + Results[receivedNumbers[Counter]]);
+        }
+        else
+        {
+            Debug.LogError("receivedNumbers o Counter no están inicializados correctamente.");
+        }
+
     }
 
     void AnswerQuestion(bool answer)
     {
         bool correctAnswer = Results[receivedNumbers[Counter]];
+        Debug.Log($"Index: {receivedNumbers[Counter]}, Answer: {answer}, Correct Answer: {correctAnswer}");
         // Validar la respuesta
         if (answer == correctAnswer)
         {
-            Debug.Log("Respuesta correcta.");
             if (answer)
             {
                 True.image.color = Color.green;
@@ -87,7 +87,6 @@ public class preguntas : MonoBehaviour
         }
         else
         {
-            Debug.Log("Respuesta incorrecta.");
             if (answer)
             {
                 True.image.color = Color.red;
@@ -99,9 +98,10 @@ public class preguntas : MonoBehaviour
         }
         True.interactable = false;
         False.interactable = false;
-
+        Counter++;
         // Iniciar la corrutina para cerrar el canvas
         StartCoroutine(Close(2f));
+       
     }
 
     IEnumerator Close(float waitTime)

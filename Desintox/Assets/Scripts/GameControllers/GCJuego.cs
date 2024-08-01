@@ -12,14 +12,7 @@ public class GCJuego : MonoBehaviour
 
     void Start()
     {
-        // Generar el arreglo de números únicos
         uniqueNumbers = GenerateUniqueNumbers(size);
-
-        // Mostrar los números únicos generados
-        foreach (int number in uniqueNumbers)
-        {
-            Debug.Log(number);
-        }
     }
 
     int[] GenerateUniqueNumbers(int size)
@@ -41,7 +34,7 @@ public class GCJuego : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V)&& Counter<uniqueNumbers.Length)
+        if (Input.GetKeyDown(KeyCode.V)&& Counter<(uniqueNumbers.Length-1))
         {
             bool isActive = !preguntas.gameObject.activeSelf;
             if (preguntas != null)
@@ -51,18 +44,10 @@ public class GCJuego : MonoBehaviour
             if (isActive)
             {
                 Counter++;
-                Debug.Log("Canvas opened " + (Counter+1)+ " times");
-
-                // Enviar el conteo al otro script
-                preguntas otherScript = FindObjectOfType<preguntas>();
-                if (otherScript != null)
-                {
-                    otherScript.UpdateCounter(Counter);
-                }
             }
         }
 
-        preguntas sender = FindObjectOfType<preguntas>();
+        preguntas sender = FindObjectOfType<preguntas>();//envia el arreglo
         if (sender != null)
         {
             sender.ReceiveNumbers(uniqueNumbers);
