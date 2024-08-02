@@ -29,16 +29,12 @@ public class GCJuego_T3 : MonoBehaviour
     public int n2 = 0;
     public int n3 = 0;
     public int n4 = 0;
-    //Variables para determinar cada que suceda uno de los resultados posibles
+    //Variable para definir que jugadores tienen empate
     public int sit = 0;
+    //Variable para definir que lugares tendran los jugadores que repiten tirada
     public int sit2 = 0;
+    //Variable que guarda si ya hubo un empate para que no pueda existir otro
     public int repe = 0;
-    //Declaro la camara que se va a estar enfocando en ese momento
-    //Para todo lo que involucra el cambio de camara utilice este tuto https://www.youtube.com/watch?v=-Aj2wulC660
-    public int camara_principal=0;
-    //Declaro un arreglo con las camaras que van a estar en el juego (se añaden mediante Unity)
-    public GameObject[] Camaras;
-
     //Funcionamiento del boton
     public void generar_random_jugadores()
     {
@@ -156,6 +152,7 @@ public class GCJuego_T3 : MonoBehaviour
                 decidir_orden();
                 break;
                 //Estos casos ejecutan los nuevos tiros para determinar el orden de los otros dos jugadores
+                //la variable sit2 define los casos de si se tiene que decidir el 1,2 lugar/ 2,3 lugar/ 3,4 lugar segun el primer tiro de dados
             case 5:
                 if (sit2 == 1)
                 {
@@ -807,8 +804,12 @@ public class GCJuego_T3 : MonoBehaviour
                 break;
         }
     }
+
+    //Este metodo se encarga de definir los primeros,segundos,terceros y cuartos lugares dependiendo como hayan sido los dados hasta ahora y manda a los casos para repetir los tiros correspondientes
+    //Segun los casos le da un valor a la variable sit2 para decidir los lugares que quedaron indefinidos
     public void decidir_orden()
     {
+        //sit es la variable que define que jugadores tuvieron un empate para definir el orden de lso otros dos
         switch (sit)
         {
             case 1:
@@ -1150,22 +1151,6 @@ public class GCJuego_T3 : MonoBehaviour
                 break;
         }
     }
-    //Metodo que hace el cambio de camara segun el indicado en la variable publica de camara principal
-    public void cambio_de_camara()
-    {
-        //for que pasa por cada camara para descativarlas y activar la que se use en el momento
-        //Seria buena idea poner una trancision aqui para que el cambio de camara no se vea tan brusco
-        for (int i = 0; i <= 4; i++)
-        {
-            Camaras[i].gameObject.SetActive(false);
-            if (camara_principal == i)
-            {
-                Camaras[i].gameObject.SetActive(true);
-                Debug.Log("Se activo la camara "+i);
-            }
-        }
-    }
-
     void Start()
     {
         //Pone de antemano el nombre del primer jugador que tira los dados
