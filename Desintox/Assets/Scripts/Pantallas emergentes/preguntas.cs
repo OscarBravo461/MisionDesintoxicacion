@@ -59,12 +59,12 @@ public class preguntas : MonoBehaviour
         if (receivedNumbers != null)
         {
                 Question_txt.text = Questionario[receivedNumbers[Counter]];
-                Debug.Log($"Index: {receivedNumbers[Counter]}, Pregunta actual: {Questionario[receivedNumbers[Counter]]}, Respuesta correcta: {Results[receivedNumbers[Counter]]}");
+                //Debug.Log($"Index: {receivedNumbers[Counter]}, Pregunta actual: {Questionario[receivedNumbers[Counter]]}, Respuesta correcta: {Results[receivedNumbers[Counter]]}");
 
         }
         else
         {
-            Debug.LogError("receivedNumbers o Counter no están inicializados correctamente.");
+            //Debug.LogError("receivedNumbers o Counter no están inicializados correctamente.");
         }
 
     }
@@ -72,7 +72,7 @@ public class preguntas : MonoBehaviour
     void AnswerQuestion(bool answer)
     {
         bool correctAnswer = Results[receivedNumbers[Counter]];
-        Debug.Log($"Index: {receivedNumbers[Counter]}, Answer: {answer}, Correct Answer: {correctAnswer}");
+        //Debug.Log($"Index: {receivedNumbers[Counter]}, Answer: {answer}, Correct Answer: {correctAnswer}");
         // Validar la respuesta
         if (answer == correctAnswer)
         {

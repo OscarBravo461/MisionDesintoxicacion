@@ -1519,7 +1519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5086b34fc63ea4cafae97dab48e7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 5
   preguntas: {fileID: 2023136315}
 --- !u!4 &470811594
 Transform:
@@ -8134,7 +8133,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
