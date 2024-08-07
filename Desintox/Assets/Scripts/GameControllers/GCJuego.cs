@@ -5,9 +5,9 @@ using UnityEngine;
 public class GCJuego : MonoBehaviour
 {
     //RandomsUnity -->  https://rusbenguzman.medium.com/generating-random-numbers-in-unity-spanish-ddd63e7795e
-    private int[] uniqueNumbers = new int[6];
+    private int[] uniqueNumbers = new int[20];
     public Canvas preguntas;
-    private int Counter = -1;
+    private int Counter = 0;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class GCJuego : MonoBehaviour
 
     int[] GenerateUniqueNumbers()
     {
-        int[] numbers = { 0, 1, 2, 3, 4, 5};
+        int[] numbers = { 0, 1, 2, 3, 4, 5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
         // Mezclar el arreglo
         for (int i = 0; i < numbers.Length; i++)
         {
@@ -29,7 +29,7 @@ public class GCJuego : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V)&& Counter<(uniqueNumbers.Length-1))
+        if (Input.GetKeyDown(KeyCode.V)&& Counter<(uniqueNumbers.Length))
         {
             bool isActive = !preguntas.gameObject.activeSelf;
             if (preguntas != null)
