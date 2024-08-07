@@ -29,6 +29,11 @@ public class GCJuego : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.V) && Counter >= (uniqueNumbers.Length - 1))
+        {
+            Counter = -1;
+            uniqueNumbers = GenerateUniqueNumbers();
+        }
         if (Input.GetKeyDown(KeyCode.V)&& Counter<(uniqueNumbers.Length-1))
         {
             bool isActive = !preguntas.gameObject.activeSelf;

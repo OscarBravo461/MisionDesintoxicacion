@@ -11,7 +11,6 @@ public class preguntas : MonoBehaviour
     public Button True, False;
     private int[] receivedNumbers;
     public TextMeshProUGUI Question_txt;
-    private bool isQuestionAnswered;
     int Counter=0;
     public Canvas Preguntas;
     public string[] Questionario = new string[]{
@@ -38,6 +37,10 @@ public class preguntas : MonoBehaviour
     }
     void OnEnable()
     {
+        if (Counter >= (receivedNumbers.Length))
+        {
+            Counter = 0;
+        }
         ResetButtons();
         DisplayQuestion();
     }
@@ -59,12 +62,12 @@ public class preguntas : MonoBehaviour
         if (receivedNumbers != null)
         {
                 Question_txt.text = Questionario[receivedNumbers[Counter]];
-                //Debug.Log($"Index: {receivedNumbers[Counter]}, Pregunta actual: {Questionario[receivedNumbers[Counter]]}, Respuesta correcta: {Results[receivedNumbers[Counter]]}");
+                
 
         }
         else
         {
-            //Debug.LogError("receivedNumbers o Counter no están inicializados correctamente.");
+            Debug.LogError("receivedNumbers o Counter no están inicializados correctamente.");
         }
 
     }
