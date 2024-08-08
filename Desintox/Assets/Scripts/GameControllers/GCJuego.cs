@@ -5,16 +5,16 @@ using UnityEngine;
 public class GCJuego : MonoBehaviour
 {
     //RandomsUnity -->  https://rusbenguzman.medium.com/generating-random-numbers-in-unity-spanish-ddd63e7795e
-    private int[] uniqueNumbers = new int[20];
+    public int[] uniqueNumbers = new int[20];
     public Canvas preguntas;
-    private int Counter = 0;
+    public int Counter = 0;
 
     void Start()
     {
         uniqueNumbers = GenerateUniqueNumbers();
     }
 
-    int[] GenerateUniqueNumbers()
+    public int[] GenerateUniqueNumbers()
     {
         int[] numbers = { 0, 1, 2, 3, 4, 5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
         // Mezclar el arreglo
@@ -39,6 +39,12 @@ public class GCJuego : MonoBehaviour
             if (isActive)
             {
                 Counter++;
+                if (Counter >= uniqueNumbers.Length)
+                {
+                    uniqueNumbers = GenerateUniqueNumbers();
+                    Counter = 0;
+                }
+
             }
         }
 

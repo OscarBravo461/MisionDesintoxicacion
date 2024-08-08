@@ -91,11 +91,11 @@ public class preguntas : MonoBehaviour
     {
         ResetButtons();
         DisplayQuestion();
+        Debug.Log(Counter);
     }
     public void ReceiveNumbers(int[] numbers)
     {
         receivedNumbers = numbers;
-
     }
 
     void ResetButtons()
@@ -145,9 +145,21 @@ public class preguntas : MonoBehaviour
         True.interactable = false;
         False.interactable = false;
         Counter++;
+        if (Counter >= receivedNumbers.Length)
+        {
+            // Solicitar actualización de números
+            GCJuego juego = FindObjectOfType<GCJuego>(); // Asegúrate de que el nombre de la clase sea correcto
+            if (juego != null)
+            {
+                juego.uniqueNumbers = juego.GenerateUniqueNumbers(); // Genera nuevos números
+                juego.Counter = 0; // Reiniciar el contador en GCJuego
+                ReceiveNumbers(juego.uniqueNumbers); // Actualiza el arreglo recibido
+            }
+            Counter = 0; // Reinicia el contador local si es necesario
+        }
+
         // Iniciar la corrutina para cerrar el canvas
-        StartCoroutine(Close(5f));
-       
+        StartCoroutine(Close(0.5f));
     }
 
     IEnumerator Close(float waitTime)
