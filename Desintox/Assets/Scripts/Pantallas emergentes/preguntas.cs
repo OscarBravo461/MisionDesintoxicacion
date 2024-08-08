@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class preguntas : MonoBehaviour
 {
-    public Button True, False;
+    public Button True, False, Surrender;
     private int[] receivedNumbers;
     public TextMeshProUGUI Question_txt;
     public Canvas Preguntas;
@@ -78,7 +78,7 @@ public class preguntas : MonoBehaviour
     false,
     false
     };
-    [Range(0.1f, 5f)]
+    [Range(0.1f, 10f)]// <= Hacer variable tipo barra de volumen
     public float waitTime = 5f;
     int Counter=0;
     void Start()
@@ -86,13 +86,13 @@ public class preguntas : MonoBehaviour
         // Asignar eventos a los botones
         True.onClick.AddListener(() => AnswerQuestion(true));
         False.onClick.AddListener(() => AnswerQuestion(false));
+        Surrender.onClick.AddListener(() => StartCoroutine(Close(0))); //probablemente esto se cambie a futuro,si llega a haber penalizaciones por rendirse
         DisplayQuestion();
     }
     void OnEnable()
     {
         ResetButtons();
         DisplayQuestion();
-        Debug.Log(Counter);
     }
     public void ReceiveNumbers(int[] numbers)
     {
