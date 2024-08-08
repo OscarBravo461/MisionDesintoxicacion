@@ -120,6 +120,7 @@ public class preguntas : MonoBehaviour
         // Validar la respuesta
         if (answer == correctAnswer)
         {
+            Question_txt.text = "HECHO"+Facts[receivedNumbers[Counter]];
             if (answer)
             {
                 True.image.color = Color.green;
@@ -131,6 +132,7 @@ public class preguntas : MonoBehaviour
         }
         else
         {
+            Question_txt.text = "HECHO" + Facts[receivedNumbers[Counter]];
             if (answer)
             {
                 True.image.color = Color.red;
@@ -144,7 +146,7 @@ public class preguntas : MonoBehaviour
         False.interactable = false;
         Counter++;
         // Iniciar la corrutina para cerrar el canvas
-        StartCoroutine(Close(2f));
+        StartCoroutine(Close(5f));
        
     }
 
