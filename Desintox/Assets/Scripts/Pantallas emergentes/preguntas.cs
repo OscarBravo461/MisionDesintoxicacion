@@ -78,7 +78,8 @@ public class preguntas : MonoBehaviour
     false,
     false
     };
-
+    [Range(0.1f, 5f)]
+    public float waitTime = 5f;
     int Counter=0;
     void Start()
     {
@@ -159,7 +160,7 @@ public class preguntas : MonoBehaviour
         }
 
         // Iniciar la corrutina para cerrar el canvas
-        StartCoroutine(Close(0.5f));
+        StartCoroutine(Close(waitTime));
     }
 
     IEnumerator Close(float waitTime)
