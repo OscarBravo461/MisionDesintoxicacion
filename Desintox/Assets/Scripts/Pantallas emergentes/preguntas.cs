@@ -79,10 +79,11 @@ public class preguntas : MonoBehaviour
     false
     };
     [Range(0.1f, 10f)]// <= Hacer variable tipo barra de volumen
-    public float waitTime = 5f;
+    public float waitTime = 15f;
     int Counter=0;
     void Start()
     {
+        Surrender.gameObject.SetActive(false);
         // Asignar eventos a los botones
         True.onClick.AddListener(() => AnswerQuestion(true));
         False.onClick.AddListener(() => AnswerQuestion(false));
@@ -163,8 +164,8 @@ public class preguntas : MonoBehaviour
         StartCoroutine(Close(waitTime));
     }
 
-    IEnumerator Close(float waitTime)
-    {
+    IEnumerator Close(float waitTime) {
+        Surrender.gameObject.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         Preguntas.gameObject.SetActive(false);
     }
