@@ -8,7 +8,7 @@ public class ConfirmButtonNext : MonoBehaviour
     public CanvasGroup ConfirmButtonNextSceneCanvasGroup;
     public Button ConfirmButtonNextScene;
     public GameObject Canvas1; // Asigna el canvas desde el Inspector
-    public string nombreSiguienteEscena = "NombreDeTuOtraEscena"; // Asigna el nombre de la siguiente escena
+    public string nombreSiguienteEscena = "Juego"; // Asigna el nombre de la siguiente escena
     private int clicksRequired; // Ahora esta variable tendrá el mismo valor que savedNumJug
     public ConfirmButtonControllerPer ConfirmButtonControllerPer;
     public Button[] colorButtons; // Arreglo de botones de colores

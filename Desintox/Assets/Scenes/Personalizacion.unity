@@ -4574,7 +4574,7 @@ MonoBehaviour:
   ConfirmButtonNextSceneCanvasGroup: {fileID: 1764199148}
   ConfirmButtonNextScene: {fileID: 1764199149}
   Canvas1: {fileID: 1494238971}
-  nombreSiguienteEscena: Inicio.01
+  nombreSiguienteEscena: Juego
   ConfirmButtonControllerPer: {fileID: 673397374}
   colorButtons:
   - {fileID: 83588774}
