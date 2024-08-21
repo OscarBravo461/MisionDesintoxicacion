@@ -1634,7 +1634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 470811594}
-  - component: {fileID: 470811593}
+  - component: {fileID: 470811595}
   m_Layer: 0
   m_Name: GameControllerJuego
   m_TagString: Untagged
@@ -1642,21 +1642,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &470811593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470811592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5086b34fc63ea4cafae97dab48e7e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueNumbers: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  preguntas: {fileID: 2023136315}
-  Counter: 0
 --- !u!4 &470811594
 Transform:
   m_ObjectHideFlags: 0
@@ -1672,6 +1657,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &470811595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470811592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c927f4dd02ee5574aae665251d07d0fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueNumbers: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  preguntas: {fileID: 2023136315}
+  Counter: 0
 --- !u!1 &488358462
 GameObject:
   m_ObjectHideFlags: 0
@@ -8098,7 +8098,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2023136312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e45dce9fc28142a255a271642a25b, type: 3}
+  m_Script: {fileID: 11500000, guid: c96e3658aeaf065499dec93a5547f191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   True: {fileID: 1482198310}
@@ -8202,7 +8202,7 @@ MonoBehaviour:
     monoxido de carbono. Esto inflama los pulmones y produce riesgos de contraer
     enfermedades como la neumonia, bronquitis cronica, etc.'
   Results: 0100010101000100000000010101000101010000
-  waitTime: 5
+  waitTime: 10
 --- !u!1 &2060273065
 GameObject:
   m_ObjectHideFlags: 0
