@@ -132,7 +132,7 @@ public class VerdadoReto : MonoBehaviour {
         Counter++;
         if (Counter >= receivedNumbers.Length) {
             // Solicitar actualización de números
-            GCJuego juego = FindObjectOfType<GCJuego>(); // Asegúrate de que el nombre de la clase sea correcto
+            GCJuego1 juego = FindObjectOfType<GCJuego1>(); // Asegúrate de que el nombre de la clase sea correcto
             if (juego != null) {
                 juego.uniqueNumbers = juego.GenerateUniqueNumbers(); // Genera nuevos números
                 juego.Counter = 0; // Reiniciar el contador en GCJuego

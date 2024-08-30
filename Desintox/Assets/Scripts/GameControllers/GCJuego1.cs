@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GCJuego : MonoBehaviour {
+public class GCJuego1 : MonoBehaviour {
     //RandomsUnity -->  https://rusbenguzman.medium.com/generating-random-numbers-in-unity-spanish-ddd63e7795e
     public int[] uniqueNumbers = new int[20];
     public Canvas preguntas;

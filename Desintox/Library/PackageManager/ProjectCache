@@ -3063,8 +3063,8 @@ m_ResolvedPackages:
     name: 
     email: 
     url: 
-  category: 
-  type: 
+  category: Libraries
+  type: asset
   description: Custom version of the nunit package build to work with Unity. Used
     by the Unity Test Framework.
   status: 0
