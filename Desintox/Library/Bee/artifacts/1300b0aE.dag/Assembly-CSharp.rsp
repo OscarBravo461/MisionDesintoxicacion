@@ -383,6 +383,7 @@
 "Assets/Scripts/Buttons/PersonalizationScripts/ButtonControllerPersonalization.cs"
 "Assets/Scripts/Buttons/PersonalizationScripts/ConfirmButtonNext.cs"
 "Assets/Scripts/Buttons/PersonalizationScripts/ConfirmButtonPer.cs"
+"Assets/Scripts/GameControllers/GCFinal_Molio.cs"
 "Assets/Scripts/GameControllers/GCInicio02.cs"
 "Assets/Scripts/GameControllers/GCJuego.cs"
 "Assets/Scripts/GameControllers/GCJuego1.cs"
