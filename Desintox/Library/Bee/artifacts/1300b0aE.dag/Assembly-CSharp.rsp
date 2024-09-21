@@ -390,6 +390,7 @@
 "Assets/Scripts/GameControllers/GCJuego.cs"
 "Assets/Scripts/GameControllers/GCJuego1.cs"
 "Assets/Scripts/GameControllers/GCJuego_T3.cs"
+"Assets/Scripts/Pantallas emergentes/OpcionMulti_T3.cs"
 "Assets/Scripts/Pantallas emergentes/preguntas.cs"
 "Assets/Scripts/Pantallas emergentes/VerdadoReto.cs"
 "Assets/Scripts/Players/Player.cs"
