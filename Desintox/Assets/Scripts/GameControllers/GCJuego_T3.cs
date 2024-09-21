@@ -5,9 +5,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.ParticleSystemJobs;
 using UnityEngine.UIElements;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class GCJuego_T3 : MonoBehaviour
 {
+    //canva que se activa
+    public Canvas dados;
+    //tiempo de espera despues de contestar en lo que se cierra la ventana
+    public float waitTime = 5f;
     // Declaracion de la indicacion de que jugador tirara el dado
     public TextMeshProUGUI JD;
     //Declaracion de la indicacion visual del numero que saco cadad jugador
@@ -1158,9 +1163,25 @@ public class GCJuego_T3 : MonoBehaviour
 
     }
 
+    IEnumerator Close(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        dados.gameObject.SetActive(false);
+    }
 
     void Update()
     {
-        
+        //Enciende la ventana para activar el evento o la cierra
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            if (dados.gameObject.active == false)
+            {
+                dados.gameObject.SetActive(true);
+            }
+            else
+            {
+                dados.gameObject.SetActive(false);
+            }
+        }
     }
 }

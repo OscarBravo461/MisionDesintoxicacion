@@ -929,7 +929,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 54963604}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1829217905}
+        m_TargetAssemblyTypeName: OpcionMulti_T3, Assembly-CSharp
+        m_MethodName: bt3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &54963604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2084,7 +2096,7 @@ GameObject:
   - component: {fileID: 163005758}
   - component: {fileID: 163005757}
   m_Layer: 5
-  m_Name: Preguntas_opcion_multi
+  m_Name: Preguntas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2502,7 +2514,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 191116156}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1829217905}
+        m_TargetAssemblyTypeName: OpcionMulti_T3, Assembly-CSharp
+        m_MethodName: bt4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &191116156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4993,7 +5017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueNumbers: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  preguntas: {fileID: 2023136315}
+  preguntas: {fileID: 163005760}
   Counter: 0
 --- !u!114 &470811596
 MonoBehaviour:
@@ -9990,7 +10014,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 970777966}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1829217905}
+        m_TargetAssemblyTypeName: OpcionMulti_T3, Assembly-CSharp
+        m_MethodName: bt2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &970777966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15933,7 +15969,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1482198311}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1829217905}
+        m_TargetAssemblyTypeName: OpcionMulti_T3, Assembly-CSharp
+        m_MethodName: bt1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1482198311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19851,6 +19899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1829217904}
   - component: {fileID: 1829217903}
+  - component: {fileID: 1829217905}
   m_Layer: 0
   m_Name: GC_T3
   m_TagString: Untagged
@@ -19870,6 +19919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457031b3b8175204da878e6a596a2b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dados: {fileID: 637322258}
+  waitTime: 5
   JD: {fileID: 2021824548}
   Nj1: {fileID: 978026848}
   Nj2: {fileID: 2059947499}
@@ -19903,6 +19954,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1829217905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829217902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91cb1dcc310acd4e8d5199c40ecee57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btt1: {fileID: 1482198310}
+  btt2: {fileID: 970777965}
+  btt3: {fileID: 54963603}
+  btt4: {fileID: 191116155}
+  pregutext: {fileID: 2063563447}
+  op1: {fileID: 1595056755}
+  op2: {fileID: 319415178}
+  op3: {fileID: 1712450816}
+  op4: {fileID: 819204450}
+  Multi_op: {fileID: 2023136315}
+  p: 0
+  Questionario:
+  - "\xBFQu\xE9 son las drogas?"
+  - "\xBFA qu\xE9 edad (promedio) empiezan las adicciones a las drogas?"
+  - "\xBFCu\xE1l es la raz\xF3n por la que es dif\xEDcil dejar una adicci\xF3n?"
+  - "\xBFCu\xE1l droga es la m\xE1s conocida en M\xE9xico?"
+  - "\xBFCu\xE1ntas muertes al a\xF1o hay por el uso de drogas en M\xE9xico?"
+  - "\xBFQui\xE9n es m\xE1s propenso a consumir drogas?"
+  - "\xBFCuando se consumen drogas siendo menor afecta diferentes aspectos como?"
+  - "\xBFEl s\xEDndrome de abstinencia se produce cuando?"
+  - "\xBFCual de las siguientes sustancias son ilegales?"
+  - "\xBFCuando el consum\xF3 de drogas se vuelve problem\xE1tico?"
+  - "\xBFQu\xE9 s\xEDntomas nocivos para la salud crea el vapeo y el cigarro?"
+  - "\xBFQu\xE9 es la sibilancia?"
+  - "\xBFC\xF3mo se puede dar la sibilancia?"
+  - "\xBFEl vapeo puede da\xF1ar el ambiente?"
+  - "\xBFQu\xE9 pasa con el cerebro cuando una persona usa drogas"
+  - "\xBFQu\xE9 funciones son afectadas por el uso de las drogas?"
+  - "\xBFQu\xE9 problemas causa fumar tabaco?"
+  - "\xBFQu\xE9 problemas da el fumar embarazada o fumar cerca de una persona embarazada?"
+  - "\xBFQu\xE9 es el alcoholismo?"
+  - "\xBFQu\xE9 problemas causa el alcoholismo?"
+  correcta: 0100000001000000010000000100000001000000010000000100000001000000020000000300000001000000010000000100000001000000010000000100000001000000010000000300000003000000
+  waitTime: 10
 --- !u!1 &1840242727
 GameObject:
   m_ObjectHideFlags: 0
@@ -22037,14 +22134,13 @@ GameObject:
   - component: {fileID: 2023136315}
   - component: {fileID: 2023136314}
   - component: {fileID: 2023136313}
-  - component: {fileID: 2023136318}
   m_Layer: 5
-  m_Name: Preguntas
+  m_Name: Preguntas_opcion_multi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2023136313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22128,120 +22224,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2023136318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023136312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96e3658aeaf065499dec93a5547f191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  True: {fileID: 1482198310}
-  False: {fileID: 0}
-  Surrender: {fileID: 685236712}
-  Question_txt: {fileID: 2063563447}
-  Preguntas: {fileID: 2023136315}
-  Questionario:
-  - Las drogas en Mexico se declararon ilegales en el anio 1940?
-  - El termino adicciones se refiere solo al abuso y consumo de sustancias tales
-    como el tabaco, la bebida y las drogas
-  - Mexico cuenta con Centro de Atencion Ciudadana contra las Adicciones?
-  - 'Realizar de forma constante y excesiva actividades como: el ejercicio, los videojuegos
-    y redes sociales, cuenta como adicciones?'
-  - Jugar constantemente juegos de azar en casinos se puede considerar una adiccion?
-  - Jugar a videojuegos, juegos de azar y pasar el rato en redes sociales  son actividades
-    que directamente vuelven adictos a las personas?
-  - El acido sulfurico puede utilizarse para la elaboracion de drogas como la cocaina?
-  - El acido acetil salicilico es el nombre cientifico de la marihuana?
-  - No pasa nada si solo se consumen drogas los fines de semana
-  - Las personas con dependencia a las drogas tomaron una decision equivocada?
-  - SI TOMO MUCHO ALCOHOL ME HARe MENOS RESISTENTE?
-  - PARA PASARLO BIEN HAY QUE BEBER ALCOHOL?
-  - UNA INTOXICACIoN GRAVE CON ALCOHOL PUEDE PRODUCIR LA MUERTE?
-  - EL ALCOHOL BAJA LA TEMPERATURA CORPORAL?
-  - EL CONSUMO DE MARIHUANA NO HACE DAniO?
-  - EL ALCOHOL MATA NEURONAS?
-  - EL CONSUMO EN EDAD TEMPRANO TIENE CONSECUENCIAS?
-  - MIENTRAS MaS JOVEN SE COMIENCE A CONSUMIR DROGAS, MaS PROBABILIDADES HAY DE SER
-    DEPENDIENTE
-  - EL ALCOHOL NOS PONE BIEN HAPPY'S?
-  - LA MARIHUANA NO AFECTA LOS PULMONES
-  Facts:
-  - ': En 1940, ultimo anio de su mandato como presidente, Lazaro Cardenas promulgo
-    un Reglamento Federal de Toxicomanias en el que se eliminaron diversos decretos
-    punitivos que consideraban el consumo, posesion y venta de drogas como un delito.'
-  - ': La adiccion es una enfermedad neurologica que se caracteriza por una busqueda
-    patologica de la recompensa o alivio a traves del uso de una sustancia u otras
-    acciones.'
-  - ': En el Centro de Atencion Ciudadana contra las Adicciones un grupo de especialistas
-    te escucha para ofrecerte: Prevencion y atencion del consumo de sustancias adictivas
-    y orientacion a sus familiares. Tratamiento breve para dejar de fumar. Entre
-    otros servicios.'
-  - ': El riesgo de caer en una adiccion es parte de la vida. Lo que sucede es que
-    a veces no lo percibimos. Los seres humanos podemos crear dependencia hacia cualquier
-    cosa, incluso hacia el futbol, senala el doctor Hugo Espana, toxicologo y especialista
-    en adicciones.'
-  - ': La ludopatia es un trastorno de orden psicologico que lleva a la persona a
-    jugar y apostar repetidamente en un casino u otro sistema de apuestas, afectando
-    de forma negativa a la vida personal, familiar y vocacional. Tambien se aplica
-    a la adiccion patologica a los juegos electronicos en general.'
-  - ': Se ha demostrado que estas actividades por si mismas no generan dependencia,
-    ludopatia o adiccion y si bien se registran casos que ligan a estas actividades
-    la realidad es que casi cualquier actividad sin medida puede generar adiccion
-    en una persona.'
-  - ': El acido sulfurico, acetona, permanganato de potasio, etc. Es extraido hasta
-    su forma final en cocaina (clorhidrato de cocaina).'
-  - ': El acido acetilsalicilico o AAS, conocido popularmente como aspirina, nombre
-    de una marca que paso al uso comun, es un farmaco de la familia de los salicilatos.
-    Se utiliza como medicamento para tratar el dolor, la fiebre y la inflamacion,
-    debido a su efecto inhibidor, no selectivo, de la ciclooxigenasa.'
-  - ': Debe recordarse que algunos efectos graves del consumo como es el caso del
-    golpe de calor son independientes del tiempo que se lleve consumiendo. Por otra
-    parte, consumir todos los fines de semana conlleva un riesgo evidente. Ademas
-    hay que tener en cuenta que los efectos del fin de semana se prolongan durante
-    varios dias.'
-  - ': Desde el 2019, los Estados Miembro de las Naciones Unidas han reconocido que
-    la dependencia a las drogas es un asunto de salud publica relacionado con multiples
-    factores. Esto significa que existen diversas variables que incrementan la posibilidad
-    de que alguien comience a utilizar drogas o desarrolle problemas de salud mental
-    por su consumo.'
-  - ': El consumir frecuentemente el alcohol te generara una resistencia cada vez
-    mas fuerte al punto donde no sera suficiente con unas pocas copas.'
-  - ': El alcohol produce una buena onda temporal, que termina cuando se acaba el
-    efecto. Beber en exceso puede traer un buen momento, pero luego podemos sentirnos
-    cansados, deprimidos o nerviosos. Unas copas de mas a veces puede traernos una
-    buena resaca.'
-  - ': Si la intoxicacion es grave, existe un alto riesgo de morir, ya que puede
-    causar paralisis respiratoria y compromiso cardiovascular. Tambien puede provocar
-    perdida de conocimiento, problemas respiratorios, gastritis cronica y alterar
-    el funcionamiento del higado, lo que puede llevar finalmente a una cirrosis hepatica.
-    Ademas puede provocar una hepatitis aguda que eventualmente puede causar la muerte.'
-  - ': Al llegar al cerebro el alcohol activa unos centros que causan caida en la
-    temperatura corporal; por eso, la hipotermia es una de las consecuencias mas
-    rapidas y contundentes del consumo de alcohol.'
-  - ': La marihuana puede generar dependencia. Su consumo produce dificultades en
-    la capacidad de aprendizaje, problemas de concentracion, altera la memoria inmediata
-    y desmotiva.'
-  - ': Si se ha comprobado que el alcohol causa degeneracion neuronal y dificulta
-    la comunicacion entre las neuronas.'
-  - ': El consumo temprano tiene consecuencias graves en ninios, ninias y adolescentes,
-    y se debe evitar en todas las circunstancias.'
-  - ': Diversas investigaciones senalan que mientras mas temprano se inicie el consumo
-    de drogas, mas probabilidades hay de generar una adiccion (dependencia de las
-    drogas). Esto se debe a que el organismo joven se encuentra en desarrollo y,
-    por lo tanto, es mas vulnerable a los efectos de las drogas.'
-  - ': El alcohol hace que la gente se desinhiba, pero hay quienes al beber tienen
-    reacciones negativas que pueden provocar problemas con la ley, violencia, conflictos
-    con la familia, la pareja o en el trabajo.'
-  - ': La marihuana afecta los pulmones porque el humo se retiene en ellos, conteniendo
-    monoxido de carbono. Esto inflama los pulmones y produce riesgos de contraer
-    enfermedades como la neumonia, bronquitis cronica, etc.'
-  Results: 0100010101000100000000010101000101010000
-  waitTime: 10
 --- !u!1 &2024726154
 GameObject:
   m_ObjectHideFlags: 0
@@ -23638,8 +23620,8 @@ SceneRoots:
   - {fileID: 488358464}
   - {fileID: 1359349105}
   - {fileID: 1863000552}
-  - {fileID: 2023136316}
   - {fileID: 163005761}
+  - {fileID: 2023136316}
   - {fileID: 242308587}
   - {fileID: 1588635077}
   - {fileID: 637322259}
