@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638624974254322628
-    m_Hash: 471995231
+      ticks: 638625022230247656
+    m_Hash: 3384777843
   m_LockFileStatus:
     m_FilePath: C:/Users/Paolo/Documents/GitHub/MisionDesintoxicacion/Desintox/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638624974254352879
-    m_Hash: 1311835710
+      ticks: 638625022230247656
+    m_Hash: 802557292
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

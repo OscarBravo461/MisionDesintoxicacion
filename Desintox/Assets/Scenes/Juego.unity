@@ -5371,7 +5371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 592026943}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1829217903}
+        m_TargetAssemblyTypeName: GCJuego_T3, Assembly-CSharp
+        m_MethodName: generar_random_jugadores
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &592026943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18143,15 +18155,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457031b3b8175204da878e6a596a2b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JD: {fileID: 0}
-  Nj1: {fileID: 0}
-  Nj2: {fileID: 0}
-  Nj3: {fileID: 0}
-  Nj4: {fileID: 0}
-  T1: {fileID: 0}
-  T2: {fileID: 0}
-  T3: {fileID: 0}
-  T4: {fileID: 0}
+  JD: {fileID: 2021824548}
+  Nj1: {fileID: 978026848}
+  Nj2: {fileID: 2059947499}
+  Nj3: {fileID: 681574456}
+  Nj4: {fileID: 1145154041}
+  T1: {fileID: 1740955904}
+  T2: {fileID: 191576635}
+  T3: {fileID: 481166439}
+  T4: {fileID: 1346269972}
   turno: 1
   turno2: 1
   n1: 0
