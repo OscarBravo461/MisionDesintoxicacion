@@ -8,6 +8,11 @@ TagManager:
   - Ciudad
   - Plaza
   - Parque
+  - Player1
+  - Player2
+  - Player3
+  - Player4
+  - camaralibre
   layers:
   - Default
   - TransparentFX
