@@ -2984,10 +2984,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 677380588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c12349d6ebafca7408da6a2bac405270, type: 3}
+  m_Script: {fileID: 11500000, guid: 93578d2340dcd364e97eb638770bcf01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo_camara: 0
 --- !u!4 &677380590
 Transform:
   m_ObjectHideFlags: 0
@@ -9510,27 +9509,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1962907415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cafe8a39fb2cb8c4c99454bc574cf0e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 4476aa8b4f81a524a96ccb12577d7a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JD: {fileID: 311198500}
-  Nj1: {fileID: 1478311364}
-  Nj2: {fileID: 788414126}
-  Nj3: {fileID: 689633666}
-  Nj4: {fileID: 308684184}
-  T1: {fileID: 811307680}
-  T2: {fileID: 2018967867}
-  T3: {fileID: 157208387}
-  T4: {fileID: 85591128}
-  turno: 1
-  turno2: 1
-  n1: 0
-  n2: 0
-  n3: 0
-  n4: 0
-  sit: 0
-  sit2: 0
-  repe: 0
 --- !u!4 &1962907417
 Transform:
   m_ObjectHideFlags: 0
