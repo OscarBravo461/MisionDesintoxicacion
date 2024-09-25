@@ -5,170 +5,121 @@ using UnityEngine.UI; // Import this to use UI elements
 
 public class Spinning : MonoBehaviour
 {
-    public GameObject roulette;  // Reference to the roulette GameObject
-    public Button spinButton;     // Reference to the button to disable/enable
-    public float spinSpeed = 500f;      // Initial spin speed
-    public float deceleration = 50f;    // Deceleration rate
-    public float finalSpinSpeed = 100f; // Speed when approaching the final angle
-    public float snapThreshold = 0.1f;   // Threshold to consider when to snap to the target angle
+    public GameObject rouletteWheel; // Reference to the roulette GameObject
+    public Button spinButton;        // Reference to the button
 
-    private float currentSpeed;         // Current speed of the roulette
-    private bool isSpinning = false;    // To check if the roulette is spinning
-    private int selectedIndex = -1;     // To store the index of the selected section
-    private float targetAngle;           // Target angle for the roulette to stop at
+    public float baseSpinSpeed = 500f;   // Base speed of the spin
+    public float slowDownSpeed = 1f;     // How quickly it slows down
+    private bool isSpinning = false;
+    private float currentSpeed;
 
-    // Struct to hold chance and angle for each section
-    [System.Serializable]
-    public struct RouletteSection
-    {
-        public int chance; // Probability of the section
-        public float angle; // Angle of the section
-        public string name; // Name of the section
-    }
-
-    public RouletteSection[] sections = new RouletteSection[4]; // Array of sections
+    // Section weights (start with equal chances)
+    private List<float> sectionWeights = new List<float> { 0.25f, 0.25f, 0.25f, 0.25f };
+    private List<float> originalWeights = new List<float>(); // Store original weights
+    private List<int> pickedSections = new List<int>(); // Track picked sections
 
     void Start()
     {
-        // Initialize sections with chances and angles
-        sections[0] = new RouletteSection { chance = 25, angle = 22.5f, name = "Opción 1" };
-        sections[1] = new RouletteSection { chance = 25, angle = 67.5f, name = "Opción 2" };
-        sections[2] = new RouletteSection { chance = 25, angle = 112.5f, name = "Opción 3" };
-        sections[3] = new RouletteSection { chance = 25, angle = 157.5f, name = "Opción 4" };
+        originalWeights = new List<float>(sectionWeights); // Store original weights
+        spinButton.onClick.AddListener(StartSpin); // Attach button click event
     }
 
     void Update()
     {
-        // If the roulette is spinning
         if (isSpinning)
         {
-            // Rotate the roulette using the GameObject
-            roulette.transform.Rotate(0, 0, currentSpeed * Time.deltaTime);
+            rouletteWheel.transform.Rotate(0, 0, currentSpeed * Time.deltaTime); // Spin the wheel
+            currentSpeed -= slowDownSpeed * Time.deltaTime; // Slow down gradually
 
-            // Check if we need to decelerate towards the target angle
-            if (selectedIndex >= 0)
+            if (currentSpeed <= 0)
             {
-                // Calculate the angle difference
-                float angleDifference = Mathf.DeltaAngle(roulette.transform.eulerAngles.z, targetAngle);
-
-                // If we're close enough to the target angle, adjust speed
-                if (Mathf.Abs(angleDifference) < snapThreshold)
-                {
-                    currentSpeed = Mathf.Max(0, currentSpeed - deceleration * Time.deltaTime);
-                }
-                else
-                {
-                    // If not close enough, continue spinning
-                    currentSpeed = finalSpinSpeed; // Set a slower speed as we approach the target angle
-                }
-
-                // Stop spinning when speed reaches zero and close to the target
-                if (currentSpeed <= 0 && Mathf.Abs(angleDifference) < snapThreshold)
-                {
-                    isSpinning = false; // Stop the spin
-                    roulette.transform.rotation = Quaternion.Euler(0, 0, targetAngle); // Snap to target angle
-                    DetermineOutcome();  // Call to determine the outcome
-                    selectedIndex = -1; // Reset selected index
-
-                    // Re-enable the spin button
-                    spinButton.interactable = true;
-                }
-            }
-            else
-            {
-                // Continue normal deceleration
-                currentSpeed = Mathf.Max(0, currentSpeed - deceleration * Time.deltaTime);
-
-                // When the speed reaches zero, stop the roulette
-                if (currentSpeed == 0)
-                {
-                    isSpinning = false;
-
-                    // Call to determine the outcome
-                    DetermineOutcome(); // Ensure we determine the outcome at the end of spin
-
-                    // Re-enable the spin button
-                    spinButton.interactable = true;
-                }
+                isSpinning = false;
+                currentSpeed = 0;
+                int selectedSection = DetermineSection();
+                ReduceChance(selectedSection); // Reduce chances of selected section
+                spinButton.interactable = true; // Re-enable the button
             }
         }
     }
 
-
-    // Starts the spin of the roulette
     public void StartSpin()
     {
-        currentSpeed = spinSpeed;
-        isSpinning = true;
+        if (!isSpinning)
+        {
+            isSpinning = true;
 
-        // Disable the spin button while spinning
-        spinButton.interactable = false;
+            // Apply some randomization to the starting spin speed
+            currentSpeed = baseSpinSpeed + Random.Range(100f, 500f); // Random spin speed range
 
-        // Call to determine the outcome here
-        DetermineOutcome(); // Ensure this is called when the spin starts
+            spinButton.interactable = false; // Disable the button while spinning
+        }
     }
 
-
-    // Determines the outcome of the spin
-    void DetermineOutcome()
+    int DetermineSection()
     {
-        int totalChance = 0;
-        foreach (var section in sections)
+        // Normalize the rotation of the wheel to the range [0, 360)
+        float currentRotation = rouletteWheel.transform.eulerAngles.z % 360;
+
+        // Randomize the final landing position a bit to break patterns
+        currentRotation += Random.Range(-10f, 10f);
+
+        int selectedSection = 0;
+
+        if (currentRotation >= 0 && currentRotation < 90) selectedSection = 0;
+        else if (currentRotation >= 90 && currentRotation < 180) selectedSection = 1;
+        else if (currentRotation >= 180 && currentRotation < 270) selectedSection = 2;
+        else selectedSection = 3;
+
+        Debug.Log($"Landed on Section {selectedSection + 1}");
+        return selectedSection;
+    }
+
+    void ReduceChance(int sectionIndex)
+    {
+        // Apply the reduction to the current section regardless if it's already picked
+        sectionWeights[sectionIndex] *= 0.75f;
+
+        // Add the current section to the picked sections list if not already in it
+        if (!pickedSections.Contains(sectionIndex))
         {
-            totalChance += section.chance;
+            pickedSections.Add(sectionIndex);
         }
 
-        // Generate a random number based on total probabilities
-        int randomChance = Random.Range(0, totalChance);
-        int accumulatedChance = 0;
-
-        // Determine which section the roulette falls into
-        for (int i = 0; i < sections.Length; i++)
+        // Check if all sections have been picked
+        if (pickedSections.Count == sectionWeights.Count)
         {
-            accumulatedChance += sections[i].chance;
-            if (randomChance < accumulatedChance)
+            ResetWeights();
+        }
+        else
+        {
+            NormalizeWeights();
+        }
+    }
+
+    void ResetWeights()
+    {
+        // Reset all weights to original values
+        sectionWeights = new List<float>(originalWeights);
+        pickedSections.Clear(); // Clear the picked sections
+        Debug.Log("Weights reset to original values.");
+    }
+
+    void NormalizeWeights()
+    {
+        float totalWeight = 0f;
+        foreach (float weight in sectionWeights) totalWeight += weight;
+
+        for (int i = 0; i < sectionWeights.Count; i++)
+        {
+            // Skip applying the normalization to sections that have been picked already,
+            // except for the currently picked section (which should still apply the reduction).
+            if (!pickedSections.Contains(i) || i == pickedSections[pickedSections.Count - 1])
             {
-                Debug.Log("Resultado: " + sections[i].name);
-                selectedIndex = i; // Store the selected index
-                targetAngle = sections[i].angle; // Set the target angle to the selected section
-                ReduceChance(i);  // Reduce the probability of the selected section
-                break;
+                sectionWeights[i] /= totalWeight;
             }
         }
-    }
 
-    // Reduces the probability of the selected section to 25% of its original value
-    void ReduceChance(int index)
-    {
-        int originalChance = sections[index].chance;
-        int reducedChance = Mathf.FloorToInt(originalChance * 0.25f); // Reduce to 25%
-        int difference = originalChance - reducedChance;
-
-        sections[index].chance = reducedChance; // Apply the reduced probability
-        RedistributeChances(difference);       // Redistribute the remaining 75% among other sections
-    }
-
-    // Redistributes the remaining probability among the other sections
-    void RedistributeChances(int difference)
-    {
-        int remainingSections = 0;
-        foreach (var section in sections)
-        {
-            if (section.chance > 0) remainingSections++;
-        }
-
-        if (remainingSections > 0)
-        {
-            int redistribution = Mathf.FloorToInt(difference / remainingSections);
-            for (int i = 0; i < sections.Length; i++)
-            {
-                if (sections[i].chance > 0 && redistribution > 0)
-                {
-                    sections[i].chance += redistribution;
-                }
-            }
-        }
+        Debug.Log("Normalized Weights: " + string.Join(", ", sectionWeights));
     }
 }
-
 

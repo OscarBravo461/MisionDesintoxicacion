@@ -235,25 +235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581679bf87b220c42990bc263feda2c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roulette: {fileID: 1453754403}
+  rouletteWheel: {fileID: 1453754403}
   spinButton: {fileID: 333358660}
-  spinSpeed: 500
-  deceleration: 50
-  finalSpinSpeed: 100
-  snapThreshold: 2
-  sections:
-  - chance: 0
-    angle: 0
-    name: 
-  - chance: 0
-    angle: 0
-    name: 
-  - chance: 0
-    angle: 0
-    name: 
-  - chance: 0
-    angle: 0
-    name: 
+  baseSpinSpeed: 500
+  slowDownSpeed: 50
 --- !u!1 &333358658
 GameObject:
   m_ObjectHideFlags: 0
