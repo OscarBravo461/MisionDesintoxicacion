@@ -7,6 +7,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //Touch touch; --> Aspectos que podremos ocupar al momento de hacerlo para android
+    //OpcionMulti_T3 PMultiples = new OpcionMulti_T3();
+    public OpcionMulti_T3 scriptOpcionMulti;
+    public CCJuego_T3 scriptCamara;
+    public Canvas preguntas;
+    public Canvas Multi_op;
     Vector3 SectorEscuela = new Vector3(-9.2f, 5.3f, 0f);
     Vector3 SectorCiudad = new Vector3(8.9f, 5.3f, 0f);
     Vector3 SectorPlaza = new Vector3(-9.2f, -3.7f, 0f);
@@ -19,6 +24,7 @@ public class Player : MonoBehaviour
     public int pasos; //Esta variable es la que controla cuánto avanza el jugador ---> Cambiar por el dado
     public GCJuego gc;
     int posicionEnRuta;
+    int valor_anterior;
     bool seMueve = false;
     bool isOnSeccion;
     bool vueltaEscuela = false;
@@ -42,7 +48,7 @@ public class Player : MonoBehaviour
                 switch (seccionElegida)
                 {
                     case 1:
-                        pasos = 1;
+                        pasos = 4;
                         StartCoroutine(MovimientoSeccionEscuela());
                         Debug.Log("Hola");
                         break;
@@ -55,7 +61,7 @@ public class Player : MonoBehaviour
                         StartCoroutine(MovimientoSeccionPlaza());
                         break;
                     case 4:
-                        pasos = 1;
+                        pasos = 4;
                         StartCoroutine(MovimientoSeccionParque());
                         break;
                 }
@@ -250,7 +256,25 @@ public class Player : MonoBehaviour
                 isOnSeccion = true;
                 seccionElegida = 4;
                 break;
+            case "Preguntas":
+                preguntas.gameObject.SetActive(true);
+                break;
+            case "Multiple":
+                Multi_op.gameObject.SetActive(true);
+                scriptOpcionMulti.empiezar();
+                scriptOpcionMulti.reinicio();
+                break;
+            case "Ruleta":
+                valor_anterior = scriptCamara.objetivo_camara;
+                StartCoroutine(esperaCamara());
+                break;
         }
+    }
+    public IEnumerator esperaCamara() {
+        Debug.Log("so");
+        scriptCamara.objetivo_camara = 0;
+        yield return new WaitForSeconds(10);
+        scriptCamara.objetivo_camara = valor_anterior;
     }
 }
 

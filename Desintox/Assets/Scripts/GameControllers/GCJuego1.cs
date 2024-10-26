@@ -5,7 +5,7 @@ using UnityEngine;
 public class GCJuego1 : MonoBehaviour {
     //RandomsUnity -->  https://rusbenguzman.medium.com/generating-random-numbers-in-unity-spanish-ddd63e7795e
     public int[] uniqueNumbers = new int[20];
-    public Canvas preguntas;
+    public Canvas preguntas, ruleta;
     public int Counter = 0;
 
     void Start() {
@@ -37,6 +37,12 @@ public class GCJuego1 : MonoBehaviour {
                     Counter = 0;
                 }
 
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.R)) {
+
+            if (ruleta != null) {
+                ruleta.gameObject.SetActive(true);
             }
         }
 

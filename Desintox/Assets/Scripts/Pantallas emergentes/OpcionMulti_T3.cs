@@ -8,8 +8,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OpcionMulti_T3 : MonoBehaviour
-{
+public class OpcionMulti_T3 : MonoBehaviour {
     //Declaracion de todos los objetos del canvas que se utilizaran
     public Button btt1, btt2, btt3, btt4;
     public TextMeshProUGUI pregutext, op1, op2, op3, op4;
@@ -52,25 +51,21 @@ public class OpcionMulti_T3 : MonoBehaviour
     public int[] correcta = { 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3 };
     //tiempo de espera despues de contestar en lo que se cierra la ventana
     public float waitTime = 5f;
-    
-    void Start()
-    {
+
+    void Start() {
 
     }
 
-    void Update()
-    {
+    void Update() {
         //activa el evento con la letra b
-        if (Input.GetKeyDown(KeyCode.B))
-        {
+        /*if (Input.GetKeyDown(KeyCode.B)) {
             Multi_op.gameObject.SetActive(true);
             empiezar();
             reinicio();
-        }
+        }*/
     }
     //Selecciona la pregunta y la escribe junto con sus respuesta
-    public void empiezar()
-    {
+    public void empiezar() {
         int p = UnityEngine.Random.Range(0, 20);
         pregutext.text = (Questionario[p]);
         op1.text = (Respuestas[p, 0]);
@@ -80,65 +75,49 @@ public class OpcionMulti_T3 : MonoBehaviour
 
     }
     //Determina si la respuesta de cada boton es correcta o incorrecta
-    public void bt1()
-    {
-        if (correcta[p] == 1)
-        {
+    public void bt1() {
+        if (correcta[p] == 1) {
             Debug.Log("ACERTASTE");
             descativar();
             color();
-        }
-        else
-        {
+        } else {
             Debug.Log("Fallaste");
             descativar();
             color();
         }
         StartCoroutine(Close(waitTime));
     }
-    public void bt2()
-    {
-        if (correcta[p] == 2)
-        {
+    public void bt2() {
+        if (correcta[p] == 2) {
             Debug.Log("ACERTASTE");
             descativar();
             color();
 
-        }
-        else
-        {
+        } else {
             Debug.Log("Fallaste");
             descativar();
             color();
         }
         StartCoroutine(Close(waitTime));
     }
-    public void bt3()
-    {
-        if (correcta[p] == 3)
-        {
+    public void bt3() {
+        if (correcta[p] == 3) {
             Debug.Log("ACERTASTE");
             descativar();
             color();
-        }
-        else
-        {
+        } else {
             Debug.Log("Fallaste");
             descativar();
             color();
         }
         StartCoroutine(Close(waitTime));
     }
-    public void bt4()
-    {
-        if (correcta[p] == 4)
-        {
+    public void bt4() {
+        if (correcta[p] == 4) {
             Debug.Log("ACERTASTE");
             descativar();
             color();
-        }
-        else
-        {
+        } else {
             Debug.Log("Fallaste");
             descativar();
             color();
@@ -146,10 +125,8 @@ public class OpcionMulti_T3 : MonoBehaviour
         StartCoroutine(Close(waitTime));
     }
     //Segun cual sea la respuesat correcta le pone un color  al boton, rojo incorrecto, verde correcto
-    public void color()
-    {
-        switch(correcta[p])
-        {
+    public void color() {
+        switch (correcta[p]) {
             case 1:
                 btt1.image.color = Color.green;
                 btt2.image.color = Color.red;
@@ -177,16 +154,14 @@ public class OpcionMulti_T3 : MonoBehaviour
         }
     }
     //Desactiva los botones despues de presionarlos
-    public void descativar()
-    {
+    public void descativar() {
         btt1.enabled = false;
         btt2.enabled = false;
         btt3.enabled = false;
         btt4.enabled = false;
     }
     //reinicia el color de los botones y los vuelve a activar
-    public void reinicio()
-    {
+    public void reinicio() {
         btt1.enabled = true;
         btt2.enabled = true;
         btt3.enabled = true;
@@ -198,8 +173,7 @@ public class OpcionMulti_T3 : MonoBehaviour
 
     }
     //cierra la ventana del evento
-    IEnumerator Close(float waitTime)
-    {
+    IEnumerator Close(float waitTime) {
         yield return new WaitForSeconds(waitTime);
         Multi_op.gameObject.SetActive(false);
     }

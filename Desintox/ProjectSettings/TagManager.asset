@@ -13,6 +13,9 @@ TagManager:
   - Player3
   - Player4
   - camaralibre
+  - Preguntas
+  - Multiple
+  - Ruleta
   layers:
   - Default
   - TransparentFX

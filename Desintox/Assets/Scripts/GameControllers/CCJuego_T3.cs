@@ -51,6 +51,7 @@ public class CCJuego_T3 : MonoBehaviour
         //CineMachine hace el seguimiento del objetivo automaticamente sin necesidad de actualizar las 
         //coordenadas de la camara directamente, solo del objeto
         Seguir();
+        //Debug.Log(objetivo_camara);
         if (Input.GetKeyDown(KeyCode.C))
         {
             objetivo_camara++;

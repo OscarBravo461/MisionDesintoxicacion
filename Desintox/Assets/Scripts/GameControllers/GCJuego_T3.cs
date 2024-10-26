@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.ParticleSystemJobs;
 using UnityEngine.UIElements;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+using UnityEngine.UI;
 
 public class GCJuego_T3 : MonoBehaviour
 {
@@ -1174,7 +1175,7 @@ public class GCJuego_T3 : MonoBehaviour
         //Enciende la ventana para activar el evento o la cierra
         if (Input.GetKeyDown(KeyCode.O))
         {
-            if (dados.gameObject.active == false)
+            if (dados.gameObject.activeInHierarchy == false)
             {
                 dados.gameObject.SetActive(true);
             }
