@@ -49,22 +49,19 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion)
             {
+                pasos = Random.Range(1, 7);
                 switch (seccionElegida)
                 {
                     case 1:
-                        pasos = 1;
                         StartCoroutine(MovimientoSeccionEscuela());
                         break;
                     case 2:
-                        pasos = 1;
                         StartCoroutine(MovimientoSeccionCiudad());
                         break;
                     case 3:
-                        pasos = 1;
                         StartCoroutine(MovimientoSeccionPlaza());
                         break;
                     case 4:
-                        pasos = 4;
                         StartCoroutine(MovimientoSeccionParque());
                         break;
                 }
