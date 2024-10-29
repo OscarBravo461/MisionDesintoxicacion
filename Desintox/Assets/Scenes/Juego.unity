@@ -3395,12 +3395,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febc269aae88a4340ab33fad1d3d2f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptOpcionMulti: {fileID: 1829217905}
+  scriptCamara: {fileID: 1243833825}
+  preguntas: {fileID: 163005760}
+  Multi_op: {fileID: 2023136315}
   rutaEscuela: {fileID: 1773888251}
   rutaCiudad: {fileID: 1036169329}
   rutaPlaza: {fileID: 1560376644}
   rutaParque: {fileID: 1437319879}
-  pasos: 0
   gc: {fileID: 470811596}
+  pasos: 0
+  speed: 20
 --- !u!58 &253798308
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5800,12 +5805,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d69ddb5eb5fd4e4990e949487639548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptOpcionMulti: {fileID: 1829217905}
+  scriptCamara: {fileID: 1243833825}
+  preguntas: {fileID: 163005760}
+  Multi_op: {fileID: 2023136315}
   rutaEscuela: {fileID: 1446777988}
   rutaCiudad: {fileID: 715773975}
   rutaPlaza: {fileID: 171940101}
   rutaParque: {fileID: 86343688}
-  pasos: 0
   gc: {fileID: 470811596}
+  pasos: 0
+  speed: 20
 --- !u!50 &488358466
 Rigidbody2D:
   serializedVersion: 4
@@ -13649,8 +13659,9 @@ MonoBehaviour:
   rutaCiudad: {fileID: 1233733936}
   rutaPlaza: {fileID: 1566636299}
   rutaParque: {fileID: 1532844019}
-  pasos: 0
   gc: {fileID: 470811596}
+  pasos: 0
+  speed: 20
 --- !u!58 &1283408334
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19115,12 +19126,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0aaf5f675e28c5498fe06f31b0382ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptOpcionMulti: {fileID: 1829217905}
+  scriptCamara: {fileID: 1243833825}
+  preguntas: {fileID: 163005760}
+  Multi_op: {fileID: 2023136315}
   rutaEscuela: {fileID: 360923543}
   rutaCiudad: {fileID: 377162277}
   rutaPlaza: {fileID: 1003074008}
   rutaParque: {fileID: 1815776392}
-  pasos: 0
   gc: {fileID: 470811596}
+  pasos: 0
+  speed: 20
 --- !u!58 &1700172997
 CircleCollider2D:
   m_ObjectHideFlags: 0

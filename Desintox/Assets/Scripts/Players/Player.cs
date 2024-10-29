@@ -21,13 +21,17 @@ public class Player : MonoBehaviour
     public Ruta rutaCiudad;
     public Ruta rutaPlaza;
     public Ruta rutaParque;
-    public int pasos; //Esta variable es la que controla cuánto avanza el jugador ---> Cambiar por el dado
     public GCJuego gc;
+    public int pasos; //Esta variable es la que controla cuánto avanza el jugador ---> Cambiar por el dado
+    public float speed = 20f; //Velocidad a la que se mueve el jugador
     int posicionEnRuta;
     int valor_anterior;
     bool seMueve = false;
     bool isOnSeccion;
     bool vueltaEscuela = false;
+    bool vueltaCiudad = false;
+    bool vueltaPlaza = false;
+    bool vueltaParque = false;
     int seccionElegida;
 
     void Update()
@@ -48,9 +52,8 @@ public class Player : MonoBehaviour
                 switch (seccionElegida)
                 {
                     case 1:
-                        pasos = 4;
+                        pasos = 1;
                         StartCoroutine(MovimientoSeccionEscuela());
-                        Debug.Log("Hola");
                         break;
                     case 2:
                         pasos = 1;
@@ -101,7 +104,6 @@ public class Player : MonoBehaviour
 
             if (posicionEnRuta % rutaEscuela.listaDeCasillas.Count == 0)//Evalua si se llego de nuevo al inicio de la sección para que el player vuelva al puente
             {
-                
                 vueltaEscuela = true;
             }
         }
@@ -119,20 +121,28 @@ public class Player : MonoBehaviour
 
         while (pasos > 0)
         {
-            posicionEnRuta++;
+            if(vueltaCiudad == false)
+            {
+                posicionEnRuta++;
 
-            posicionEnRuta %= rutaCiudad.listaDeCasillas.Count;
-            Vector3 siguientePosicion = rutaCiudad.listaDeCasillas[posicionEnRuta].position;
-            while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                posicionEnRuta %= rutaCiudad.listaDeCasillas.Count;
+                Vector3 siguientePosicion = rutaCiudad.listaDeCasillas[posicionEnRuta].position;
+                while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
-            yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.2f);
+            }
             pasos--;
 
-            if (posicionEnRuta % rutaCiudad.listaDeCasillas.Count == 0)
+            if (vueltaCiudad == true)
             {
                     while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                     isOnSeccion = false;
                     seccionElegida = 0;
+            }
+            if (posicionEnRuta % rutaCiudad.listaDeCasillas.Count == 0)
+            {
+
+                vueltaCiudad = true;
             }
         }
         seMueve = false;
@@ -148,20 +158,28 @@ public class Player : MonoBehaviour
 
         while (pasos > 0)
         {
-            posicionEnRuta++;
+            if (vueltaPlaza == false)
+            {
+                posicionEnRuta++;
 
-            posicionEnRuta %= rutaPlaza.listaDeCasillas.Count;
-            Vector3 siguientePosicion = rutaPlaza.listaDeCasillas[posicionEnRuta].position;
-            while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                posicionEnRuta %= rutaPlaza.listaDeCasillas.Count;
+                Vector3 siguientePosicion = rutaPlaza.listaDeCasillas[posicionEnRuta].position;
+                while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
-            yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.2f);
+            }
             pasos--;
 
-            if (posicionEnRuta % rutaPlaza.listaDeCasillas.Count == 0)
+            if (vueltaPlaza == true)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
                 seccionElegida = 0;
+            }
+            if (posicionEnRuta % rutaPlaza.listaDeCasillas.Count == 0)
+            {
+
+                vueltaPlaza = true;
             }
         }
         seMueve = false;
@@ -177,20 +195,28 @@ public class Player : MonoBehaviour
 
         while (pasos > 0)
         {
-            posicionEnRuta++;
+            if (vueltaParque == false)
+            {
+                posicionEnRuta++;
 
-            posicionEnRuta %= rutaParque.listaDeCasillas.Count;
-            Vector3 siguientePosicion = rutaParque.listaDeCasillas[posicionEnRuta].position;
-            while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                posicionEnRuta %= rutaParque.listaDeCasillas.Count;
+                Vector3 siguientePosicion = rutaParque.listaDeCasillas[posicionEnRuta].position;
+                while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
-            yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.2f);
+            }
             pasos--;
 
-            if (posicionEnRuta % rutaParque.listaDeCasillas.Count == 0)
+            if (vueltaParque == true)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
                 isOnSeccion = false;
                 seccionElegida = 0;
+            }
+            if (posicionEnRuta % rutaParque.listaDeCasillas.Count == 0)
+            {
+
+                vueltaParque = true;
             }
         }
         seMueve = false;
@@ -231,7 +257,14 @@ public class Player : MonoBehaviour
 
     bool MoverDeCasilla(Vector3 objetivo) //Es el método que ejecuta el movimiento
     {
-        return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, 12f * Time.deltaTime));//Está línea evalua si la posición actual del jugador es distinta
+        if(vueltaEscuela || vueltaCiudad || vueltaPlaza || vueltaParque)
+        {
+            vueltaEscuela = false;
+            vueltaCiudad = false;
+            vueltaPlaza = false;
+            vueltaParque = false;
+        }
+        return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, speed * Time.deltaTime));//Está línea evalua si la posición actual del jugador es distinta
                                                                                                                           //a la del objetivo, si si,
                                                                                                                           //entonces devuelve el valor true y hace que se mueva
     }
@@ -256,17 +289,30 @@ public class Player : MonoBehaviour
                 isOnSeccion = true;
                 seccionElegida = 4;
                 break;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        switch (collision.tag)
+        {
             case "Preguntas":
-                preguntas.gameObject.SetActive(true);
+                if (!seMueve)
+                    preguntas.gameObject.SetActive(true);
                 break;
             case "Multiple":
-                Multi_op.gameObject.SetActive(true);
-                scriptOpcionMulti.empiezar();
-                scriptOpcionMulti.reinicio();
+                if (!seMueve)
+                {
+                    Multi_op.gameObject.SetActive(true);
+                    scriptOpcionMulti.empiezar();
+                    scriptOpcionMulti.reinicio();
+                }
                 break;
             case "Ruleta":
-                valor_anterior = scriptCamara.objetivo_camara;
-                StartCoroutine(esperaCamara());
+                if (!seMueve)
+                {
+                    valor_anterior = scriptCamara.objetivo_camara;
+                    StartCoroutine(esperaCamara());
+                }
                 break;
         }
     }
