@@ -10,6 +10,11 @@ using UnityEngine.UI;
 
 public class GCJuego_T3 : MonoBehaviour
 {
+    //Obtener el script de los players
+    public Player script_Player1;
+    public Player_2 script_Player2;
+    public Player_3 script_Player3;
+    public Player_4 script_Player4;
     //canva que se activa
     public Canvas dados;
     //tiempo de espera despues de contestar en lo que se cierra la ventana
@@ -42,6 +47,8 @@ public class GCJuego_T3 : MonoBehaviour
     //Variable que guarda si ya hubo un empate para que no pueda existir otro
     public int repe = 0;
     //Funcionamiento del boton
+
+    //Variables usables para los turnos
     public void generar_random_jugadores()
     {
         //Bajo este switch funciona el boton cambiando cada caso con lo que se necesite en el momento
@@ -184,13 +191,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n1 > n2)
                         {
                             T1.text = ("3");
+                            script_Player1.turno = 3;
+
                             T2.text = ("4");
+                            script_Player2.turno = 4;
                             Debug.Log("Tercer turno J1, Cuarto Turno J2");
                         }
                         else
                         {
                             T2.text = ("4");
+                            script_Player2.turno = 4;
+
                             T1.text = ("3");
+                            script_Player1.turno = 3;
                             Debug.Log("Cuarto turno J2, Tercer Turno J1");
                         }
                         turno2++;
@@ -220,13 +233,21 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n1 > n2)
                         {
                             T1.text = ("1");
+                            script_Player1.turno = 1;
+                            script_Player1.enTurno = true;
+
                             T2.text = ("2");
+                            script_Player2.turno = 2;
                             Debug.Log("Primer turno J1, Segundo Turno J2");
                         }
                         else
                         {
                             T2.text = ("2");
+                            script_Player2.turno = 2;
+
                             T1.text = ("1");
+                            script_Player1.turno = 1;
+                            script_Player1.enTurno = true;
                             Debug.Log("Segundo turno J2, Primer Turno J1");
                         }
                         turno2++;
@@ -256,13 +277,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n1 > n2)
                         {
                             T1.text = ("2");
+                            script_Player1.turno = 2;
+
                             T2.text = ("3");
+                            script_Player2.turno = 3;
                             Debug.Log("Primer turno J1, Segundo Turno J2");
                         }
                         else
                         {
                             T2.text = ("2");
+                            script_Player2.turno = 2;
+
                             T1.text = ("3");
+                            script_Player1.turno = 3;
                             Debug.Log("Segundo turno J2, Tercero Turno J1");
                         }
                         turno2++;
@@ -294,13 +321,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n1 > n3)
                         {
                             T1.text = ("3");
+                            script_Player1.turno = 3;
+
                             T3.text = ("4");
+                            script_Player3.turno = 4;
                             Debug.Log("Tercer turno J1, Cuarto Turno J3");
                         }
                         else
                         {
                             T3.text = ("3");
+                            script_Player3.turno = 3;
+
                             T1.text = ("4");
+                            script_Player1.turno = 4;
                             Debug.Log("Tercer turno J3, Cuarto Turno J1");
                         }
                         turno2++;
@@ -330,13 +363,21 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n1 > n3)
                         {
                             T1.text = ("1");
+                            script_Player1.turno = 1;
+                            script_Player1.enTurno = true;
+
                             T3.text = ("2");
+                            script_Player3.turno = 2;
                             Debug.Log("Primer turno J1, Segundo Turno J3");
                         }
                         else
                         {
                             T3.text = ("1");
+                            script_Player3.turno = 1;
+                            script_Player3.enTurno = true;
+
                             T1.text = ("2");
+                            script_Player1.turno = 2;
                             Debug.Log("Primer turno J3, Segundo Turno J1");
                         }
                         turno2++;
@@ -356,13 +397,19 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 > n3)
                     {
                         T1.text = ("2");
+                        script_Player1.turno = 2;
+
                         T3.text = ("3");
+                        script_Player3.turno = 3;
                         Debug.Log("Segundo turno J1, Cuarto Turno J3");
                     }
                     else
                     {
                         T3.text = ("2");
+                        script_Player3.turno = 2;
+
                         T1.text = ("3");
+                        script_Player1.turno = 3;
                         Debug.Log("Segundo turno J3, Cuarto Turno J1");
                     }
                     turno2++;
@@ -394,13 +441,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n2 > n3)
                         {
                             T2.text = ("3");
+                            script_Player2.turno = 3;
+
                             T3.text = ("4");
+                            script_Player3.turno = 4;
                             Debug.Log("Tercer turno J2, Cuarto Turno J3");
                         }
                         else
                         {
                             T3.text = ("3");
+                            script_Player3.turno = 3;
+
                             T2.text = ("4");
+                            script_Player2.turno = 4;
                             Debug.Log("Cuarto turno J3, Tercer Turno J2");
                         }
                     }
@@ -430,13 +483,21 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n2 > n3)
                         {
                             T2.text = ("1");
+                            script_Player2.turno = 1;
+                            script_Player2.enTurno = true;
+
                             T3.text = ("2");
+                            script_Player3.turno = 2;
                             Debug.Log("Primer turno J2, Segundo Turno J3");
                         }
                         else
                         {
                             T3.text = ("1");
+                            script_Player3.turno = 1;
+                            script_Player3.enTurno = true;
+
                             T2.text = ("2");
+                            script_Player2.turno = 2;
                             Debug.Log("Segundo turno J3, Primer Turno J2");
                         }
                     }
@@ -466,13 +527,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n2 > n3)
                         {
                             T2.text = ("2");
+                            script_Player2.turno = 2;
+
                             T3.text = ("3");
+                            script_Player3.turno = 3;
                             Debug.Log("Segundo turno J2, Cuarto Turno J3");
                         }
                         else
                         {
                             T3.text = ("2");
+                            script_Player3.turno = 2;
+
                             T2.text = ("3");
+                            script_Player2.turno = 3;
                             Debug.Log("Segundo turno J3, Cuarto Turno J2");
                         }
                     }
@@ -503,13 +570,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n1 > n4)
                         {
                             T1.text = ("3");
+                            script_Player1.turno = 3;
+
                             T4.text = ("4");
+                            script_Player4.turno = 4;
                             Debug.Log("Tercer turno J1, Cuarto Turno J4");
                         }
                         else
                         {
                             T4.text = ("3");
+                            script_Player4.turno = 3;
+
                             T1.text = ("4");
+                            script_Player1.turno = 4;
                             Debug.Log("Cuarto turno J4, Tercer Turno J1");
                         }
                         turno2++;
@@ -539,13 +612,21 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n1 > n4)
                         {
                             T1.text = ("1");
+                            script_Player1.turno = 1;
+                            script_Player1.enTurno = true;
+
                             T4.text = ("2");
+                            script_Player4.turno = 2;
                             Debug.Log("Primer turno J1, Segundo Turno J4");
                         }
                         else
                         {
                             T4.text = ("1");
+                            script_Player4.turno = 1;
+                            script_Player4.enTurno = true;
+
                             T1.text = ("2");
+                            script_Player1.turno = 2;
                             Debug.Log("Segundo turno J4, Primer Turno J1");
                         }
                         turno2++;
@@ -575,13 +656,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n1 > n4)
                         {
                             T1.text = ("2");
+                            script_Player1.turno = 2;
+
                             T4.text = ("3");
+                            script_Player4.turno = 3;
                             Debug.Log("Segundo turno J1, Tercero Turno J4");
                         }
                         else
                         {
                             T4.text = ("2");
+                            script_Player4.turno = 2;
+
                             T1.text = ("3");
+                            script_Player1.turno = 3;
                             Debug.Log("Segundo turno J4, Tercero Turno J1");
                         }
                         turno2++;
@@ -614,13 +701,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n2 > n4)
                         {
                             T2.text = ("3");
+                            script_Player2.turno = 3;
+
                             T4.text = ("4");
+                            script_Player4.turno = 4;
                             Debug.Log("Tercer turno J2, Cuarto Turno J4");
                         }
                         else
                         {
                             T4.text = ("3");
+                            script_Player4.turno = 3;
+
                             T2.text = ("4");
+                            script_Player2.turno = 4;
                             Debug.Log("Cuarto turno J4, Tercer Turno J2");
                         }
                     }
@@ -650,13 +743,21 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n2 > n4)
                         {
                             T2.text = ("1");
+                            script_Player2.turno = 1;
+                            script_Player2.enTurno = true;
+
                             T4.text = ("2");
+                            script_Player4.turno = 2;
                             Debug.Log("Primer turno J2, Segundo Turno J4");
                         }
                         else
                         {
                             T4.text = ("1");
+                            script_Player4.turno = 1;
+                            script_Player4.enTurno = true;
+
                             T2.text = ("2");
+                            script_Player2.turno = 2;
                             Debug.Log("Segundo turno J4, Primer Turno J2");
                         }
                     }
@@ -686,13 +787,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n2 > n4)
                         {
                             T2.text = ("2");
+                            script_Player2.turno = 2;
+
                             T4.text = ("3");
+                            script_Player4.turno = 3;
                             Debug.Log("Segundo turno J2, Tercero Turno J4");
                         }
                         else
                         {
                             T4.text = ("2");
+                            script_Player4.turno = 2;
+
                             T2.text = ("3");
+                            script_Player2.turno = 3;
                             Debug.Log("Segundo turno J4, Tercero Turno J2");
                         }
                     }
@@ -723,13 +830,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n3 > n4)
                         {
                             T3.text = ("3");
+                            script_Player3.turno = 3;
+
                             T4.text = ("4");
+                            script_Player4.turno = 4;
                             Debug.Log("Tercer turno J3, Cuarto Turno J4");
                         }
                         else
                         {
                             T4.text = ("3");
+                            script_Player4.turno = 3;
+
                             T3.text = ("4");
+                            script_Player3.turno = 4;
                             Debug.Log("Cuarto turno J4, Tercer Turno J3");
                         }
                         turno2++;
@@ -759,13 +872,21 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n3 > n4)
                         {
                             T3.text = ("1");
+                            script_Player3.turno = 1;
+                            script_Player3.enTurno = true;
+
                             T4.text = ("2");
+                            script_Player4.turno = 2;
                             Debug.Log("Primer turno J3, Segundo Turno J4");
                         }
                         else
                         {
                             T4.text = ("1");
+                            script_Player4.turno = 1;
+                            script_Player4.enTurno = true;
+
                             T3.text = ("2");
+                            script_Player3.turno = 2;
                             Debug.Log("Segundo turno J4, Primer Turno J3");
                         }
                         turno2++;
@@ -795,13 +916,19 @@ public class GCJuego_T3 : MonoBehaviour
                         if (n3 > n4)
                         {
                             T3.text = ("2");
+                            script_Player3.turno = 2;
+
                             T4.text = ("3");
+                            script_Player4.turno = 3;
                             Debug.Log("Segundo turno J3, Tercero Turno J4");
                         }
                         else
                         {
                             T4.text = ("2");
+                            script_Player4.turno = 2;
+
                             T3.text = ("3");
+                            script_Player3.turno = 3;
                             Debug.Log("Segundo turno J4, Tercero Turno J3");
                         }
                         turno2++;
@@ -819,19 +946,26 @@ public class GCJuego_T3 : MonoBehaviour
         switch (sit)
         {
             case 1:
-                if (n1 ==3)
+                if (n1 == 3)
                 {
                     if (n3 > n4)
                     {
                         T3.text = ("3");
+                        script_Player3.turno = 3;
+
                         T4.text = ("4");
+                        script_Player4.turno = 4;
                         Debug.Log("Tercer turno J3, Cuarto Turno J4");
                         sit2 = 2;
                     }
                     else
                     {
                         T4.text = ("3");
+                        script_Player4.turno = 3;
+
                         T3.text = ("4");
+                        script_Player3.turno = 4;
+
                         Debug.Log("Cuarto turno J4, Tercer Turno J3");
                         sit2 = 2;
                     }
@@ -841,14 +975,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n3 > n4)
                     {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T4.text = ("2");
+                        script_Player4.turno = 2;
                         Debug.Log("Primer turno J3, Segundo Turno J4");
                         sit2 = 1;
                     }
                     else
                     {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T3.text = ("2");
+                        script_Player3.turno = 2;
                         Debug.Log("Primer turno J4, Segundo Turno J3");
                         sit2 = 1;
                     }
@@ -858,14 +1000,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n3 > n4)
                     {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T4.text = ("4");
+                        script_Player4.turno = 4;
                         Debug.Log("Primer turno J3, Cuarto Turno J4");
                         sit2 = 3;
                     }
                     else
                     {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T3.text = ("4");
+                        script_Player3.turno = 4;
                         Debug.Log("Primer turno J4, Cuarto Turno J3");
                         sit2 = 3;
                     }
@@ -880,14 +1030,20 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n2 > n4)
                     {
                         T2.text = ("3");
+                        script_Player2.turno = 3;
+
                         T4.text = ("4");
+                        script_Player4.turno = 4;
                         Debug.Log("Tercer turno J2, Cuarto Turno J4");
                         sit2 = 2;
                     }
                     else
                     {
                         T4.text = ("3");
+                        script_Player4.turno = 3;
+
                         T2.text = ("4");
+                        script_Player2.turno = 4;
                         Debug.Log("Cuarto turno J4, Tercer Turno J2");
                         sit2 = 2;
                     }
@@ -897,14 +1053,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n2 > n4)
                     {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T4.text = ("2");
+                        script_Player4.turno = 2;
                         Debug.Log("Primer turno J2, Segundo Turno J4");
                         sit2 = 1;
                     }
                     else
                     {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T2.text = ("2");
+                        script_Player2.turno = 2;
                         Debug.Log("Primer turno J4, Segundo Turno J2");
                         sit2 = 1;
                     }
@@ -914,14 +1078,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n2 > n4)
                     {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T4.text = ("4");
+                        script_Player4.turno = 4;
                         Debug.Log("Primer turno J2, Cuarto Turno J4");
                         sit2 = 3;
                     }
                     else
                     {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T2.text = ("4");
+                        script_Player2.turno = 4;
                         Debug.Log("Primer turno J4, Cuarto Turno J2");
                         sit2 = 3;
                     }
@@ -936,7 +1108,10 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 > n4)
                     {
                         T1.text = ("3");
+                        script_Player1.turno = 3;
+                        
                         T4.text = ("4");
+                        script_Player4.turno = 4;
                         Debug.Log("Tercer turno J1, Cuarto Turno J4");
                         sit2 = 2;
 
@@ -944,7 +1119,10 @@ public class GCJuego_T3 : MonoBehaviour
                     else
                     {
                         T4.text = ("3");
+                        script_Player4.turno = 3;
+
                         T1.text = ("4");
+                        script_Player1.turno = 4;
                         Debug.Log("Cuarto turno J4, Tercer Turno J1");
                         sit2 = 2;
                     }
@@ -954,14 +1132,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 > n4)
                     {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T4.text = ("2");
+                        script_Player4.turno = 2;
                         Debug.Log("Primer turno J1, Segundo Turno J4");
                         sit2 = 1;
                     }
                     else
                     {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T1.text = ("2");
+                        script_Player1.turno = 2;
                         Debug.Log("Primer turno J4, Segundo Turno J1");
                         sit2 = 1;
                     }
@@ -971,14 +1157,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 > n4)
                     {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T4.text = ("4");
+                        script_Player4.turno = 4;
                         Debug.Log("Primer turno J1, Cuarto Turno J4");
                         sit2 = 3;
                     }
                     else
                     {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T1.text = ("4");
+                        script_Player1.turno = 4;
                         Debug.Log("Primer turno J4, Cuarto Turno J1");
                         sit2 = 3;
                     }
@@ -993,14 +1187,20 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n2 > n3)
                     {
                         T2.text = ("3");
+                        script_Player2.turno = 3;
+
                         T3.text = ("4");
+                        script_Player3.turno = 4;
                         Debug.Log("Tercer turno J2, Cuarto Turno J3");
                         sit2 = 2;
                     }
                     else
                     {
                         T3.text = ("3");
+                        script_Player3.turno = 3;
+
                         T2.text = ("4");
+                        script_Player2.turno = 4;
                         Debug.Log("Cuarto turno J3, Tercer Turno J2");
                         sit2 = 2;
                     }
@@ -1010,14 +1210,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n2 > n3)
                     {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T3.text = ("2");
+                        script_Player3.turno = 2;
                         Debug.Log("Primer turno J2, Segundo Turno J3");
                         sit2 = 1;
                     }
                     else
                     {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T2.text = ("2");
+                        script_Player2.turno = 2;
                         Debug.Log("Primer turno J3, Segundo Turno J2");
                         sit2 = 1;
                     }
@@ -1027,14 +1235,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n2 > n3)
                     {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T3.text = ("4");
+                        script_Player3.turno = 4;
                         Debug.Log("Primer turno J2, Cuarto Turno J3");
                         sit2 = 3;
                     }
                     else
                     {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T2.text = ("4");
+                        script_Player2.turno = 4;
                         Debug.Log("Primer turno J3, Cuarto Turno J2");
                         sit2 = 3;
                     }
@@ -1049,14 +1265,20 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 > n3)
                     {
                         T1.text = ("3");
+                        script_Player1.turno = 3;
+
                         T3.text = ("4");
+                        script_Player3.turno = 4;
                         Debug.Log("Tercer turno J1, Cuarto Turno J3");
                         sit2 = 2;
                     }
                     else
                     {
                         T3.text = ("3");
+                        script_Player3.turno = 3;
+
                         T1.text = ("4");
+                        script_Player1.turno = 4;
                         Debug.Log("Cuarto turno J3, Tercer Turno J1");
                         sit2 = 2;
                     }
@@ -1066,14 +1288,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 > n3)
                     {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T3.text = ("2");
+                        script_Player3.turno = 2;
                         Debug.Log("Primer turno J1, Segundo Turno J3");
                         sit2 = 1;
                     }
                     else
                     {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T1.text = ("2");
+                        script_Player1.turno = 2;
                         Debug.Log("Primer turno J3, Segundo Turno J1");
                         sit2 = 1;
                     }
@@ -1083,14 +1313,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 > n3)
                     {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T3.text = ("4");
+                        script_Player3.turno = 4;
                         Debug.Log("Primer turno J1, Segundo Turno J3");
                         sit2 = 3;
                     }
                     else
                     {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T1.text = ("4");
+                        script_Player1.turno = 4;
                         Debug.Log("Cuarto turno J3, Cuarto Turno J1");
                         sit2 = 3;
                     }
@@ -1105,14 +1343,20 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 > n2)
                     {
                         T1.text = ("3");
+                        script_Player1.turno = 3;
+
                         T2.text = ("4");
+                        script_Player2.turno = 4;
                         Debug.Log("Tercer turno J1, Cuarto Turno J2");
                         sit2 = 2;
                     }
                     else
                     {
                         T2.text = ("3");
+                        script_Player2.turno = 3;
+
                         T1.text = ("4");
+                        script_Player1.turno = 4;
                         Debug.Log("Cuarto turno J2, Tercer Turno J1");
                         sit2 = 2;
                     }
@@ -1122,14 +1366,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if(n1 > n2)
                     {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T2.text = ("2");
+                        script_Player2.turno = 2;
                         Debug.Log("Primer turno J1, Segundo Turno J2");
                         sit2 = 1;
                     }
                     else
                     {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T1.text = ("2");
+                        script_Player1.turno = 2;
                         Debug.Log("Primer turno J2, Segundo Turno J1");
                         sit2 = 1;
                     }
@@ -1139,14 +1391,22 @@ public class GCJuego_T3 : MonoBehaviour
                     if (n1 > n2)
                     {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T2.text = ("4");
+                        script_Player2.turno = 4;
                         Debug.Log("Primer turno J1, Cuarto Turno J2");
                         sit2 = 3;
                     }
                     else
                     {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T1.text = ("4");
+                        script_Player1.turno = 4;
                         Debug.Log("Primer turno J2, Cuarto Turno J1");
                         sit2 = 3;
                     }

@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class Player_4 : MonoBehaviour
 {
-    //Touch touch;
+    public Player script_Player1;
+    public Player_2 script_Player2;
+    public Player_3 script_Player3;
     public OpcionMulti_T3 scriptOpcionMulti;
     public CCJuego_T3 scriptCamara;
     public Canvas preguntas;
@@ -19,7 +21,9 @@ public class Player_4 : MonoBehaviour
     public Ruta rutaParque;
     public GCJuego gc;
     public int pasos;
+    public int turno;
     public float speed = 20f;
+    public bool enTurno = false;
     int posicionEnRuta;
     int valor_anterior;
     bool seMueve = false;
@@ -32,41 +36,130 @@ public class Player_4 : MonoBehaviour
 
     void Update()
     {
-        if(gc.turno == 4)
+        switch (turno)
         {
-            if (!isOnSeccion)
-            {
-                if (Input.GetMouseButtonDown(0)) // Input.touchcount > 0
+            case 1:
+                if (!isOnSeccion && enTurno == true)
                 {
-                    //touch = Input.GetTouch(0);
-                    StartCoroutine(MovimientoDeSeccion());
-                }
-            }
-
-            if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion)
-            {
-                switch (seccionElegida)
-                {
-                    case 1:
-                        pasos = 1;
-                        StartCoroutine(MovimientoSeccionEscuela());
-                        Debug.Log("Hola");
-                        break;
-                    case 2:
-                        pasos = 1;
-                        StartCoroutine(MovimientoSeccionCiudad());
-                        break;
-                    case 3:
-                        pasos = 1;
-                        StartCoroutine(MovimientoSeccionPlaza());
-                        break;
-                    case 4:
-                        pasos = 1;
-                        StartCoroutine(MovimientoSeccionParque());
-                        break;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        StartCoroutine(MovimientoDeSeccion());
+                    }
                 }
 
-            }
+                if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion && enTurno == true)
+                {
+                    pasos = Random.Range(1, 7);
+                    switch (seccionElegida)
+                    {
+                        case 1:
+                            StartCoroutine(MovimientoSeccionEscuela());
+                            break;
+                        case 2:
+                            StartCoroutine(MovimientoSeccionCiudad());
+                            break;
+                        case 3:
+                            StartCoroutine(MovimientoSeccionPlaza());
+                            break;
+                        case 4:
+                            StartCoroutine(MovimientoSeccionParque());
+                            break;
+                    }
+                    StartCoroutine(esperar());
+                }
+                break;
+
+            case 2:
+                if (!isOnSeccion && enTurno == true)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        StartCoroutine(MovimientoDeSeccion());
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion && enTurno == true)
+                {
+                    pasos = Random.Range(1, 7);
+                    switch (seccionElegida)
+                    {
+                        case 1:
+                            StartCoroutine(MovimientoSeccionEscuela());
+                            break;
+                        case 2:
+                            StartCoroutine(MovimientoSeccionCiudad());
+                            break;
+                        case 3:
+                            StartCoroutine(MovimientoSeccionPlaza());
+                            break;
+                        case 4:
+                            StartCoroutine(MovimientoSeccionParque());
+                            break;
+                    }
+                    StartCoroutine(esperar());
+                }
+                break;
+            case 3:
+                if (!isOnSeccion && enTurno == true)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        StartCoroutine(MovimientoDeSeccion());
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion && enTurno == true)
+                {
+                    pasos = Random.Range(1, 7);
+                    switch (seccionElegida)
+                    {
+                        case 1:
+                            StartCoroutine(MovimientoSeccionEscuela());
+                            break;
+                        case 2:
+                            StartCoroutine(MovimientoSeccionCiudad());
+                            break;
+                        case 3:
+                            StartCoroutine(MovimientoSeccionPlaza());
+                            break;
+                        case 4:
+                            StartCoroutine(MovimientoSeccionParque());
+                            break;
+                    }
+                    StartCoroutine(esperar());
+                }
+                break;
+
+            case 4:
+                if (!isOnSeccion && enTurno == true)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        StartCoroutine(MovimientoDeSeccion());
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion && enTurno == true)
+                {
+                    pasos = Random.Range(1, 7);
+                    switch (seccionElegida)
+                    {
+                        case 1:
+                            StartCoroutine(MovimientoSeccionEscuela());
+                            break;
+                        case 2:
+                            StartCoroutine(MovimientoSeccionCiudad());
+                            break;
+                        case 3:
+                            StartCoroutine(MovimientoSeccionPlaza());
+                            break;
+                        case 4:
+                            StartCoroutine(MovimientoSeccionParque());
+                            break;
+                    }
+                    StartCoroutine(esperar());
+                }
+                break;
         }
     }
 
@@ -317,6 +410,82 @@ public class Player_4 : MonoBehaviour
         scriptCamara.objetivo_camara = 0;
         yield return new WaitForSeconds(10);
         scriptCamara.objetivo_camara = valor_anterior;
+    }
+    public IEnumerator esperar()
+    {
+        Debug.Log("Entro en P4");
+        yield return new WaitForSeconds(2);
+        switch(turno)
+        {
+            case 1:
+                if (script_Player1.turno == 2)
+                {
+                    script_Player1.enTurno = true;
+                    enTurno = false;
+                }
+                else if (script_Player2.turno == 2)
+                {
+                    script_Player2.enTurno = true;
+                    enTurno = false;
+                }
+                else
+                {
+                    script_Player3.enTurno = true;
+                    enTurno = false;
+                }
+                break;
+            case 2:
+                if (script_Player1.turno == 3)
+                {
+                    script_Player1.enTurno = true;
+                    enTurno = false;
+                }
+                else if (script_Player2.turno == 3)
+                {
+                    script_Player2.enTurno = true;
+                    enTurno = false;
+                }
+                else
+                {
+                    script_Player3.enTurno = true;
+                    enTurno = false;
+                }
+                break;
+            case 3:
+                if (script_Player1.turno == 4)
+                {
+                    script_Player1.enTurno = true;
+                    enTurno = false;
+                }
+                else if (script_Player2.turno == 4)
+                {
+                    script_Player2.enTurno = true;
+                    enTurno = false;
+                }
+                else
+                {
+                    script_Player3.enTurno = true;
+                    enTurno = false;
+                }
+                break;
+            case 4:
+                if (script_Player1.turno == 1)
+                {
+                    script_Player1.enTurno = true;
+                    enTurno = false;
+                }
+                else if (script_Player2.turno == 1)
+                {
+                    script_Player2.enTurno = true;
+                    enTurno = false;
+                }
+                else
+                {
+                    script_Player3.enTurno = true;
+                    enTurno = false;
+                }
+                break;
+        }
     }
 }
 

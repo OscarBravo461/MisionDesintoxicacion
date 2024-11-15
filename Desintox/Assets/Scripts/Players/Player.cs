@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
 {
     //Touch touch; --> Aspectos que podremos ocupar al momento de hacerlo para android
     //OpcionMulti_T3 PMultiples = new OpcionMulti_T3();
+    public Player_2 script_Player2;
+    public Player_3 script_Player3;
+    public Player_4 script_Player4;
     public OpcionMulti_T3 scriptOpcionMulti;
     public CCJuego_T3 scriptCamara;
     public Canvas preguntas;
@@ -23,7 +26,9 @@ public class Player : MonoBehaviour
     public Ruta rutaParque;
     public GCJuego gc;
     public int pasos; //Esta variable es la que controla cuánto avanza el jugador ---> Cambiar por el dado
+    public int turno;
     public float speed = 20f; //Velocidad a la que se mueve el jugador
+    public bool enTurno = false;
     int posicionEnRuta;
     int valor_anterior;
     bool seMueve = false;
@@ -36,51 +41,150 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (gc.turno == 1)
+        switch (turno)
         {
-            if (!isOnSeccion) //Evualua si se seleccionó una sección
-            {
-                if (Input.GetMouseButtonDown(0)) // Input.touchcount > 0 --> Aspectos que podremos ocupar al momento de hacerlo para android
+            case 1:
+                if (!isOnSeccion && enTurno == true) //Evualua si se seleccionó una sección
                 {
-                    //touch = Input.GetTouch(0); --> Aspectos que podremos ocupar al momento de hacerlo para android
-                    StartCoroutine(MovimientoDeSeccion());
-                }
-            }
-
-            if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion)
-            {
-                pasos = Random.Range(1, 7);
-                switch (seccionElegida)
-                {
-                    case 1:
-                        StartCoroutine(MovimientoSeccionEscuela());
-                        break;
-                    case 2:
-                        StartCoroutine(MovimientoSeccionCiudad());
-                        break;
-                    case 3:
-                        StartCoroutine(MovimientoSeccionPlaza());
-                        break;
-                    case 4:
-                        StartCoroutine(MovimientoSeccionParque());
-                        break;
+                    if (Input.GetMouseButtonDown(0)) // Input.touchcount > 0 --> Aspectos que podremos ocupar al momento de hacerlo para android
+                    {
+                        //touch = Input.GetTouch(0); --> Aspectos que podremos ocupar al momento de hacerlo para android
+                        StartCoroutine(MovimientoDeSeccion());
+                    }
                 }
 
-            }
+                if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion && enTurno == true)
+                {
+                    pasos = Random.Range(1, 7);
+                    switch (seccionElegida)
+                    {
+                        case 1:
+                            StartCoroutine(MovimientoSeccionEscuela());
+                            break;
+                        case 2:
+                            StartCoroutine(MovimientoSeccionCiudad());
+                            break;
+                        case 3:
+                            StartCoroutine(MovimientoSeccionPlaza());
+                            break;
+                        case 4:
+                            StartCoroutine(MovimientoSeccionParque());
+                            break;
+                    }
+                    StartCoroutine(esperar());
+
+                }
+                break;
+
+            case 2:
+                if (!isOnSeccion && enTurno == true)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        StartCoroutine(MovimientoDeSeccion());
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion && enTurno == true)
+                {
+                    pasos = Random.Range(1, 7);
+                    switch (seccionElegida)
+                    {
+                        case 1:
+                            StartCoroutine(MovimientoSeccionEscuela());
+                            break;
+                        case 2:
+                            StartCoroutine(MovimientoSeccionCiudad());
+                            break;
+                        case 3:
+                            StartCoroutine(MovimientoSeccionPlaza());
+                            break;
+                        case 4:
+                            StartCoroutine(MovimientoSeccionParque());
+                            break;
+                    }
+                    StartCoroutine(esperar());
+
+
+                }
+                break;
+            case 3:
+                if (!isOnSeccion && enTurno == true)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        StartCoroutine(MovimientoDeSeccion());
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion && enTurno == true)
+                {
+                    pasos = Random.Range(1, 7);
+                    switch (seccionElegida)
+                    {
+                        case 1:
+                            StartCoroutine(MovimientoSeccionEscuela());
+                            break;
+                        case 2:
+                            StartCoroutine(MovimientoSeccionCiudad());
+                            break;
+                        case 3:
+                            StartCoroutine(MovimientoSeccionPlaza());
+                            break;
+                        case 4:
+                            StartCoroutine(MovimientoSeccionParque());
+                            break;
+                    }
+                    StartCoroutine(esperar());
+
+                }
+                break;
+
+            case 4:
+                if (!isOnSeccion && enTurno == true)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        StartCoroutine(MovimientoDeSeccion());
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.F) && seMueve == false && isOnSeccion && enTurno == true)
+                {
+                    pasos = Random.Range(1, 7);
+                    switch (seccionElegida)
+                    {
+                        case 1:
+                            StartCoroutine(MovimientoSeccionEscuela());
+                            break;
+                        case 2:
+                            StartCoroutine(MovimientoSeccionCiudad());
+                            break;
+                        case 3:
+                            StartCoroutine(MovimientoSeccionPlaza());
+                            break;
+                        case 4:
+                            StartCoroutine(MovimientoSeccionParque());
+                            break;
+                    }
+                    StartCoroutine(esperar());
+
+                }
+                break;
         }
     }
 
     public IEnumerator MovimientoSeccionEscuela()
     {
-        if(seMueve)
+        if (seMueve)
         {
             yield break;
         }
         seMueve = true;
 
-        while(pasos > 0)
+        while (pasos > 0)
         {
-            if(vueltaEscuela == false)
+            if (vueltaEscuela == false)
             {
                 posicionEnRuta++;
 
@@ -105,9 +209,8 @@ public class Player : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 2;
     }
-        //Todos los métodos tienen la misma lógica, solo adecuada a cada sección
+    //Todos los métodos tienen la misma lógica, solo adecuada a cada sección
     public IEnumerator MovimientoSeccionCiudad()
     {
         if (seMueve)
@@ -118,7 +221,7 @@ public class Player : MonoBehaviour
 
         while (pasos > 0)
         {
-            if(vueltaCiudad == false)
+            if (vueltaCiudad == false)
             {
                 posicionEnRuta++;
 
@@ -132,9 +235,9 @@ public class Player : MonoBehaviour
 
             if (vueltaCiudad == true)
             {
-                    while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
-                    isOnSeccion = false;
-                    seccionElegida = 0;
+                while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
+                isOnSeccion = false;
+                seccionElegida = 0;
             }
             if (posicionEnRuta % rutaCiudad.listaDeCasillas.Count == 0)
             {
@@ -143,7 +246,6 @@ public class Player : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 2;
     }
     public IEnumerator MovimientoSeccionPlaza()
     {
@@ -180,7 +282,6 @@ public class Player : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 2;
     }
     public IEnumerator MovimientoSeccionParque()
     {
@@ -217,7 +318,6 @@ public class Player : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 2;
     }
     public IEnumerator MovimientoDeSeccion() //Evalua donde se toco con el mouse para mover al jugador de una sección a otra
     {
@@ -254,7 +354,7 @@ public class Player : MonoBehaviour
 
     bool MoverDeCasilla(Vector3 objetivo) //Es el método que ejecuta el movimiento
     {
-        if(vueltaEscuela || vueltaCiudad || vueltaPlaza || vueltaParque)
+        if (vueltaEscuela || vueltaCiudad || vueltaPlaza || vueltaParque)
         {
             vueltaEscuela = false;
             vueltaCiudad = false;
@@ -262,8 +362,8 @@ public class Player : MonoBehaviour
             vueltaParque = false;
         }
         return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, speed * Time.deltaTime));//Está línea evalua si la posición actual del jugador es distinta
-                                                                                                                          //a la del objetivo, si si,
-                                                                                                                          //entonces devuelve el valor true y hace que se mueva
+                                                                                                                            //a la del objetivo, si si,
+                                                                                                                            //entonces devuelve el valor true y hace que se mueva
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -313,11 +413,88 @@ public class Player : MonoBehaviour
                 break;
         }
     }
-    public IEnumerator esperaCamara() {
-        Debug.Log("so");
+    public IEnumerator esperaCamara()
+    {
         scriptCamara.objetivo_camara = 0;
         yield return new WaitForSeconds(10);
         scriptCamara.objetivo_camara = valor_anterior;
+    }
+
+    public IEnumerator esperar()
+    {
+        Debug.Log("Entro en P1");
+        yield return new WaitForSeconds(2);
+        switch (turno)
+        {
+            case 1:
+                if (script_Player2.turno == 2)
+                {
+                    script_Player2.enTurno = true;
+                    enTurno = false;
+                }
+                else if (script_Player3.turno == 2)
+                {
+                    script_Player3.enTurno = true;
+                    enTurno = false;
+                }
+                else
+                {
+                    script_Player4.enTurno = true;
+                    enTurno = false;
+                }
+                break;
+            case 2:
+                if (script_Player2.turno == 3)
+                {
+                    script_Player2.enTurno = true;
+                    enTurno = false;
+                }
+                else if (script_Player3.turno == 3)
+                {
+                    script_Player3.enTurno = true;
+                    enTurno = false;
+                }
+                else
+                {
+                    script_Player4.enTurno = true;
+                    enTurno = false;
+                }
+                break;
+            case 3:
+                if (script_Player2.turno == 4)
+                {
+                    script_Player2.enTurno = true;
+                    enTurno = false;
+                }
+                else if (script_Player3.turno == 4)
+                {
+                    script_Player3.enTurno = true;
+                    enTurno = false;
+                }
+                else if (script_Player4.turno == 4)
+                {
+                    script_Player4.enTurno = true;
+                    enTurno = false;
+                }
+                break;
+            case 4:
+                if (script_Player2.turno == 1)
+                {
+                    script_Player2.enTurno = true;
+                    enTurno = false;
+                }
+                else if (script_Player3.turno == 1)
+                {
+                    script_Player3.enTurno = true;
+                    enTurno = false;
+                }
+                else
+                {
+                    script_Player4.enTurno = true;
+                    enTurno = false;
+                }
+                break;
+        }
     }
 }
 

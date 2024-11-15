@@ -3395,6 +3395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febc269aae88a4340ab33fad1d3d2f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script_Player1: {fileID: 1283408333}
+  script_Player2: {fileID: 1700172996}
+  script_Player4: {fileID: 488358465}
   scriptOpcionMulti: {fileID: 1829217905}
   scriptCamara: {fileID: 1243833825}
   preguntas: {fileID: 163005760}
@@ -3405,7 +3408,9 @@ MonoBehaviour:
   rutaParque: {fileID: 1437319879}
   gc: {fileID: 470811596}
   pasos: 0
+  turno: 0
   speed: 20
+  enTurno: 0
 --- !u!58 &253798308
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5805,6 +5810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d69ddb5eb5fd4e4990e949487639548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script_Player1: {fileID: 1283408333}
+  script_Player2: {fileID: 1700172996}
+  script_Player3: {fileID: 253798307}
   scriptOpcionMulti: {fileID: 1829217905}
   scriptCamara: {fileID: 1243833825}
   preguntas: {fileID: 163005760}
@@ -5815,7 +5823,9 @@ MonoBehaviour:
   rutaParque: {fileID: 86343688}
   gc: {fileID: 470811596}
   pasos: 0
+  turno: 0
   speed: 20
+  enTurno: 0
 --- !u!50 &488358466
 Rigidbody2D:
   serializedVersion: 4
@@ -13651,6 +13661,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dedbac7e85bf8ac4a9a7248629cf696a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script_Player2: {fileID: 1700172996}
+  script_Player3: {fileID: 253798307}
+  script_Player4: {fileID: 488358465}
   scriptOpcionMulti: {fileID: 1829217905}
   scriptCamara: {fileID: 1243833825}
   preguntas: {fileID: 163005760}
@@ -13661,7 +13674,9 @@ MonoBehaviour:
   rutaParque: {fileID: 1532844019}
   gc: {fileID: 470811596}
   pasos: 0
+  turno: 0
   speed: 20
+  enTurno: 0
 --- !u!58 &1283408334
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19126,6 +19141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0aaf5f675e28c5498fe06f31b0382ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script_Player1: {fileID: 1283408333}
+  script_Player3: {fileID: 253798307}
+  script_Player4: {fileID: 488358465}
   scriptOpcionMulti: {fileID: 1829217905}
   scriptCamara: {fileID: 1243833825}
   preguntas: {fileID: 163005760}
@@ -19136,7 +19154,9 @@ MonoBehaviour:
   rutaParque: {fileID: 1815776392}
   gc: {fileID: 470811596}
   pasos: 0
+  turno: 0
   speed: 20
+  enTurno: 0
 --- !u!58 &1700172997
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20570,6 +20590,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457031b3b8175204da878e6a596a2b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script_Player1: {fileID: 1283408333}
+  script_Player2: {fileID: 1700172996}
+  script_Player3: {fileID: 253798307}
+  script_Player4: {fileID: 488358465}
   dados: {fileID: 637322258}
   waitTime: 5
   JD: {fileID: 2021824548}
