@@ -41,9 +41,13 @@ public class Player_3 : MonoBehaviour
             case 1:
                 if (!isOnSeccion && enTurno == true)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(1))
                     {
+                        if (pasos == 0)
+                            pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoDeSeccion());
+                        StartCoroutine(primerMovimiento());
+                        StartCoroutine(esperar());
                     }
                 }
 
@@ -72,9 +76,13 @@ public class Player_3 : MonoBehaviour
             case 2:
                 if (!isOnSeccion && enTurno == true)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(1))
                     {
+                        if (pasos == 0)
+                            pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoDeSeccion());
+                        StartCoroutine(primerMovimiento());
+                        StartCoroutine(esperar());
                     }
                 }
 
@@ -102,9 +110,13 @@ public class Player_3 : MonoBehaviour
             case 3:
                 if (!isOnSeccion && enTurno == true)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(1))
                     {
+                        if (pasos == 0)
+                            pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoDeSeccion());
+                        StartCoroutine(primerMovimiento());
+                        StartCoroutine(esperar());
                     }
                 }
 
@@ -133,9 +145,13 @@ public class Player_3 : MonoBehaviour
             case 4:
                 if (!isOnSeccion && enTurno == true)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(1))
                     {
+                        if (pasos == 0)
+                            pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoDeSeccion());
+                        StartCoroutine(primerMovimiento());
+                        StartCoroutine(esperar());
                     }
                 }
 
@@ -171,7 +187,8 @@ public class Player_3 : MonoBehaviour
         }
         seMueve = true;
 
-        while (pasos > 0)
+        int pasosWhile = pasos;
+        while (pasosWhile > 0)
         {
             if (vueltaEscuela == false)
             {
@@ -182,9 +199,9 @@ public class Player_3 : MonoBehaviour
                 while (MoverDeCasilla(siguientePosicion)) { yield return null; } //Ejecuta el recorrido
 
                 yield return new WaitForSeconds(0.2f);
+                pasos--;
             }
-            pasos--;
-
+            pasosWhile--;
             if (vueltaEscuela == true)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
@@ -209,7 +226,8 @@ public class Player_3 : MonoBehaviour
         }
         seMueve = true;
 
-        while (pasos > 0)
+        int pasosWhile = pasos;
+        while (pasosWhile > 0)
         {
             if (vueltaCiudad == false)
             {
@@ -220,9 +238,9 @@ public class Player_3 : MonoBehaviour
                 while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
                 yield return new WaitForSeconds(0.2f);
+                pasos--;
             }
-            pasos--;
-
+            pasosWhile--;
             if (vueltaCiudad == true)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
@@ -246,7 +264,8 @@ public class Player_3 : MonoBehaviour
         }
         seMueve = true;
 
-        while (pasos > 0)
+        int pasosWhile = pasos;
+        while (pasosWhile > 0)
         {
             if (vueltaPlaza == false)
             {
@@ -257,9 +276,9 @@ public class Player_3 : MonoBehaviour
                 while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
                 yield return new WaitForSeconds(0.2f);
+                pasos--;
             }
-            pasos--;
-
+            pasosWhile--;
             if (vueltaPlaza == true)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
@@ -283,7 +302,8 @@ public class Player_3 : MonoBehaviour
         }
         seMueve = true;
 
-        while (pasos > 0)
+        int pasosWhile = pasos;
+        while (pasosWhile > 0)
         {
             if (vueltaParque == false)
             {
@@ -294,9 +314,10 @@ public class Player_3 : MonoBehaviour
                 while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
                 yield return new WaitForSeconds(0.2f);
+                pasos--;
             }
-            pasos--;
 
+            pasosWhile--;
             if (vueltaParque == true)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
@@ -343,6 +364,7 @@ public class Player_3 : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
         seMueve = false;
+        pasos--;
     }
 
     bool MoverDeCasilla(Vector3 objetivo)
@@ -485,6 +507,26 @@ public class Player_3 : MonoBehaviour
                     script_Player4.enTurno = true;
                     enTurno = false;
                 }
+                break;
+        }
+    }
+    public IEnumerator primerMovimiento()
+    {
+        Debug.Log("P3 se mueve hacia una seccion");
+        yield return new WaitForSeconds(1);
+        switch (seccionElegida)
+        {
+            case 1:
+                StartCoroutine(MovimientoSeccionEscuela());
+                break;
+            case 2:
+                StartCoroutine(MovimientoSeccionCiudad());
+                break;
+            case 3:
+                StartCoroutine(MovimientoSeccionPlaza());
+                break;
+            case 4:
+                StartCoroutine(MovimientoSeccionParque());
                 break;
         }
     }

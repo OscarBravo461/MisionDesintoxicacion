@@ -46,10 +46,14 @@ public class Player : MonoBehaviour
             case 1:
                 if (!isOnSeccion && enTurno == true) //Evualua si se seleccionó una sección
                 {
-                    if (Input.GetMouseButtonDown(0)) // Input.touchcount > 0 --> Aspectos que podremos ocupar al momento de hacerlo para android
+                    if (Input.GetMouseButtonDown(1))// Input.touchcount > 0 --> Aspectos que podremos ocupar al momento de hacerlo para android
+                                                    //touch = Input.GetTouch(0); --> Aspectos que podremos ocupar al momento de hacerlo para android
                     {
-                        //touch = Input.GetTouch(0); --> Aspectos que podremos ocupar al momento de hacerlo para android
+                        if (pasos == 0)
+                            pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoDeSeccion());
+                        StartCoroutine(primerMovimiento());
+                        StartCoroutine(esperar());
                     }
                 }
 
@@ -79,9 +83,13 @@ public class Player : MonoBehaviour
             case 2:
                 if (!isOnSeccion && enTurno == true)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(1))
                     {
+                        if (pasos == 0)
+                            pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoDeSeccion());
+                        StartCoroutine(primerMovimiento());
+                        StartCoroutine(esperar());
                     }
                 }
 
@@ -111,9 +119,13 @@ public class Player : MonoBehaviour
             case 3:
                 if (!isOnSeccion && enTurno == true)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(1))
                     {
+                        if (pasos == 0)
+                            pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoDeSeccion());
+                        StartCoroutine(primerMovimiento());
+                        StartCoroutine(esperar());
                     }
                 }
 
@@ -143,9 +155,13 @@ public class Player : MonoBehaviour
             case 4:
                 if (!isOnSeccion && enTurno == true)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(1))
                     {
+                        if (pasos == 0)
+                            pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoDeSeccion());
+                        StartCoroutine(primerMovimiento());
+                        StartCoroutine(esperar());
                     }
                 }
 
@@ -182,7 +198,8 @@ public class Player : MonoBehaviour
         }
         seMueve = true;
 
-        while (pasos > 0)
+        int pasosWhile = pasos;
+        while (pasosWhile > 0)
         {
             if (vueltaEscuela == false)
             {
@@ -193,8 +210,9 @@ public class Player : MonoBehaviour
                 while (MoverDeCasilla(siguientePosicion)) { yield return null; } //Ejecuta el recorrido
 
                 yield return new WaitForSeconds(0.2f);
+                pasos--;
             }
-            pasos--;
+            pasosWhile--;
 
             if (vueltaEscuela == true)
             {
@@ -219,7 +237,8 @@ public class Player : MonoBehaviour
         }
         seMueve = true;
 
-        while (pasos > 0)
+        int pasosWhile = pasos;
+        while (pasosWhile > 0)
         {
             if (vueltaCiudad == false)
             {
@@ -230,9 +249,9 @@ public class Player : MonoBehaviour
                 while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
                 yield return new WaitForSeconds(0.2f);
+                pasos--;
             }
-            pasos--;
-
+            pasosWhile--;
             if (vueltaCiudad == true)
             {
                 while (MoverDeCasilla(VueltaAlPuente)) { yield return null; }
@@ -255,7 +274,8 @@ public class Player : MonoBehaviour
         }
         seMueve = true;
 
-        while (pasos > 0)
+        int pasosWhile = pasos;
+        while (pasosWhile > 0)
         {
             if (vueltaPlaza == false)
             {
@@ -266,8 +286,9 @@ public class Player : MonoBehaviour
                 while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
                 yield return new WaitForSeconds(0.2f);
+                pasos--;
             }
-            pasos--;
+            pasosWhile--;
 
             if (vueltaPlaza == true)
             {
@@ -291,7 +312,8 @@ public class Player : MonoBehaviour
         }
         seMueve = true;
 
-        while (pasos > 0)
+        int pasosWhile = pasos;
+        while (pasosWhile > 0)
         {
             if (vueltaParque == false)
             {
@@ -302,8 +324,9 @@ public class Player : MonoBehaviour
                 while (MoverDeCasilla(siguientePosicion)) { yield return null; }
 
                 yield return new WaitForSeconds(0.2f);
+                pasos--;
             }
-            pasos--;
+            pasosWhile--;
 
             if (vueltaParque == true)
             {
@@ -350,6 +373,7 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
         seMueve = false;
+        pasos--;
     }
 
     bool MoverDeCasilla(Vector3 objetivo) //Es el método que ejecuta el movimiento
@@ -493,6 +517,26 @@ public class Player : MonoBehaviour
                     script_Player4.enTurno = true;
                     enTurno = false;
                 }
+                break;
+        }
+    }
+    public IEnumerator primerMovimiento()
+    {
+        Debug.Log("P1 se mueve hacia una seccion");
+        yield return new WaitForSeconds(1);
+        switch (seccionElegida)
+        {
+            case 1:
+                StartCoroutine(MovimientoSeccionEscuela());
+                break;
+            case 2:
+                StartCoroutine(MovimientoSeccionCiudad());
+                break;
+            case 3:
+                StartCoroutine(MovimientoSeccionPlaza());
+                break;
+            case 4:
+                StartCoroutine(MovimientoSeccionParque());
                 break;
         }
     }
