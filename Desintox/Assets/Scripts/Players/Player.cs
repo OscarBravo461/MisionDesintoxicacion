@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     Vector3 SectorEscuela = new Vector3(-9.2f, 5.3f, 0f);
     Vector3 SectorCiudad = new Vector3(8.9f, 5.3f, 0f);
     Vector3 SectorPlaza = new Vector3(-9.2f, -3.7f, 0f);
-    Vector3 SectorParque = new Vector3(8.9f, -3.7f, 0f);
+    Vector3 SectorParque = new Vector3(21.75f, -8.15999985f, 0);
     Vector3 VueltaAlPuente = new Vector3(-2f, 2f, 0f);
     public Ruta rutaEscuela;
     public Ruta rutaCiudad;
