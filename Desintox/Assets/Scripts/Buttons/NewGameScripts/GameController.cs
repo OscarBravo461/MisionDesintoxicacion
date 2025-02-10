@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour
     public static string ColorP2;
     public static string ColorP3;
     public static string ColorP4;
+    public Vector3 dimensionCComun = new Vector3(4, 4, 4);
+    public Vector3 dimensionAmplia = new Vector3 (5, 5, 5);
 
     // Corutina para escalar el botón
     IEnumerator ScaleButton(Button button, Vector3 targetScale)
@@ -29,12 +31,12 @@ public class GameController : MonoBehaviour
 
         while (elapsedTime < animationDuration)
         {
-            button.transform.localScale = Vector3.Lerp(initialScale, targetScale, elapsedTime / animationDuration);
+            button.transform.localScale = Vector3.Lerp(initialScale, dimensionAmplia, elapsedTime / animationDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        button.transform.localScale = targetScale; // Aseguramos que termine en la escala objetivo
+        button.transform.localScale = dimensionAmplia; // Aseguramos que termine en la escala objetivo
     }
 
     // Corutina para restaurar la escala normal del botón
@@ -45,12 +47,12 @@ public class GameController : MonoBehaviour
 
         while (elapsedTime < animationDuration)
         {
-            button.transform.localScale = Vector3.Lerp(initialScale, Vector3.one, elapsedTime / animationDuration);
+            button.transform.localScale = Vector3.Lerp(initialScale, dimensionCComun, elapsedTime / animationDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        button.transform.localScale = Vector3.one; // Escala normal (1, 1, 1)
+        button.transform.localScale = dimensionCComun; // Escala normal (1, 1, 1)
     }
 
     // Iniciar la animación de escala

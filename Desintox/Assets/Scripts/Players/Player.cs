@@ -8,6 +8,13 @@ public class Player : MonoBehaviour
 {
     //Touch touch; --> Aspectos que podremos ocupar al momento de hacerlo para android
     //OpcionMulti_T3 PMultiples = new OpcionMulti_T3();
+
+    //Info de los jugadores
+    public string Playername = "";
+    public string color = "";
+    public bool[] pet = {false, false, false, false}; // Loro, gato, perro, pinguino
+    public int score = 0;
+
     public OpcionMulti_T3 scriptOpcionMulti;
     public CCJuego_T3 scriptCamara;
     public Canvas preguntas;
