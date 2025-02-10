@@ -13,10 +13,10 @@ public class Player : MonoBehaviour
     public CCJuego_T3 scriptCamara;
     public Canvas preguntas;
     public Canvas Multi_op;
-    Vector3 SectorEscuela = new Vector3(-9.2f, 5.3f, 0f);
+    Vector3 SectorEscuela = new Vector3(-7.63999987f, 5.61999989f, 0);
     Vector3 SectorCiudad = new Vector3(8.9f, 5.3f, 0f);
     Vector3 SectorPlaza = new Vector3(-9.2f, -3.7f, 0f);
-    Vector3 SectorParque = new Vector3(21.75f, -8.15999985f, 0);
+    Vector3 SectorParque = new Vector3(21.6410007f, -8.28100014f, 0);
     Vector3 VueltaAlPuente = new Vector3(-2f, 2f, 0f);
     public Ruta rutaEscuela;
     public Ruta rutaCiudad;
@@ -208,7 +208,7 @@ public class Player : MonoBehaviour
         while (!isOnSeccion)
         {
             Vector3 SeccionObjetivo = Camera.main.ScreenToWorldPoint(Input.mousePosition); //touch.position --> Aspectos que podremos ocupar al momento de hacerlo para android
-            if (SeccionObjetivo.x < -8 && SeccionObjetivo.x > -12 && SeccionObjetivo.y > 3 && SeccionObjetivo.y < 6)
+            if (SeccionObjetivo.x < -6 && SeccionObjetivo.x > -15 && SeccionObjetivo.y > 3 && SeccionObjetivo.y < 7)
             {
                 while (MoverDeCasilla(SectorEscuela)) { yield return null; }
             }
@@ -220,7 +220,7 @@ public class Player : MonoBehaviour
             {
                 while (MoverDeCasilla(SectorPlaza)) { yield return null; }
             }
-            if (SeccionObjetivo.x > 8 && SeccionObjetivo.x < 12 && SeccionObjetivo.y > -6 && SeccionObjetivo.y < -3)
+            if (SeccionObjetivo.x > 20 && SeccionObjetivo.x < 28 && SeccionObjetivo.y > -11 && SeccionObjetivo.y < -6)
             {
                 while (MoverDeCasilla(SectorParque)) { yield return null; }
             }
