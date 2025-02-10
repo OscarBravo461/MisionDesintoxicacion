@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Jugadores : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameController GC;
+    public static Jugadores Instance;
+    public int Cantidaddejugadores = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    //Info de los jugadores
+    public string Playername = "";
+    public string color = "";
+    public bool[] pet = { false, false, false, false }; // Loro, gato, perro, pinguino
+    public int score = 0;
+
+    private void Awake() {
+        if(Jugadores.Instance == null) {
+            Jugadores.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        } else {
+            Destroy(gameObject);
+        }
+    }
+    private void Start() {
+        GC.CanJug = Cantidaddejugadores;
     }
 }

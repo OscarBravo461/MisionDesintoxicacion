@@ -1779,6 +1779,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   confirmButton: {fileID: 1251107778}
   confirmButtonCanvasGroup: {fileID: 1251107782}
+  InfoJugadores: {fileID: 2004252100}
+  GC: {fileID: 1650243775}
 --- !u!1 &1433996512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,6 +1955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55784ded887ccba47895431d3f1971e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanJug: 0
   animationDuration: 0.2
   dimensionCComun: {x: 4, y: 4, z: 4}
   dimensionAmplia: {x: 5, y: 5, z: 5}
@@ -2133,6 +2136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3570b50b57792c4ebeadc3d8fb6dac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cantidaddejugadores: 0
+  Playername: 
+  color: 
+  pet: 00000000
+  score: 0
 --- !u!4 &2004252101
 Transform:
   m_ObjectHideFlags: 0

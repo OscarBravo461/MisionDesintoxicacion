@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class ConfirmButtonController : MonoBehaviour
 {
     public Button confirmButton;
     public CanvasGroup confirmButtonCanvasGroup;
-
+    public Jugadores InfoJugadores;
+    public GameController GC;
     void Start()
     {
         // Al inicio, desactivamos el botón de confirmación
@@ -32,8 +34,10 @@ public class ConfirmButtonController : MonoBehaviour
 
     public void OnConfirmButtonClick()
     {
-        // Aquí es donde manejamos el clic en el botón de confirmación
-        // En lugar de cambiar la escena, no hacemos nada adicional
-        // El botón simplemente mantendrá su efecto de opacidad y no hará más acciones
+        InfoJugadores.Cantidaddejugadores = GC.CanJug;
+        InfoJugadores.color = GC.color;
+        InfoJugadores.Playername = GC.PlayerName;
+        //GC.StartRestoreNormalScaleAnimation(GC.BotonSeleccionado);
+        GC.BotonSeleccionado.interactable = false;
     }
 }

@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ConfirmButtonControllerPer : MonoBehaviour
 {
+    public GameController GC;
     public Button confirmButton;
     public CanvasGroup confirmButtonCanvasGroup;
     public Canvas canvasToDisable; // Referencia al Canvas que deseas desactivar
@@ -34,6 +36,8 @@ public class ConfirmButtonControllerPer : MonoBehaviour
     {
         // Aquí es donde manejamos el clic en el botón de confirmación
         // Desactivamos el Canvas completo
+        GC.StartRestoreNormalScaleAnimation(GC.BotonSeleccionado);
+        GC.BotonSeleccionado.interactable = false;
         canvasToDisable.gameObject.SetActive(false);
     }
 }

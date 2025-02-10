@@ -1,11 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI; // Necesario para el uso de UI
 using System.Collections;
-using UnityEngine.SceneManagement; // Necesario para cargar escenas
+using UnityEngine.SceneManagement;
+using System; // Necesario para cargar escenas
 
 public class GameController : MonoBehaviour
 {
+    public int CanJug = 0; //Distintor de cantidad de jugadores seleccionados
+    //Info Jugador actual
+    public string color = "";
+    public string PlayerName = "";
+
     public static Button SelectedButton { get; private set; }
+    public Button BotonSeleccionado = SelectedButton;
     public float animationDuration = 0.2f; // Duración de la animación en segundos
     public static int NumJugadores;
     public static int avatarP1;
@@ -35,7 +42,21 @@ public class GameController : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
+        //Debug.Log(button.image.name); // Confirmar el nombre del boton presionado
+        switch (button.image.name) {
+            case "J2":
+                CanJug = 2;
+                break;
+            case "J3":
+                CanJug = 3;
+                break;
+            case "J4":
+                CanJug = 4;
+                break;
+            default:
+                Debug.Log("Error de cantidad de jugadores");
+                break;
+        }
         button.transform.localScale = dimensionAmplia; // Aseguramos que termine en la escala objetivo
     }
 
@@ -52,7 +73,7 @@ public class GameController : MonoBehaviour
             yield return null;
         }
 
-        button.transform.localScale = dimensionCComun; // Escala normal (1, 1, 1)
+        button.transform.localScale = dimensionCComun; // Escala normal (4, 4, 4)
     }
 
     // Iniciar la animación de escala
