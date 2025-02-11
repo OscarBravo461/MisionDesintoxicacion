@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ca21363c-dcb1-490c-aa3c-78f406e76bec}">
+		<property name="assetPath">
+			<value>Parque VJMD.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>150.58824999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{06bc69d9-fdf9-4484-8c2f-ea9232fce5fc}</destination>
+		</relationship>
+	</object>
+</objects>

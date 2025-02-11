@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8225838a-dea5-4ad7-b0f1-d4238b336664}">
+		<property name="assetPath">
+			<value>Plaza VJMD.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>60</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{06bc69d9-fdf9-4484-8c2f-ea9232fce5fc}</destination>
+		</relationship>
+	</object>
+</objects>

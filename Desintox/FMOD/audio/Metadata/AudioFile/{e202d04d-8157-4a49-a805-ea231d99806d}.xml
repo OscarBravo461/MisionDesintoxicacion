@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e202d04d-8157-4a49-a805-ea231d99806d}">
+		<property name="assetPath">
+			<value>Selección de Jugadores VJMD.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>58.775500000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{06bc69d9-fdf9-4484-8c2f-ea9232fce5fc}</destination>
+		</relationship>
+	</object>
+</objects>

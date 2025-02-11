@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ade2e114-4a7c-4cb1-97af-753bb64a0455}">
+		<property name="assetPath">
+			<value>Escuela VJMD.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>156.73468750000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{06bc69d9-fdf9-4484-8c2f-ea9232fce5fc}</destination>
+		</relationship>
+	</object>
+</objects>
