@@ -18,7 +18,6 @@ public class AudioManager : MonoBehaviour
 
     private Bus masterBus;
     private Bus musicBus;
-
     private Bus sfxBus;
 
     private List<EventInstance> eventInstances;
