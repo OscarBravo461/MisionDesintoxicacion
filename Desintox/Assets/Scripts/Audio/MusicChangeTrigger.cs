@@ -10,9 +10,11 @@ public class MusicChangeTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        Debug.Log("Trigger");
         if (collider.tag.Equals("Player1"))
         {
             AudioManager.instance.SetMusicArea(area);
+            Debug.Log("cambio");
         }
     }
 }
