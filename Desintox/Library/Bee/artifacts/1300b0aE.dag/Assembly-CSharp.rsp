@@ -387,6 +387,7 @@
 "Assets/Scripts/Audio/FMODEvents.cs"
 "Assets/Scripts/Audio/MusicArea.cs"
 "Assets/Scripts/Audio/MusicChangeTrigger.cs"
+"Assets/Scripts/Audio/Pureba.cs"
 "Assets/Scripts/Audio/VolumeSlider.cs"
 "Assets/Scripts/Buttons/NewGameScripts/ButtonController.cs"
 "Assets/Scripts/Buttons/NewGameScripts/ConfirmButtonController.cs"

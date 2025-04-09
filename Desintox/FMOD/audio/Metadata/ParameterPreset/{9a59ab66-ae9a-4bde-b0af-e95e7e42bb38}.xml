@@ -24,11 +24,20 @@
 			<value>Parque</value>
 			<value>Panta_Ini</value>
 			<value>Escuela</value>
-			<value>Edificios(castigo)</value>
+			<value>Edificios</value>
 			<value>Ajustes</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="isHeld">
+			<value>true</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
 		</property>
 	</object>
 </objects>

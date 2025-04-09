@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7746453195666648783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tablero
+  m_EditorClassIdentifier: 
+  Name: Tablero
+  StudioPath: parameter:/Tablero
+  Min: 0
+  Max: 6
+  Default: 0
+  ID:
+    data1: 2544847996
+    data2: 4081910382
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Selec_Perso
+  - Plaza
+  - Parque
+  - Panta_Ini
+  - Escuela
+  - Edificios
+  - Ajustes
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19,12 +50,13 @@ MonoBehaviour:
   - {fileID: 6780483864044319097}
   EditorEvents:
   - {fileID: 7417251088137543529}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: -7746453195666648783}
   MasterBanks:
   - {fileID: 4263642446951383786}
   StringsBanks:
   - {fileID: 569967216198802365}
-  cacheTime: 638748375343629442
+  cacheTime: 638797697405599053
   cacheVersion: 131620
 --- !u!114 &569967216198802365
 MonoBehaviour:
@@ -41,7 +73,7 @@ MonoBehaviour:
   Path: FMOD/audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638748375323194327
+  lastModified: 638797697405150324
   FileSizes:
   - Name: Desktop
     Value: 892
@@ -61,10 +93,10 @@ MonoBehaviour:
   Path: FMOD/audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638748375323174277
+  lastModified: 638797697405140285
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1302
   Exists: 1
 --- !u!114 &5268449593799827171
 MonoBehaviour:
@@ -87,14 +119,14 @@ MonoBehaviour:
     data1: 2544847996
     data2: 4081910382
   Type: 2
-  IsGlobal: 0
+  IsGlobal: 1
   Labels:
   - Selec_Perso
   - Plaza
   - Parque
   - Panta_Ini
   - Escuela
-  - Edificios(castigo)
+  - Edificios
   - Ajustes
   Exists: 1
 --- !u!114 &6780483864044319097
@@ -160,8 +192,8 @@ MonoBehaviour:
   Path: FMOD/audio/Build/Desktop/Seleccio.bank
   Name: Seleccio
   StudioPath: bank:/Seleccio
-  lastModified: 638748375343629442
+  lastModified: 638797697405599053
   FileSizes:
   - Name: Desktop
-    Value: 6988256
+    Value: 6988288
   Exists: 1
