@@ -7,7 +7,7 @@ using TMPro;
 
 public class ConfirmButtonNext : MonoBehaviour {
     public Jugadores InfoJugadores;
-    public TMP_Text nombre;
+    public TextMeshProUGUI nombre;
     public int conJug;
     public CanvasGroup ConfirmButtonNextSceneCanvasGroup;
     public Button ConfirmButtonNextScene;
@@ -29,8 +29,7 @@ public class ConfirmButtonNext : MonoBehaviour {
     {
         InfoJugadores = FindAnyObjectByType<Jugadores>();
         conJug = 0;
-        foreach (Button colorButton in colorButtons)
-        {
+        foreach (Button colorButton in colorButtons){
             colorButton.onClick.AddListener(() => OnColorButtonClick(colorButton));
         }
 
@@ -38,59 +37,51 @@ public class ConfirmButtonNext : MonoBehaviour {
         DisableConfirmButtonNextScene();
 
         // Asignamos un listener al botón para manejar el clic
-        ConfirmButtonNextScene.onClick.AddListener(OnConfirmButtonNextClick);
+        //ConfirmButtonNextScene.onClick.AddListener(OnConfirmButtonNextClick);
     }
 
-    public void EnableConfirmButtonNextScene()
-    {
+    public void EnableConfirmButtonNextScene(){
         // Habilita el botón de confirmación
         ConfirmButtonNextScene.interactable = true;
         ConfirmButtonNextSceneCanvasGroup.alpha = 1f; // Opacidad completa (sin transparencia)
     }
 
-    public void DisableConfirmButtonNextScene()
-    {
+    public void DisableConfirmButtonNextScene(){
         // Deshabilita el botón de confirmación
-        ConfirmButtonNextScene.interactable = false;
-        ConfirmButtonNextSceneCanvasGroup.alpha = 0.5f; // Opacidad reducida (transparencia)
+        //ConfirmButtonNextScene.interactable = false;
+        //ConfirmButtonNextSceneCanvasGroup.alpha = 0.5f; // Opacidad reducida (transparencia)
     }
 
-    public void OnConfirmButtonNextClick()
-    {
-        if (nombreDelColor == GameController.ColorP1 || nombreDelColor == GameController.ColorP2 || nombreDelColor == GameController.ColorP3 || nombreDelColor == GameController.ColorP4)
-        {
+    public void OnConfirmButtonNextClick(){
+        if (nombreDelColor == GameController.ColorP1 || nombreDelColor == GameController.ColorP2 || nombreDelColor == GameController.ColorP3 || nombreDelColor == GameController.ColorP4){
             selectedButton.interactable = false;
             Color P1selectedButton = selectedButton.image.color;
             P1selectedButton.a = 0.5f;
             selectedButton.image.color = P1selectedButton;
         }
 
-        if (GameController.avatarP1 >= 1 && GameController.avatarP1 <= 4)
-        {
+        if (GameController.avatarP1 >= 1 && GameController.avatarP1 <= 4) {
             Button p1Button = GetButtonForAvatar(GameController.avatarP1);
             p1Button.interactable = false;
             Color p1ButtonColor = p1Button.image.color;
             p1ButtonColor.a = 0.5f;
             p1Button.image.color = p1ButtonColor;
         }
-        if (GameController.avatarP2 >= 1 && GameController.avatarP2 <= 4)
-        {
+        if (GameController.avatarP2 >= 1 && GameController.avatarP2 <= 4) {
             Button p2Button = GetButtonForAvatar(GameController.avatarP2);
             p2Button.interactable = false;
             Color p2ButtonColor = p2Button.image.color;
             p2ButtonColor.a = 0.5f;
             p2Button.image.color = p2ButtonColor;
         }
-        if (GameController.avatarP3 >= 1 && GameController.avatarP3 <= 4)
-        {
+        if (GameController.avatarP3 >= 1 && GameController.avatarP3 <= 4) {
             Button p3Button = GetButtonForAvatar(GameController.avatarP3);
             p3Button.interactable = false;
             Color p3ButtonColor = p3Button.image.color;
             p3ButtonColor.a = 0.5f;
             p3Button.image.color = p3ButtonColor;
         }
-        if (GameController.avatarP4 >= 1 && GameController.avatarP4 <= 4)
-        {
+        if (GameController.avatarP4 >= 1 && GameController.avatarP4 <= 4){
             Button p4Button = GetButtonForAvatar(GameController.avatarP4);
             p4Button.interactable = false;
             Color p4ButtonColor = p4Button.image.color;
@@ -98,10 +89,8 @@ public class ConfirmButtonNext : MonoBehaviour {
             p4Button.image.color = p4ButtonColor;
         }
 
-        Button GetButtonForAvatar(int avatar)
-        {
-            switch (avatar)
-            {
+        Button GetButtonForAvatar(int avatar){
+            switch (avatar){
                 case 1: return P1;
                 case 2: return P2;
                 case 3: return P3;
@@ -110,12 +99,10 @@ public class ConfirmButtonNext : MonoBehaviour {
             }
         }
 
-        if (clicksRequired == 1)
-        {
+        if (clicksRequired == 1){
             SceneManager.LoadScene(nombreSiguienteEscena);
         }
-        else
-        {
+        else{
             clicksRequired--;
             Canvas1.SetActive(true);
             ConfirmButtonControllerPer.DisableConfirmButton();
@@ -124,8 +111,7 @@ public class ConfirmButtonNext : MonoBehaviour {
         AsignarInfoPlayer();
     }
 
-    public void OnColorButtonClick(Button colorButton)
-    {
+    public void OnColorButtonClick(Button colorButton){
         selectedButton = colorButton;
         nombreDelColor = selectedButton.name;
         //Debug.Log(nombreDelColor);
@@ -135,7 +121,6 @@ public class ConfirmButtonNext : MonoBehaviour {
         InfoJugadores.Playername[conJug] = nombre.text;
 
         //Debug.Log(InfoJugadores.color[conJug] + " " + InfoJugadores.Playername[conJug]);
-        nombre.text = "";
         conJug++;
     }
 }

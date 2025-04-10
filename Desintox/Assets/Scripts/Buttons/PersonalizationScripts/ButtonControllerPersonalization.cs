@@ -156,29 +156,25 @@ public class ButtonControllerPersonalization : MonoBehaviour
         {
             case 1:
                 // Limitamos la longitud del nombre
-                if (newName.Length > MaxNameLength)
-                {
+                if (newName.Length > MaxNameLength) {
                     nameInputField.text = newName.Substring(0, MaxNameLength);
                     GameController.NameP1 = nameInputField.text;
                 }
                 break;
             case 2:
-                if (newName.Length > MaxNameLength)
-                {
+                if (newName.Length > MaxNameLength) {
                     nameInputField.text = newName.Substring(0, MaxNameLength);
                     GameController.NameP2 = nameInputField.text;
                 }
                 break;
             case 3:
-                if (newName.Length > MaxNameLength)
-                {
+                if (newName.Length > MaxNameLength) {
                     nameInputField.text = newName.Substring(0, MaxNameLength);
                     GameController.NameP3 = nameInputField.text;
                 }
                 break;
             case 4:
-                if (newName.Length > MaxNameLength)
-                {
+                if (newName.Length > MaxNameLength) {
                     nameInputField.text = newName.Substring(0, MaxNameLength);
                     GameController.NameP4 = nameInputField.text;
                 }
@@ -208,15 +204,12 @@ public class ButtonControllerPersonalization : MonoBehaviour
     {
         //Debug.Log(GameController.NameP1);
         // Verificamos si se ha seleccionado un ColorButton y si hay texto en el InputField
-        bool canProceed = colorButtonSelected &&
-                          !string.IsNullOrEmpty(nameInputField.text);
+        bool canProceed = colorButtonSelected && !string.IsNullOrEmpty(nameInputField.text);
         // Activamos o desactivamos el botón según las condiciones
-        if (canProceed)
-        {
+        if (canProceed) {
             ConfirmButtonNext.EnableConfirmButtonNextScene();
         }
-        else
-        {
+        else {
             ConfirmButtonNext.DisableConfirmButtonNextScene();
         }
     }

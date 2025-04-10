@@ -22,8 +22,18 @@ public class Player : MonoBehaviour
     public Ruta rutaCiudad;
     public Ruta rutaPlaza;
     public Ruta rutaParque;
-    public int pasos; //Esta variable es la que controla cuánto avanza el jugador ---> Cambiar por el dado
     public GCJuego gc;
+    public int pasos; //Esta variable es la que controla cuánto avanza el jugador ---> Cambiar por el dado
+    public int xEscuela;
+    public int yEscuela;
+    public int xCiudad;
+    public int yCiudad;
+    public int xPlaza;
+    public int yPlaza;
+    public int xParque;
+    public int yParque;
+    public int turno = 1;
+    public int turnoSiguiente = 2;
     int posicionEnRuta;
     int valor_anterior;
     bool seMueve = false;
@@ -33,11 +43,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (gc.turno == 1)
+        if (gc.turno == turno)
         {
             if (!isOnSeccion) //Evualua si se seleccionó una sección
             {
-                if (Input.GetMouseButtonDown(0)) // Input.touchcount > 0 --> Aspectos que podremos ocupar al momento de hacerlo para android
+                if (Input.GetMouseButtonDown(1)) // Input.touchcount > 0 --> Aspectos que podremos ocupar al momento de hacerlo para android
                 {
                     //touch = Input.GetTouch(0); --> Aspectos que podremos ocupar al momento de hacerlo para android
                     StartCoroutine(MovimientoDeSeccion());
@@ -49,20 +59,20 @@ public class Player : MonoBehaviour
                 switch (seccionElegida)
                 {
                     case 1:
-                        pasos = 4;
+                        pasos = Random.Range(1,7);
                         StartCoroutine(MovimientoSeccionEscuela());
                         Debug.Log("Hola");
                         break;
                     case 2:
-                        pasos = 1;
+                        pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoSeccionCiudad());
                         break;
                     case 3:
-                        pasos = 1;
+                        pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoSeccionPlaza());
                         break;
                     case 4:
-                        pasos = 4;
+                        pasos = Random.Range(1, 7);
                         StartCoroutine(MovimientoSeccionParque());
                         break;
                 }
@@ -107,7 +117,7 @@ public class Player : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 2;
+        gc.turno = turnoSiguiente;
     }
         //Todos los métodos tienen la misma lógica, solo adecuada a cada sección
     public IEnumerator MovimientoSeccionCiudad()
@@ -137,7 +147,7 @@ public class Player : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 2;
+        gc.turno = turnoSiguiente;
     }
     public IEnumerator MovimientoSeccionPlaza()
     {
@@ -166,7 +176,7 @@ public class Player : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 2;
+        gc.turno = turnoSiguiente;
     }
     public IEnumerator MovimientoSeccionParque()
     {
@@ -195,7 +205,7 @@ public class Player : MonoBehaviour
             }
         }
         seMueve = false;
-        gc.turno = 2;
+        gc.turno = turnoSiguiente;
     }
     public IEnumerator MovimientoDeSeccion() //Evalua donde se toco con el mouse para mover al jugador de una sección a otra
     {
@@ -257,6 +267,12 @@ public class Player : MonoBehaviour
                 isOnSeccion = true;
                 seccionElegida = 4;
                 break;
+
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision) {
+        switch (collision.tag) 
+        {
             case "Preguntas":
                 preguntas.gameObject.SetActive(true);
                 break;
@@ -272,7 +288,6 @@ public class Player : MonoBehaviour
         }
     }
     public IEnumerator esperaCamara() {
-        Debug.Log("so");
         scriptCamara.objetivo_camara = 0;
         yield return new WaitForSeconds(10);
         scriptCamara.objetivo_camara = valor_anterior;

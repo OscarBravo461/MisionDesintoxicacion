@@ -41,7 +41,7 @@ public class ConfirmButtonControllerPer : MonoBehaviour
         // Aquí es donde manejamos el clic en el botón de confirmación
         // Desactivamos el Canvas completo
         GC.StartRestoreNormalScaleAnimation(GC.BotonSeleccionado);
-        InfoJugadores.imagen[GCB.conJug].sprite = ButtonController.imagenSeleccionada.sprite;
+        //InfoJugadores.imagen[GCB.conJug].sprite = ButtonController.imagenSeleccionada.sprite;
         GC.BotonSeleccionado.interactable = false;
         canvasToDisable.gameObject.SetActive(false);
     }

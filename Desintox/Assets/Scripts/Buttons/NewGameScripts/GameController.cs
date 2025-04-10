@@ -107,4 +107,7 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void CancelarColor() {
+
+    }
 }

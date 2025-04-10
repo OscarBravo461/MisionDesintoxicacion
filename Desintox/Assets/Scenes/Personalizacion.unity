@@ -2136,7 +2136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GC: {fileID: 1613017044}
   GCB: {fileID: 0}
-  InfoJugadores: {fileID: 856279834}
+  ButtonController: {fileID: 0}
+  InfoJugadores: {fileID: 0}
   confirmButton: {fileID: 673397371}
   confirmButtonCanvasGroup: {fileID: 673397369}
   canvasToDisable: {fileID: 1494238974}
@@ -2364,73 +2365,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &856279833
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 856279835}
-  - component: {fileID: 856279834}
-  m_Layer: 0
-  m_Name: InfoJugadores
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &856279834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856279833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3570b50b57792c4ebeadc3d8fb6dac5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GC: {fileID: 1613017044}
-  Cantidaddejugadores: 4
-  Playername:
-  - 
-  - 
-  - 
-  - 
-  color:
-  - 
-  - 
-  - 
-  - 
-  pet:
-  - 
-  - 
-  - 
-  - 
-  score: 00000000000000000000000000000000
-  imagen:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!4 &856279835
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856279833}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2343.5444, y: 740.0933, z: 5.7807984}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &883412296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4271,10 +4205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InfoPlayers: {fileID: 0}
-  P1: {fileID: 0}
-  P2: {fileID: 0}
-  P3: {fileID: 0}
-  P4: {fileID: 0}
+  P1: {fileID: 1944262624}
+  P2: {fileID: 1699651024}
+  P3: {fileID: 1814191759}
+  P4: {fileID: 21638403}
   CanJug: 4
   color: 
   PlayerName: 
@@ -4958,7 +4892,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1764199150}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1764199149}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1764199151}
+        m_TargetAssemblyTypeName: UnityEngine.CanvasRenderer, UnityEngine
+        m_MethodName: SetAlpha
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 72529072}
+        m_TargetAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1764199150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5009,7 +4979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d99a705fc339a4e9b5109f27d95b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfoJugadores: {fileID: 856279834}
+  InfoJugadores: {fileID: 0}
   nombre: {fileID: 434786501}
   conJug: 0
   ConfirmButtonNextSceneCanvasGroup: {fileID: 1764199148}
@@ -6213,4 +6183,3 @@ SceneRoots:
   - {fileID: 1494238975}
   - {fileID: 776790896}
   - {fileID: 883412299}
-  - {fileID: 856279835}

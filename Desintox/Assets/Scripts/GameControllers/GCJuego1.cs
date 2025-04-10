@@ -27,9 +27,6 @@ public class GCJuego1 : MonoBehaviour {
         return numbers;
     }
     private void Update() {
-        //No deberia estar aqui, pero no encontre donde se cambia el turno
-        Image img = ImagenJugador.GetComponent<Image>();
-        img.sprite = InfoJugadores.imagen[turno.turno - 1].sprite;
 
         if (Input.GetKeyDown(KeyCode.V) && Counter < (uniqueNumbers.Length)) {
             

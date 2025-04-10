@@ -62,7 +62,7 @@ public class GCJuego_T3 : MonoBehaviour
                 if (n1 == n2)
                 {
                     sit=1;
-                    Debug.Log("sit1 Happen");
+                    //Debug.Log("sit1 Happen");
                     repe++;
                 }
                 Nj2.text = ""+r2;
@@ -77,7 +77,7 @@ public class GCJuego_T3 : MonoBehaviour
                 {
                     if (repe > 0)
                     {
-                        Debug.Log("Se repitio el caso 3  sit2");
+                        //Debug.Log("Se repitio el caso 3  sit2");
                         goto case 3;
                     }
                     sit=2;
@@ -88,12 +88,12 @@ public class GCJuego_T3 : MonoBehaviour
                 {
                     if (repe>0)
                     {
-                        Debug.Log("Se repitio el caso 3 sit3");
+                        //Debug.Log("Se repitio el caso 3 sit3");
                         goto case 3;
                     }
                     sit=3;
                     repe++;
-                    Debug.Log("sit3 Happen");
+                    //Debug.Log("sit3 Happen");
                 }
                 JD.text = "Es turno del jugador 4";
                 Nj3.text = "" + r3;
@@ -106,49 +106,49 @@ public class GCJuego_T3 : MonoBehaviour
                 {
                     if (repe > 0)
                     {
-                        Debug.Log("Se repitio el caso 4 sit4 1");
+                        //Debug.Log("Se repitio el caso 4 sit4 1");
                         goto case 4;
                     }
                     if (repe > 0)
                     {
-                        Debug.Log("Se repitio el caso 4 sit4 2");
+                        //Debug.Log("Se repitio el caso 4 sit4 2");
                         goto case 4;
                     }
                     sit=4;
                     repe++;
-                    Debug.Log("sit4 Happen");
+                    //Debug.Log("sit4 Happen");
                 }
                 if (n2 == n4 )
                 {
                     if (repe > 0)
                     {
-                        Debug.Log("Se repitio el caso 4 sit5 1");
+                        //Debug.Log("Se repitio el caso 4 sit5 1");
                         goto case 4;
                     }
                     if (repe > 0)
                     {
-                        Debug.Log("Se repitio el caso 4 sit5 2");
+                        //Debug.Log("Se repitio el caso 4 sit5 2");
                         goto case 4;
                     }
                     sit=5;
                     repe++;
-                    Debug.Log("sit5 Happen");
+                    //Debug.Log("sit5 Happen");
                 }
                 if (n3 == n4 )
                 {
                     if (repe > 0)
                     {
-                        Debug.Log("Se repitio el caso 4 sit6 1");
+                        //Debug.Log("Se repitio el caso 4 sit6 1");
                         goto case 4;
                     }
                     if (repe > 0)
                     {
-                        Debug.Log("Se repitio el caso 4 sit6 2");
+                        //Debug.Log("Se repitio el caso 4 sit6 2");
                         goto case 4;
                     }
                     sit=6;
                     repe++;
-                    Debug.Log("sit6 Happen");
+                    //Debug.Log("sit6 Happen");
 
                 }
                 Nj4.text = "" + r4;
@@ -176,7 +176,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n1 = r2;
                         if (n1 == n2)
                         {
-                            Debug.Log("Se repitio el tiro del J2");
+                            //Debug.Log("Se repitio el tiro del J2");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 5;
                         }
@@ -185,13 +185,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T1.text = ("3");
                             T2.text = ("4");
-                            Debug.Log("Tercer turno J1, Cuarto Turno J2");
+                            //Debug.Log("Tercer turno J1, Cuarto Turno J2");
                         }
                         else
                         {
                             T2.text = ("4");
                             T1.text = ("3");
-                            Debug.Log("Cuarto turno J2, Tercer Turno J1");
+                            //Debug.Log("Cuarto turno J2, Tercer Turno J1");
                         }
                         turno2++;
                     }
@@ -212,7 +212,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n1 = r2;
                         if (n1 == n2)
                         {
-                            Debug.Log("Se repitio el tiro del J2");
+                            //Debug.Log("Se repitio el tiro del J2");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 5;
                         }
@@ -221,13 +221,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T1.text = ("1");
                             T2.text = ("2");
-                            Debug.Log("Primer turno J1, Segundo Turno J2");
+                            //Debug.Log("Primer turno J1, Segundo Turno J2");
                         }
                         else
                         {
                             T2.text = ("2");
                             T1.text = ("1");
-                            Debug.Log("Segundo turno J2, Primer Turno J1");
+                            //Debug.Log("Segundo turno J2, Primer Turno J1");
                         }
                         turno2++;
                     }
@@ -248,7 +248,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n1 = r2;
                         if (n1 == n2)
                         {
-                            Debug.Log("Se repitio el tiro del J2");
+                            //Debug.Log("Se repitio el tiro del J2");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 5;
                         }
@@ -257,13 +257,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T1.text = ("2");
                             T2.text = ("3");
-                            Debug.Log("Primer turno J1, Segundo Turno J2");
+                            //Debug.Log("Primer turno J1, Segundo Turno J2");
                         }
                         else
                         {
                             T2.text = ("2");
                             T1.text = ("3");
-                            Debug.Log("Segundo turno J2, Tercero Turno J1");
+                            //Debug.Log("Segundo turno J2, Tercero Turno J1");
                         }
                         turno2++;
                     }
@@ -286,7 +286,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n3 = r3;
                         if (n1 == n3)
                         {
-                            Debug.Log("Se repitio el tiro del J3");
+                            //Debug.Log("Se repitio el tiro del J3");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 6;
                         }
@@ -295,13 +295,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T1.text = ("3");
                             T3.text = ("4");
-                            Debug.Log("Tercer turno J1, Cuarto Turno J3");
+                            //Debug.Log("Tercer turno J1, Cuarto Turno J3");
                         }
                         else
                         {
                             T3.text = ("3");
                             T1.text = ("4");
-                            Debug.Log("Tercer turno J3, Cuarto Turno J1");
+                            //Debug.Log("Tercer turno J3, Cuarto Turno J1");
                         }
                         turno2++;
                     }
@@ -322,7 +322,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n3 = r3;
                         if (n1 == n3)
                         {
-                            Debug.Log("Se repitio el tiro del J3");
+                            //Debug.Log("Se repitio el tiro del J3");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 6;
                         }
@@ -331,13 +331,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T1.text = ("1");
                             T3.text = ("2");
-                            Debug.Log("Primer turno J1, Segundo Turno J3");
+                            //Debug.Log("Primer turno J1, Segundo Turno J3");
                         }
                         else
                         {
                             T3.text = ("1");
                             T1.text = ("2");
-                            Debug.Log("Primer turno J3, Segundo Turno J1");
+                            //Debug.Log("Primer turno J3, Segundo Turno J1");
                         }
                         turno2++;
                     }
@@ -348,7 +348,7 @@ public class GCJuego_T3 : MonoBehaviour
                     n3 = r3;
                     if (n1 == n3)
                     {
-                        Debug.Log("Se repitio el tiro del J3");
+                        //Debug.Log("Se repitio el tiro del J3");
                         //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                         goto case 6;
                     }
@@ -357,13 +357,13 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T1.text = ("2");
                         T3.text = ("3");
-                        Debug.Log("Segundo turno J1, Cuarto Turno J3");
+                        //Debug.Log("Segundo turno J1, Cuarto Turno J3");
                     }
                     else
                     {
                         T3.text = ("2");
                         T1.text = ("3");
-                        Debug.Log("Segundo turno J3, Cuarto Turno J1");
+                        //Debug.Log("Segundo turno J3, Cuarto Turno J1");
                     }
                     turno2++;
                 }
@@ -385,7 +385,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n3 = r3;
                         if (n2 == n3)
                         {
-                            Debug.Log("Se repitio el tiro del J3");
+                            //Debug.Log("Se repitio el tiro del J3");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 7;
                         }
@@ -395,13 +395,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T2.text = ("3");
                             T3.text = ("4");
-                            Debug.Log("Tercer turno J2, Cuarto Turno J3");
+                            //Debug.Log("Tercer turno J2, Cuarto Turno J3");
                         }
                         else
                         {
                             T3.text = ("3");
                             T2.text = ("4");
-                            Debug.Log("Cuarto turno J3, Tercer Turno J2");
+                            //Debug.Log("Cuarto turno J3, Tercer Turno J2");
                         }
                     }
                 }
@@ -421,7 +421,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n3 = r3;
                         if (n2 == n3)
                         {
-                            Debug.Log("Se repitio el tiro del J3");
+                            //Debug.Log("Se repitio el tiro del J3");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 7;
                         }
@@ -431,13 +431,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T2.text = ("1");
                             T3.text = ("2");
-                            Debug.Log("Primer turno J2, Segundo Turno J3");
+                            //Debug.Log("Primer turno J2, Segundo Turno J3");
                         }
                         else
                         {
                             T3.text = ("1");
                             T2.text = ("2");
-                            Debug.Log("Segundo turno J3, Primer Turno J2");
+                            //Debug.Log("Segundo turno J3, Primer Turno J2");
                         }
                     }
                 }
@@ -457,7 +457,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n3 = r3;
                         if (n2 == n3)
                         {
-                            Debug.Log("Se repitio el tiro del J3");
+                            //Debug.Log("Se repitio el tiro del J3");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 7;
                         }
@@ -467,13 +467,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T2.text = ("2");
                             T3.text = ("3");
-                            Debug.Log("Segundo turno J2, Cuarto Turno J3");
+                            //Debug.Log("Segundo turno J2, Cuarto Turno J3");
                         }
                         else
                         {
                             T3.text = ("2");
                             T2.text = ("3");
-                            Debug.Log("Segundo turno J3, Cuarto Turno J2");
+                            //Debug.Log("Segundo turno J3, Cuarto Turno J2");
                         }
                     }
                 }
@@ -495,7 +495,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n4 = r4;
                         if (n1 == n4)
                         {
-                            Debug.Log("Se repitio el tiro del J4");
+                            //Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 8;
                         }
@@ -504,13 +504,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T1.text = ("3");
                             T4.text = ("4");
-                            Debug.Log("Tercer turno J1, Cuarto Turno J4");
+                            //Debug.Log("Tercer turno J1, Cuarto Turno J4");
                         }
                         else
                         {
                             T4.text = ("3");
                             T1.text = ("4");
-                            Debug.Log("Cuarto turno J4, Tercer Turno J1");
+                            //Debug.Log("Cuarto turno J4, Tercer Turno J1");
                         }
                         turno2++;
                     }
@@ -531,7 +531,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n4 = r4;
                         if (n1 == n4)
                         {
-                            Debug.Log("Se repitio el tiro del J4");
+                            //Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 8;
                         }
@@ -540,13 +540,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T1.text = ("1");
                             T4.text = ("2");
-                            Debug.Log("Primer turno J1, Segundo Turno J4");
+                            //Debug.Log("Primer turno J1, Segundo Turno J4");
                         }
                         else
                         {
                             T4.text = ("1");
                             T1.text = ("2");
-                            Debug.Log("Segundo turno J4, Primer Turno J1");
+                            //Debug.Log("Segundo turno J4, Primer Turno J1");
                         }
                         turno2++;
                     }
@@ -567,7 +567,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n4 = r4;
                         if (n1 == n4)
                         {
-                            Debug.Log("Se repitio el tiro del J4");
+                            //Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 8;
                         }
@@ -576,13 +576,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T1.text = ("2");
                             T4.text = ("3");
-                            Debug.Log("Segundo turno J1, Tercero Turno J4");
+                            //Debug.Log("Segundo turno J1, Tercero Turno J4");
                         }
                         else
                         {
                             T4.text = ("2");
                             T1.text = ("3");
-                            Debug.Log("Segundo turno J4, Tercero Turno J1");
+                            //Debug.Log("Segundo turno J4, Tercero Turno J1");
                         }
                         turno2++;
                     }
@@ -605,7 +605,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n4 = r4;
                         if (n2 == n4)
                         {
-                            Debug.Log("Se repitio el tiro del J4");
+                            //Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 9;
                         }
@@ -615,13 +615,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T2.text = ("3");
                             T4.text = ("4");
-                            Debug.Log("Tercer turno J2, Cuarto Turno J4");
+                            //Debug.Log("Tercer turno J2, Cuarto Turno J4");
                         }
                         else
                         {
                             T4.text = ("3");
                             T2.text = ("4");
-                            Debug.Log("Cuarto turno J4, Tercer Turno J2");
+                            //Debug.Log("Cuarto turno J4, Tercer Turno J2");
                         }
                     }
                 }
@@ -641,7 +641,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n4 = r4;
                         if (n2 == n4)
                         {
-                            Debug.Log("Se repitio el tiro del J4");
+                            //Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 9;
                         }
@@ -651,13 +651,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T2.text = ("1");
                             T4.text = ("2");
-                            Debug.Log("Primer turno J2, Segundo Turno J4");
+                            //Debug.Log("Primer turno J2, Segundo Turno J4");
                         }
                         else
                         {
                             T4.text = ("1");
                             T2.text = ("2");
-                            Debug.Log("Segundo turno J4, Primer Turno J2");
+                            //Debug.Log("Segundo turno J4, Primer Turno J2");
                         }
                     }
                 }
@@ -677,7 +677,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n4 = r4;
                         if (n2 == n4)
                         {
-                            Debug.Log("Se repitio el tiro del J4");
+                            //Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 9;
                         }
@@ -687,13 +687,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T2.text = ("2");
                             T4.text = ("3");
-                            Debug.Log("Segundo turno J2, Tercero Turno J4");
+                            //Debug.Log("Segundo turno J2, Tercero Turno J4");
                         }
                         else
                         {
                             T4.text = ("2");
                             T2.text = ("3");
-                            Debug.Log("Segundo turno J4, Tercero Turno J2");
+                            //Debug.Log("Segundo turno J4, Tercero Turno J2");
                         }
                     }
                 }
@@ -715,7 +715,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n4 = r4;
                         if (n3 == n4)
                         {
-                            Debug.Log("Se repitio el tiro del J4");
+                            //Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 10;
                         }
@@ -724,13 +724,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T3.text = ("3");
                             T4.text = ("4");
-                            Debug.Log("Tercer turno J3, Cuarto Turno J4");
+                            //Debug.Log("Tercer turno J3, Cuarto Turno J4");
                         }
                         else
                         {
                             T4.text = ("3");
                             T3.text = ("4");
-                            Debug.Log("Cuarto turno J4, Tercer Turno J3");
+                            //Debug.Log("Cuarto turno J4, Tercer Turno J3");
                         }
                         turno2++;
                     }
@@ -751,7 +751,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n4 = r4;
                         if (n3 == n4)
                         {
-                            Debug.Log("Se repitio el tiro del J4");
+                            //Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 10;
                         }
@@ -760,13 +760,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T3.text = ("1");
                             T4.text = ("2");
-                            Debug.Log("Primer turno J3, Segundo Turno J4");
+                            //Debug.Log("Primer turno J3, Segundo Turno J4");
                         }
                         else
                         {
                             T4.text = ("1");
                             T3.text = ("2");
-                            Debug.Log("Segundo turno J4, Primer Turno J3");
+                            //Debug.Log("Segundo turno J4, Primer Turno J3");
                         }
                         turno2++;
                     }
@@ -787,7 +787,7 @@ public class GCJuego_T3 : MonoBehaviour
                         n4 = r4;
                         if (n3 == n4)
                         {
-                            Debug.Log("Se repitio el tiro del J4");
+                            //Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 10;
                         }
@@ -796,13 +796,13 @@ public class GCJuego_T3 : MonoBehaviour
                         {
                             T3.text = ("2");
                             T4.text = ("3");
-                            Debug.Log("Segundo turno J3, Tercero Turno J4");
+                            //Debug.Log("Segundo turno J3, Tercero Turno J4");
                         }
                         else
                         {
                             T4.text = ("2");
                             T3.text = ("3");
-                            Debug.Log("Segundo turno J4, Tercero Turno J3");
+                            //Debug.Log("Segundo turno J4, Tercero Turno J3");
                         }
                         turno2++;
                     }
@@ -825,14 +825,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T3.text = ("3");
                         T4.text = ("4");
-                        Debug.Log("Tercer turno J3, Cuarto Turno J4");
+                        //Debug.Log("Tercer turno J3, Cuarto Turno J4");
                         sit2 = 2;
                     }
                     else
                     {
                         T4.text = ("3");
                         T3.text = ("4");
-                        Debug.Log("Cuarto turno J4, Tercer Turno J3");
+                        //Debug.Log("Cuarto turno J4, Tercer Turno J3");
                         sit2 = 2;
                     }
                 }
@@ -842,14 +842,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T3.text = ("1");
                         T4.text = ("2");
-                        Debug.Log("Primer turno J3, Segundo Turno J4");
+                        //Debug.Log("Primer turno J3, Segundo Turno J4");
                         sit2 = 1;
                     }
                     else
                     {
                         T4.text = ("1");
                         T3.text = ("2");
-                        Debug.Log("Primer turno J4, Segundo Turno J3");
+                        //Debug.Log("Primer turno J4, Segundo Turno J3");
                         sit2 = 1;
                     }
                 }
@@ -859,18 +859,18 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T3.text = ("1");
                         T4.text = ("4");
-                        Debug.Log("Primer turno J3, Cuarto Turno J4");
+                        //Debug.Log("Primer turno J3, Cuarto Turno J4");
                         sit2 = 3;
                     }
                     else
                     {
                         T4.text = ("1");
                         T3.text = ("4");
-                        Debug.Log("Primer turno J4, Cuarto Turno J3");
+                        //Debug.Log("Primer turno J4, Cuarto Turno J3");
                         sit2 = 3;
                     }
                 }
-                Debug.Log("Jugadores 1 y 2 repiten tirada");
+                //Debug.Log("Jugadores 1 y 2 repiten tirada");
                 JD.text = ("Es turno del Jugador 1");
                 turno = 5;
                 break;
@@ -881,14 +881,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T2.text = ("3");
                         T4.text = ("4");
-                        Debug.Log("Tercer turno J2, Cuarto Turno J4");
+                        //Debug.Log("Tercer turno J2, Cuarto Turno J4");
                         sit2 = 2;
                     }
                     else
                     {
                         T4.text = ("3");
                         T2.text = ("4");
-                        Debug.Log("Cuarto turno J4, Tercer Turno J2");
+                        //Debug.Log("Cuarto turno J4, Tercer Turno J2");
                         sit2 = 2;
                     }
                 }
@@ -898,14 +898,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T2.text = ("1");
                         T4.text = ("2");
-                        Debug.Log("Primer turno J2, Segundo Turno J4");
+                        //Debug.Log("Primer turno J2, Segundo Turno J4");
                         sit2 = 1;
                     }
                     else
                     {
                         T4.text = ("1");
                         T2.text = ("2");
-                        Debug.Log("Primer turno J4, Segundo Turno J2");
+                        //Debug.Log("Primer turno J4, Segundo Turno J2");
                         sit2 = 1;
                     }
                 }
@@ -915,18 +915,18 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T2.text = ("1");
                         T4.text = ("4");
-                        Debug.Log("Primer turno J2, Cuarto Turno J4");
+                        //Debug.Log("Primer turno J2, Cuarto Turno J4");
                         sit2 = 3;
                     }
                     else
                     {
                         T4.text = ("1");
                         T2.text = ("4");
-                        Debug.Log("Primer turno J4, Cuarto Turno J2");
+                        //Debug.Log("Primer turno J4, Cuarto Turno J2");
                         sit2 = 3;
                     }
                 }
-                Debug.Log("Jugadores 1 y 3 repiten tirada");
+                //Debug.Log("Jugadores 1 y 3 repiten tirada");
                 turno = 6;
                 JD.text = ("Es turno del Jugador 1");
                 break;
@@ -937,7 +937,7 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T1.text = ("3");
                         T4.text = ("4");
-                        Debug.Log("Tercer turno J1, Cuarto Turno J4");
+                        //Debug.Log("Tercer turno J1, Cuarto Turno J4");
                         sit2 = 2;
 
                     }
@@ -945,7 +945,7 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T4.text = ("3");
                         T1.text = ("4");
-                        Debug.Log("Cuarto turno J4, Tercer Turno J1");
+                        //Debug.Log("Cuarto turno J4, Tercer Turno J1");
                         sit2 = 2;
                     }
                 }
@@ -955,14 +955,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T1.text = ("1");
                         T4.text = ("2");
-                        Debug.Log("Primer turno J1, Segundo Turno J4");
+                        //Debug.Log("Primer turno J1, Segundo Turno J4");
                         sit2 = 1;
                     }
                     else
                     {
                         T4.text = ("1");
                         T1.text = ("2");
-                        Debug.Log("Primer turno J4, Segundo Turno J1");
+                        //Debug.Log("Primer turno J4, Segundo Turno J1");
                         sit2 = 1;
                     }
                 }
@@ -972,18 +972,18 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T1.text = ("1");
                         T4.text = ("4");
-                        Debug.Log("Primer turno J1, Cuarto Turno J4");
+                        //Debug.Log("Primer turno J1, Cuarto Turno J4");
                         sit2 = 3;
                     }
                     else
                     {
                         T4.text = ("1");
                         T1.text = ("4");
-                        Debug.Log("Primer turno J4, Cuarto Turno J1");
+                        //Debug.Log("Primer turno J4, Cuarto Turno J1");
                         sit2 = 3;
                     }
                 }
-                Debug.Log("Jugadores 2 y 3 repiten tirada");
+                //Debug.Log("Jugadores 2 y 3 repiten tirada");
                 turno = 7;
                 JD.text = ("Es turno del Jugador 2");
                 break;
@@ -994,14 +994,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T2.text = ("3");
                         T3.text = ("4");
-                        Debug.Log("Tercer turno J2, Cuarto Turno J3");
+                        //Debug.Log("Tercer turno J2, Cuarto Turno J3");
                         sit2 = 2;
                     }
                     else
                     {
                         T3.text = ("3");
                         T2.text = ("4");
-                        Debug.Log("Cuarto turno J3, Tercer Turno J2");
+                        //Debug.Log("Cuarto turno J3, Tercer Turno J2");
                         sit2 = 2;
                     }
                 }
@@ -1011,14 +1011,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T2.text = ("1");
                         T3.text = ("2");
-                        Debug.Log("Primer turno J2, Segundo Turno J3");
+                        //Debug.Log("Primer turno J2, Segundo Turno J3");
                         sit2 = 1;
                     }
                     else
                     {
                         T3.text = ("1");
                         T2.text = ("2");
-                        Debug.Log("Primer turno J3, Segundo Turno J2");
+                        //Debug.Log("Primer turno J3, Segundo Turno J2");
                         sit2 = 1;
                     }
                 }
@@ -1028,18 +1028,18 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T2.text = ("1");
                         T3.text = ("4");
-                        Debug.Log("Primer turno J2, Cuarto Turno J3");
+                        //Debug.Log("Primer turno J2, Cuarto Turno J3");
                         sit2 = 3;
                     }
                     else
                     {
                         T3.text = ("1");
                         T2.text = ("4");
-                        Debug.Log("Primer turno J3, Cuarto Turno J2");
+                        //Debug.Log("Primer turno J3, Cuarto Turno J2");
                         sit2 = 3;
                     }
                 }
-                Debug.Log("Jugadores 1 y 4 repiten tirada");
+                //Debug.Log("Jugadores 1 y 4 repiten tirada");
                 turno = 8;
                 JD.text = ("Es turno del Jugador 1");
                 break;
@@ -1050,14 +1050,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T1.text = ("3");
                         T3.text = ("4");
-                        Debug.Log("Tercer turno J1, Cuarto Turno J3");
+                        //Debug.Log("Tercer turno J1, Cuarto Turno J3");
                         sit2 = 2;
                     }
                     else
                     {
                         T3.text = ("3");
                         T1.text = ("4");
-                        Debug.Log("Cuarto turno J3, Tercer Turno J1");
+                        //Debug.Log("Cuarto turno J3, Tercer Turno J1");
                         sit2 = 2;
                     }
                 }
@@ -1067,14 +1067,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T1.text = ("1");
                         T3.text = ("2");
-                        Debug.Log("Primer turno J1, Segundo Turno J3");
+                        //Debug.Log("Primer turno J1, Segundo Turno J3");
                         sit2 = 1;
                     }
                     else
                     {
                         T3.text = ("1");
                         T1.text = ("2");
-                        Debug.Log("Primer turno J3, Segundo Turno J1");
+                        //Debug.Log("Primer turno J3, Segundo Turno J1");
                         sit2 = 1;
                     }
                 }
@@ -1084,18 +1084,18 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T1.text = ("1");
                         T3.text = ("4");
-                        Debug.Log("Primer turno J1, Segundo Turno J3");
+                        //Debug.Log("Primer turno J1, Segundo Turno J3");
                         sit2 = 3;
                     }
                     else
                     {
                         T3.text = ("1");
                         T1.text = ("4");
-                        Debug.Log("Cuarto turno J3, Cuarto Turno J1");
+                        //Debug.Log("Cuarto turno J3, Cuarto Turno J1");
                         sit2 = 3;
                     }
                 }
-                Debug.Log("Jugadores 2 y 4 repiten tirada");
+                //Debug.Log("Jugadores 2 y 4 repiten tirada");
                 turno = 9;
                 JD.text = ("Es turno del Jugador 2");
                 break;
@@ -1106,14 +1106,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T1.text = ("3");
                         T2.text = ("4");
-                        Debug.Log("Tercer turno J1, Cuarto Turno J2");
+                        //Debug.Log("Tercer turno J1, Cuarto Turno J2");
                         sit2 = 2;
                     }
                     else
                     {
                         T2.text = ("3");
                         T1.text = ("4");
-                        Debug.Log("Cuarto turno J2, Tercer Turno J1");
+                        //Debug.Log("Cuarto turno J2, Tercer Turno J1");
                         sit2 = 2;
                     }
                 }
@@ -1123,14 +1123,14 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T1.text = ("1");
                         T2.text = ("2");
-                        Debug.Log("Primer turno J1, Segundo Turno J2");
+                        //Debug.Log("Primer turno J1, Segundo Turno J2");
                         sit2 = 1;
                     }
                     else
                     {
                         T2.text = ("1");
                         T1.text = ("2");
-                        Debug.Log("Primer turno J2, Segundo Turno J1");
+                        //Debug.Log("Primer turno J2, Segundo Turno J1");
                         sit2 = 1;
                     }
                 }
@@ -1140,18 +1140,18 @@ public class GCJuego_T3 : MonoBehaviour
                     {
                         T1.text = ("1");
                         T2.text = ("4");
-                        Debug.Log("Primer turno J1, Cuarto Turno J2");
+                        //Debug.Log("Primer turno J1, Cuarto Turno J2");
                         sit2 = 3;
                     }
                     else
                     {
                         T2.text = ("1");
                         T1.text = ("4");
-                        Debug.Log("Primer turno J2, Cuarto Turno J1");
+                        //Debug.Log("Primer turno J2, Cuarto Turno J1");
                         sit2 = 3;
                     }
                 }
-                Debug.Log("Jugadores 3 y 4 repiten tirada");
+                //Debug.Log("Jugadores 3 y 4 repiten tirada");
                 turno = 10;
                 JD.text = ("Es turno del Jugador 3");
                 break;
