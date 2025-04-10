@@ -2,9 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using TMPro.Examples;
+using TMPro;
 
-public class ConfirmButtonNext : MonoBehaviour
-{
+public class ConfirmButtonNext : MonoBehaviour {
+    public Jugadores InfoJugadores;
+    public TMP_Text nombre;
+    public int conJug;
     public CanvasGroup ConfirmButtonNextSceneCanvasGroup;
     public Button ConfirmButtonNextScene;
     public GameObject Canvas1; // Asigna el canvas desde el Inspector
@@ -23,6 +27,8 @@ public class ConfirmButtonNext : MonoBehaviour
 
     void Start()
     {
+        InfoJugadores = FindAnyObjectByType<Jugadores>();
+        conJug = 0;
         foreach (Button colorButton in colorButtons)
         {
             colorButton.onClick.AddListener(() => OnColorButtonClick(colorButton));
@@ -115,13 +121,22 @@ public class ConfirmButtonNext : MonoBehaviour
             ConfirmButtonControllerPer.DisableConfirmButton();
             DisableConfirmButtonNextScene();
         }
+        AsignarInfoPlayer();
     }
 
     public void OnColorButtonClick(Button colorButton)
     {
         selectedButton = colorButton;
         nombreDelColor = selectedButton.name;
-        Debug.Log(nombreDelColor);
+        //Debug.Log(nombreDelColor);
+    }
+    public void AsignarInfoPlayer() {
+        InfoJugadores.color[conJug] = selectedButton.name;
+        InfoJugadores.Playername[conJug] = nombre.text;
+
+        //Debug.Log(InfoJugadores.color[conJug] + " " + InfoJugadores.Playername[conJug]);
+        nombre.text = "";
+        conJug++;
     }
 }
 //Debug.Log($"Starting {name}!", this);

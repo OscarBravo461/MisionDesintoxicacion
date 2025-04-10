@@ -206,7 +206,7 @@ public class ButtonControllerPersonalization : MonoBehaviour
 
     void UpdateConfirmButtonState()
     {
-        Debug.Log(GameController.NameP1);
+        //Debug.Log(GameController.NameP1);
         // Verificamos si se ha seleccionado un ColorButton y si hay texto en el InputField
         bool canProceed = colorButtonSelected &&
                           !string.IsNullOrEmpty(nameInputField.text);

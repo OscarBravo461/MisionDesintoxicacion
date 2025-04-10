@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GCJuego1 : MonoBehaviour {
     //RandomsUnity -->  https://rusbenguzman.medium.com/generating-random-numbers-in-unity-spanish-ddd63e7795e
     public int[] uniqueNumbers = new int[20];
     public Canvas preguntas, ruleta;
     public int Counter = 0;
-
+    public Jugadores InfoJugadores;
+    public GameObject ImagenJugador;
+    public GCJuego turno;
     void Start() {
         uniqueNumbers = GenerateUniqueNumbers();
     }
@@ -24,6 +27,10 @@ public class GCJuego1 : MonoBehaviour {
         return numbers;
     }
     private void Update() {
+        //No deberia estar aqui, pero no encontre donde se cambia el turno
+        Image img = ImagenJugador.GetComponent<Image>();
+        img.sprite = InfoJugadores.imagen[turno.turno - 1].sprite;
+
         if (Input.GetKeyDown(KeyCode.V) && Counter < (uniqueNumbers.Length)) {
             
             bool isActive = !preguntas.gameObject.activeSelf;

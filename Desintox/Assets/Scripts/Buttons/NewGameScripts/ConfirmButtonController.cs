@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using JetBrains.Annotations;
 
 public class ConfirmButtonController : MonoBehaviour
 {
@@ -9,8 +10,9 @@ public class ConfirmButtonController : MonoBehaviour
     public CanvasGroup confirmButtonCanvasGroup;
     public Jugadores InfoJugadores;
     public GameController GC;
-    void Start()
-    {
+    public int conJug = 0;
+    void Start() {
+        InfoJugadores = FindAnyObjectByType<Jugadores>();
         // Al inicio, desactivamos el botón de confirmación
         DisableConfirmButton();
 
@@ -35,9 +37,10 @@ public class ConfirmButtonController : MonoBehaviour
     public void OnConfirmButtonClick()
     {
         InfoJugadores.Cantidaddejugadores = GC.CanJug;
-        InfoJugadores.color = GC.color;
-        InfoJugadores.Playername = GC.PlayerName;
+        InfoJugadores.color[conJug] = GC.color;
+        InfoJugadores.Playername[conJug] = GC.PlayerName;
         //GC.StartRestoreNormalScaleAnimation(GC.BotonSeleccionado);
-        GC.BotonSeleccionado.interactable = false;
+        //GC.BotonSeleccionado.interactable = false;
+        conJug++;
     }
 }

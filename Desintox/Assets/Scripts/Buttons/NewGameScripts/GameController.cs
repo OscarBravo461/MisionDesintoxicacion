@@ -6,16 +6,20 @@ using System; // Necesario para cargar escenas
 
 public class GameController : MonoBehaviour
 {
-    public int CanJug = 0; //Distintor de cantidad de jugadores seleccionados
+    public Jugadores InfoPlayers;
+    public GameObject P1;
+    public GameObject P2;
+    public GameObject P3;
+    public GameObject P4;
+    public int CanJug = 4; //Distintor de cantidad de jugadores seleccionados
     //Info Jugador actual
     public string color = "";
     public string PlayerName = "";
-
     public static Button SelectedButton { get; private set; }
     public Button BotonSeleccionado = SelectedButton;
     public float animationDuration = 0.2f; // Duración de la animación en segundos
-    public static int NumJugadores;
     public static int avatarP1;
+    public static int NumJugadores;
     public static int avatarP2;
     public static int avatarP3;
     public static int avatarP4;
@@ -30,6 +34,20 @@ public class GameController : MonoBehaviour
     public Vector3 dimensionCComun = new Vector3(4, 4, 4);
     public Vector3 dimensionAmplia = new Vector3 (5, 5, 5);
 
+    //Corroborar que existan la cantidad que deberian
+    public void Start() {
+        Jugadores InfoPlayers;
+        InfoPlayers = FindAnyObjectByType<Jugadores>();
+        switch (CanJug) {
+            case 2:
+                Destroy(P3);
+                Destroy(P4);
+                break;
+            case 3:
+                Destroy(P4);
+                break;
+        }
+    }
     // Corutina para escalar el botón
     IEnumerator ScaleButton(Button button, Vector3 targetScale)
     {
@@ -52,9 +70,6 @@ public class GameController : MonoBehaviour
                 break;
             case "J4":
                 CanJug = 4;
-                break;
-            default:
-                Debug.Log("Error de cantidad de jugadores");
                 break;
         }
         button.transform.localScale = dimensionAmplia; // Aseguramos que termine en la escala objetivo

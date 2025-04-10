@@ -16,6 +16,7 @@ TagManager:
   - Preguntas
   - Multiple
   - Ruleta
+  - Info
   layers:
   - Default
   - TransparentFX

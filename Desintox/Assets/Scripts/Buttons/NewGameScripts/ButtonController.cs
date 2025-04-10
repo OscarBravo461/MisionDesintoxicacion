@@ -17,6 +17,7 @@ public class ButtonController : MonoBehaviour
     public int NumJug;
     private Button selectedButton;
 
+    public Image imagenSeleccionada;
     void Start()
     {
         // Asignamos los listeners a los botones 
@@ -44,14 +45,17 @@ public class ButtonController : MonoBehaviour
         if (clickedButton == J2)
         {
             NumJug = 2;
+            imagenSeleccionada.sprite = J2.image.sprite;
         }
         else if (clickedButton == J3)
         {
             NumJug = 3;
+            imagenSeleccionada.sprite = J3.image.sprite;
         }
         else if (clickedButton == J4)
         {
             NumJug = 4;
+            imagenSeleccionada.sprite = J4.image.sprite;
         }
         GameController.NumJugadores = NumJug;
     }
