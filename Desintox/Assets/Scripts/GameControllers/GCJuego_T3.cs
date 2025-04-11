@@ -8,8 +8,13 @@ using UnityEngine.UIElements;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 using UnityEngine.UI;
 
-public class GCJuego_T3 : MonoBehaviour
-{
+public class GCJuego_T3 : MonoBehaviour {
+    //Obtener el script de los players
+    public Player script_Player1;
+    public Player_2 script_Player2;
+    public Player_3 script_Player3;
+    public Player_4 script_Player4;
+    public GameObject salir;
     //canva que se activa
     public Canvas dados;
     //tiempo de espera despues de contestar en lo que se cierra la ventana
@@ -42,767 +47,720 @@ public class GCJuego_T3 : MonoBehaviour
     //Variable que guarda si ya hubo un empate para que no pueda existir otro
     public int repe = 0;
     //Funcionamiento del boton
-    public void generar_random_jugadores()
-    {
+
+    //Variables usables para los turnos
+    public void generar_random_jugadores() {
         //Bajo este switch funciona el boton cambiando cada caso con lo que se necesite en el momento
-        switch (turno)
-        {
+        switch (turno) {
             //Los primero 4 casos deciden el numero de los dados de cada jugador
             //Tambien se detecta si se repiten los numeros y evita que un numero se repita 3 veces
             case 1:
-                int r1 =UnityEngine.Random.Range(1, 4);
-                n1= r1;
-                Nj1.text = ""+r1;
+                int r1 = UnityEngine.Random.Range(1, 4);
+                n1 = r1;
+                Nj1.text = "" + r1;
                 turno++;
                 JD.text = "Es turno del jugador 2";
                 break;
             case 2:
-                int r2 =UnityEngine.Random.Range(1, 4);
-                n2=r2;
-                if (n1 == n2)
-                {
-                    sit=1;
-                    //Debug.Log("sit1 Happen");
+                int r2 = UnityEngine.Random.Range(1, 4);
+                n2 = r2;
+                if (n1 == n2) {
+                    sit = 1;
+                    Debug.Log("sit1 Happen");
                     repe++;
                 }
-                Nj2.text = ""+r2;
+                Nj2.text = "" + r2;
 
                 turno++;
                 JD.text = "Es turno del jugador 3";
                 break;
             case 3:
-                int r3 =UnityEngine.Random.Range(1, 4);
+                int r3 = UnityEngine.Random.Range(1, 4);
                 n3 = r3;
-                if (n1 == n3 )
-                {
-                    if (repe > 0)
-                    {
-                        //Debug.Log("Se repitio el caso 3  sit2");
+                if (n1 == n3) {
+                    if (repe > 0) {
+                        Debug.Log("Se repitio el caso 3  sit2");
                         goto case 3;
                     }
-                    sit=2;
+                    sit = 2;
                     repe++;
                     Debug.Log("sit2 Happen");
                 }
-                if (n2 == n3 )
-                {
-                    if (repe>0)
-                    {
-                        //Debug.Log("Se repitio el caso 3 sit3");
+                if (n2 == n3) {
+                    if (repe > 0) {
+                        Debug.Log("Se repitio el caso 3 sit3");
                         goto case 3;
                     }
-                    sit=3;
+                    sit = 3;
                     repe++;
-                    //Debug.Log("sit3 Happen");
+                    Debug.Log("sit3 Happen");
                 }
                 JD.text = "Es turno del jugador 4";
                 Nj3.text = "" + r3;
                 turno++;
                 break;
             case 4:
-                int r4 =UnityEngine.Random.Range(1, 4);
+                int r4 = UnityEngine.Random.Range(1, 4);
                 n4 = r4;
-                if (n1 == n4)
-                {
-                    if (repe > 0)
-                    {
-                        //Debug.Log("Se repitio el caso 4 sit4 1");
+                if (n1 == n4) {
+                    if (repe > 0) {
+                        Debug.Log("Se repitio el caso 4 sit4 1");
                         goto case 4;
                     }
-                    if (repe > 0)
-                    {
-                        //Debug.Log("Se repitio el caso 4 sit4 2");
+                    if (repe > 0) {
+                        Debug.Log("Se repitio el caso 4 sit4 2");
                         goto case 4;
                     }
-                    sit=4;
+                    sit = 4;
                     repe++;
-                    //Debug.Log("sit4 Happen");
+                    Debug.Log("sit4 Happen");
                 }
-                if (n2 == n4 )
-                {
-                    if (repe > 0)
-                    {
-                        //Debug.Log("Se repitio el caso 4 sit5 1");
+                if (n2 == n4) {
+                    if (repe > 0) {
+                        Debug.Log("Se repitio el caso 4 sit5 1");
                         goto case 4;
                     }
-                    if (repe > 0)
-                    {
-                        //Debug.Log("Se repitio el caso 4 sit5 2");
+                    if (repe > 0) {
+                        Debug.Log("Se repitio el caso 4 sit5 2");
                         goto case 4;
                     }
-                    sit=5;
+                    sit = 5;
                     repe++;
-                    //Debug.Log("sit5 Happen");
+                    Debug.Log("sit5 Happen");
                 }
-                if (n3 == n4 )
-                {
-                    if (repe > 0)
-                    {
-                        //Debug.Log("Se repitio el caso 4 sit6 1");
+                if (n3 == n4) {
+                    if (repe > 0) {
+                        Debug.Log("Se repitio el caso 4 sit6 1");
                         goto case 4;
                     }
-                    if (repe > 0)
-                    {
-                        //Debug.Log("Se repitio el caso 4 sit6 2");
+                    if (repe > 0) {
+                        Debug.Log("Se repitio el caso 4 sit6 2");
                         goto case 4;
                     }
-                    sit=6;
+                    sit = 6;
                     repe++;
-                    //Debug.Log("sit6 Happen");
+                    Debug.Log("sit6 Happen");
 
                 }
                 Nj4.text = "" + r4;
                 turno = 0;
                 //A partir de aqui los siguientes if deciden el curso de accion dependiendo la repeticion que hubo
-                
+
                 decidir_orden();
                 break;
-                //Estos casos ejecutan los nuevos tiros para determinar el orden de los otros dos jugadores
-                //la variable sit2 define los casos de si se tiene que decidir el 1,2 lugar/ 2,3 lugar/ 3,4 lugar segun el primer tiro de dados
+            //Estos casos ejecutan los nuevos tiros para determinar el orden de los otros dos jugadores
+            //la variable sit2 define los casos de si se tiene que decidir el 1,2 lugar/ 2,3 lugar/ 3,4 lugar segun el primer tiro de dados
             case 5:
-                if (sit2 == 1)
-                {
-                    if (turno2 == 1)
-                    {
+                if (sit2 == 1) {
+                    if (turno2 == 1) {
                         r1 = UnityEngine.Random.Range(1, 4);
                         n1 = r1;
                         Nj1.text = "" + r1;
                         turno2++;
                         JD.text = ("Es turno del Jugador 2");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r2 = UnityEngine.Random.Range(1, 4);
                         n1 = r2;
-                        if (n1 == n2)
-                        {
-                            //Debug.Log("Se repitio el tiro del J2");
+                        if (n1 == n2) {
+                            Debug.Log("Se repitio el tiro del J2");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 5;
                         }
                         Nj2.text = "" + r2;
-                        if (n1 > n2)
-                        {
+                        if (n1 > n2) {
                             T1.text = ("3");
+                            script_Player1.turno = 3;
+
                             T2.text = ("4");
-                            //Debug.Log("Tercer turno J1, Cuarto Turno J2");
-                        }
-                        else
-                        {
+                            script_Player2.turno = 4;
+                            Debug.Log("Tercer turno J1, Cuarto Turno J2");
+                        } else {
                             T2.text = ("4");
+                            script_Player2.turno = 4;
+
                             T1.text = ("3");
-                            //Debug.Log("Cuarto turno J2, Tercer Turno J1");
+                            script_Player1.turno = 3;
+                            Debug.Log("Cuarto turno J2, Tercer Turno J1");
                         }
                         turno2++;
                     }
-                }
-                else if(sit2==2)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 2) {
+                    if (turno2 == 1) {
                         r1 = UnityEngine.Random.Range(1, 4);
                         n1 = r1;
                         Nj1.text = "" + r1;
                         turno2++;
                         JD.text = ("Es turno del Jugador 2");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r2 = UnityEngine.Random.Range(1, 4);
                         n1 = r2;
-                        if (n1 == n2)
-                        {
-                            //Debug.Log("Se repitio el tiro del J2");
+                        if (n1 == n2) {
+                            Debug.Log("Se repitio el tiro del J2");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 5;
                         }
                         Nj2.text = "" + r2;
-                        if (n1 > n2)
-                        {
+                        if (n1 > n2) {
                             T1.text = ("1");
+                            script_Player1.turno = 1;
+                            script_Player1.enTurno = true;
+
                             T2.text = ("2");
-                            //Debug.Log("Primer turno J1, Segundo Turno J2");
-                        }
-                        else
-                        {
+                            script_Player2.turno = 2;
+                            Debug.Log("Primer turno J1, Segundo Turno J2");
+                        } else {
                             T2.text = ("2");
+                            script_Player2.turno = 2;
+
                             T1.text = ("1");
-                            //Debug.Log("Segundo turno J2, Primer Turno J1");
+                            script_Player1.turno = 1;
+                            script_Player1.enTurno = true;
+                            Debug.Log("Segundo turno J2, Primer Turno J1");
                         }
                         turno2++;
                     }
-                }
-                else if (sit2 == 3)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 3) {
+                    if (turno2 == 1) {
                         r1 = UnityEngine.Random.Range(1, 4);
                         n1 = r1;
                         Nj1.text = "" + r1;
                         turno2++;
                         JD.text = ("Es turno del Jugador 2");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r2 = UnityEngine.Random.Range(1, 4);
                         n1 = r2;
-                        if (n1 == n2)
-                        {
-                            //Debug.Log("Se repitio el tiro del J2");
+                        if (n1 == n2) {
+                            Debug.Log("Se repitio el tiro del J2");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 5;
                         }
                         Nj2.text = "" + r2;
-                        if (n1 > n2)
-                        {
+                        if (n1 > n2) {
                             T1.text = ("2");
+                            script_Player1.turno = 2;
+
                             T2.text = ("3");
-                            //Debug.Log("Primer turno J1, Segundo Turno J2");
-                        }
-                        else
-                        {
+                            script_Player2.turno = 3;
+                            Debug.Log("Primer turno J1, Segundo Turno J2");
+                        } else {
                             T2.text = ("2");
+                            script_Player2.turno = 2;
+
                             T1.text = ("3");
-                            //Debug.Log("Segundo turno J2, Tercero Turno J1");
+                            script_Player1.turno = 3;
+                            Debug.Log("Segundo turno J2, Tercero Turno J1");
                         }
                         turno2++;
                     }
                 }
                 break;
             case 6:
-                if (sit2 == 1)
-                {
-                    if (turno2 == 1)
-                    {
+                if (sit2 == 1) {
+                    if (turno2 == 1) {
                         r1 = UnityEngine.Random.Range(1, 4);
                         n1 = r1;
                         Nj1.text = "" + r1;
                         turno2++;
                         JD.text = ("Es turno del Jugador 3");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r3 = UnityEngine.Random.Range(1, 3);
                         n3 = r3;
-                        if (n1 == n3)
-                        {
-                            //Debug.Log("Se repitio el tiro del J3");
+                        if (n1 == n3) {
+                            Debug.Log("Se repitio el tiro del J3");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 6;
                         }
                         Nj3.text = "" + r3;
-                        if (n1 > n3)
-                        {
+                        if (n1 > n3) {
                             T1.text = ("3");
+                            script_Player1.turno = 3;
+
                             T3.text = ("4");
-                            //Debug.Log("Tercer turno J1, Cuarto Turno J3");
-                        }
-                        else
-                        {
+                            script_Player3.turno = 4;
+                            Debug.Log("Tercer turno J1, Cuarto Turno J3");
+                        } else {
                             T3.text = ("3");
+                            script_Player3.turno = 3;
+
                             T1.text = ("4");
-                            //Debug.Log("Tercer turno J3, Cuarto Turno J1");
+                            script_Player1.turno = 4;
+                            Debug.Log("Tercer turno J3, Cuarto Turno J1");
                         }
                         turno2++;
                     }
-                }
-                else if(sit2==2)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 2) {
+                    if (turno2 == 1) {
                         r1 = UnityEngine.Random.Range(1, 4);
                         n1 = r1;
                         Nj1.text = "" + r1;
                         turno2++;
                         JD.text = ("Es turno del Jugador 3");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r3 = UnityEngine.Random.Range(1, 3);
                         n3 = r3;
-                        if (n1 == n3)
-                        {
-                            //Debug.Log("Se repitio el tiro del J3");
+                        if (n1 == n3) {
+                            Debug.Log("Se repitio el tiro del J3");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 6;
                         }
                         Nj3.text = "" + r3;
-                        if (n1 > n3)
-                        {
+                        if (n1 > n3) {
                             T1.text = ("1");
+                            script_Player1.turno = 1;
+                            script_Player1.enTurno = true;
+
                             T3.text = ("2");
-                            //Debug.Log("Primer turno J1, Segundo Turno J3");
-                        }
-                        else
-                        {
+                            script_Player3.turno = 2;
+                            Debug.Log("Primer turno J1, Segundo Turno J3");
+                        } else {
                             T3.text = ("1");
+                            script_Player3.turno = 1;
+                            script_Player3.enTurno = true;
+
                             T1.text = ("2");
-                            //Debug.Log("Primer turno J3, Segundo Turno J1");
+                            script_Player1.turno = 2;
+                            Debug.Log("Primer turno J3, Segundo Turno J1");
                         }
                         turno2++;
                     }
-                }
-                else if (sit2 == 3)
-                {
+                } else if (sit2 == 3) {
                     r3 = UnityEngine.Random.Range(1, 3);
                     n3 = r3;
-                    if (n1 == n3)
-                    {
-                        //Debug.Log("Se repitio el tiro del J3");
+                    if (n1 == n3) {
+                        Debug.Log("Se repitio el tiro del J3");
                         //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                         goto case 6;
                     }
                     Nj3.text = "" + r3;
-                    if (n1 > n3)
-                    {
+                    if (n1 > n3) {
                         T1.text = ("2");
+                        script_Player1.turno = 2;
+
                         T3.text = ("3");
-                        //Debug.Log("Segundo turno J1, Cuarto Turno J3");
-                    }
-                    else
-                    {
+                        script_Player3.turno = 3;
+                        Debug.Log("Segundo turno J1, Cuarto Turno J3");
+                    } else {
                         T3.text = ("2");
+                        script_Player3.turno = 2;
+
                         T1.text = ("3");
-                        //Debug.Log("Segundo turno J3, Cuarto Turno J1");
+                        script_Player1.turno = 3;
+                        Debug.Log("Segundo turno J3, Cuarto Turno J1");
                     }
                     turno2++;
                 }
                 break;
             case 7:
-                if (sit2 == 1)
-                {
-                    if (turno2 == 1)
-                    {
+                if (sit2 == 1) {
+                    if (turno2 == 1) {
                         r2 = UnityEngine.Random.Range(1, 4);
                         n2 = r2;
                         Nj2.text = "" + r2;
                         turno2++;
                         JD.text = ("Es turno del Jugador 2");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r3 = UnityEngine.Random.Range(1, 3);
                         n3 = r3;
-                        if (n2 == n3)
-                        {
-                            //Debug.Log("Se repitio el tiro del J3");
+                        if (n2 == n3) {
+                            Debug.Log("Se repitio el tiro del J3");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 7;
                         }
                         Nj3.text = "" + r3;
                         turno2++;
-                        if (n2 > n3)
-                        {
+                        if (n2 > n3) {
                             T2.text = ("3");
+                            script_Player2.turno = 3;
+
                             T3.text = ("4");
-                            //Debug.Log("Tercer turno J2, Cuarto Turno J3");
-                        }
-                        else
-                        {
+                            script_Player3.turno = 4;
+                            Debug.Log("Tercer turno J2, Cuarto Turno J3");
+                        } else {
                             T3.text = ("3");
+                            script_Player3.turno = 3;
+
                             T2.text = ("4");
-                            //Debug.Log("Cuarto turno J3, Tercer Turno J2");
+                            script_Player2.turno = 4;
+                            Debug.Log("Cuarto turno J3, Tercer Turno J2");
                         }
                     }
-                }
-                else if(sit2==2)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 2) {
+                    if (turno2 == 1) {
                         r2 = UnityEngine.Random.Range(1, 4);
                         n2 = r2;
                         Nj2.text = "" + r2;
                         turno2++;
                         JD.text = ("Es turno del Jugador 2");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r3 = UnityEngine.Random.Range(1, 3);
                         n3 = r3;
-                        if (n2 == n3)
-                        {
-                            //Debug.Log("Se repitio el tiro del J3");
+                        if (n2 == n3) {
+                            Debug.Log("Se repitio el tiro del J3");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 7;
                         }
                         Nj3.text = "" + r3;
                         turno2++;
-                        if (n2 > n3)
-                        {
+                        if (n2 > n3) {
                             T2.text = ("1");
+                            script_Player2.turno = 1;
+                            script_Player2.enTurno = true;
+
                             T3.text = ("2");
-                            //Debug.Log("Primer turno J2, Segundo Turno J3");
-                        }
-                        else
-                        {
+                            script_Player3.turno = 2;
+                            Debug.Log("Primer turno J2, Segundo Turno J3");
+                        } else {
                             T3.text = ("1");
+                            script_Player3.turno = 1;
+                            script_Player3.enTurno = true;
+
                             T2.text = ("2");
-                            //Debug.Log("Segundo turno J3, Primer Turno J2");
+                            script_Player2.turno = 2;
+                            Debug.Log("Segundo turno J3, Primer Turno J2");
                         }
                     }
-                }
-                else if (sit2 == 3)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 3) {
+                    if (turno2 == 1) {
                         r2 = UnityEngine.Random.Range(1, 4);
                         n2 = r2;
                         Nj2.text = "" + r2;
                         turno2++;
                         JD.text = ("Es turno del Jugador 2");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r3 = UnityEngine.Random.Range(1, 3);
                         n3 = r3;
-                        if (n2 == n3)
-                        {
-                            //Debug.Log("Se repitio el tiro del J3");
+                        if (n2 == n3) {
+                            Debug.Log("Se repitio el tiro del J3");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 7;
                         }
                         Nj3.text = "" + r3;
                         turno2++;
-                        if (n2 > n3)
-                        {
+                        if (n2 > n3) {
                             T2.text = ("2");
+                            script_Player2.turno = 2;
+
                             T3.text = ("3");
-                            //Debug.Log("Segundo turno J2, Cuarto Turno J3");
-                        }
-                        else
-                        {
+                            script_Player3.turno = 3;
+                            Debug.Log("Segundo turno J2, Cuarto Turno J3");
+                        } else {
                             T3.text = ("2");
+                            script_Player3.turno = 2;
+
                             T2.text = ("3");
-                            //Debug.Log("Segundo turno J3, Cuarto Turno J2");
+                            script_Player2.turno = 3;
+                            Debug.Log("Segundo turno J3, Cuarto Turno J2");
                         }
                     }
                 }
                 break;
             case 8:
-                if (sit2 == 1)
-                {
-                    if (turno2 == 1)
-                    {
+                if (sit2 == 1) {
+                    if (turno2 == 1) {
                         r1 = UnityEngine.Random.Range(1, 4);
                         n1 = r1;
                         Nj1.text = "" + r1;
                         turno2++;
                         JD.text = ("Es turno del Jugador 4");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r4 = UnityEngine.Random.Range(1, 3);
                         n4 = r4;
-                        if (n1 == n4)
-                        {
-                            //Debug.Log("Se repitio el tiro del J4");
+                        if (n1 == n4) {
+                            Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 8;
                         }
                         Nj4.text = "" + r4;
-                        if (n1 > n4)
-                        {
+                        if (n1 > n4) {
                             T1.text = ("3");
+                            script_Player1.turno = 3;
+
                             T4.text = ("4");
-                            //Debug.Log("Tercer turno J1, Cuarto Turno J4");
-                        }
-                        else
-                        {
+                            script_Player4.turno = 4;
+                            Debug.Log("Tercer turno J1, Cuarto Turno J4");
+                        } else {
                             T4.text = ("3");
+                            script_Player4.turno = 3;
+
                             T1.text = ("4");
-                            //Debug.Log("Cuarto turno J4, Tercer Turno J1");
+                            script_Player1.turno = 4;
+                            Debug.Log("Cuarto turno J4, Tercer Turno J1");
                         }
                         turno2++;
                     }
-                }
-                else if(sit2==2)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 2) {
+                    if (turno2 == 1) {
                         r1 = UnityEngine.Random.Range(1, 4);
                         n1 = r1;
                         Nj1.text = "" + r1;
                         turno2++;
                         JD.text = ("Es turno del Jugador 4");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r4 = UnityEngine.Random.Range(1, 3);
                         n4 = r4;
-                        if (n1 == n4)
-                        {
-                            //Debug.Log("Se repitio el tiro del J4");
+                        if (n1 == n4) {
+                            Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 8;
                         }
                         Nj4.text = "" + r4;
-                        if (n1 > n4)
-                        {
+                        if (n1 > n4) {
                             T1.text = ("1");
+                            script_Player1.turno = 1;
+                            script_Player1.enTurno = true;
+
                             T4.text = ("2");
-                            //Debug.Log("Primer turno J1, Segundo Turno J4");
-                        }
-                        else
-                        {
+                            script_Player4.turno = 2;
+                            Debug.Log("Primer turno J1, Segundo Turno J4");
+                        } else {
                             T4.text = ("1");
+                            script_Player4.turno = 1;
+                            script_Player4.enTurno = true;
+
                             T1.text = ("2");
-                            //Debug.Log("Segundo turno J4, Primer Turno J1");
+                            script_Player1.turno = 2;
+                            Debug.Log("Segundo turno J4, Primer Turno J1");
                         }
                         turno2++;
                     }
-                }
-                else if (sit2 == 3)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 3) {
+                    if (turno2 == 1) {
                         r1 = UnityEngine.Random.Range(1, 4);
                         n1 = r1;
                         Nj1.text = "" + r1;
                         turno2++;
                         JD.text = ("Es turno del Jugador 4");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r4 = UnityEngine.Random.Range(1, 3);
                         n4 = r4;
-                        if (n1 == n4)
-                        {
-                            //Debug.Log("Se repitio el tiro del J4");
+                        if (n1 == n4) {
+                            Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 8;
                         }
                         Nj4.text = "" + r4;
-                        if (n1 > n4)
-                        {
+                        if (n1 > n4) {
                             T1.text = ("2");
+                            script_Player1.turno = 2;
+
                             T4.text = ("3");
-                            //Debug.Log("Segundo turno J1, Tercero Turno J4");
-                        }
-                        else
-                        {
+                            script_Player4.turno = 3;
+                            Debug.Log("Segundo turno J1, Tercero Turno J4");
+                        } else {
                             T4.text = ("2");
+                            script_Player4.turno = 2;
+
                             T1.text = ("3");
-                            //Debug.Log("Segundo turno J4, Tercero Turno J1");
+                            script_Player1.turno = 3;
+                            Debug.Log("Segundo turno J4, Tercero Turno J1");
                         }
                         turno2++;
                     }
                 }
                 break;
             case 9:
-                if (sit2 == 1)
-                {
-                    if (turno2 == 1)
-                    {
+                if (sit2 == 1) {
+                    if (turno2 == 1) {
                         r2 = UnityEngine.Random.Range(1, 4);
                         n2 = r2;
                         Nj2.text = "" + r2;
                         turno2++;
                         JD.text = ("Es turno del Jugador 2");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r4 = UnityEngine.Random.Range(1, 3);
                         n4 = r4;
-                        if (n2 == n4)
-                        {
-                            //Debug.Log("Se repitio el tiro del J4");
+                        if (n2 == n4) {
+                            Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 9;
                         }
                         Nj4.text = "" + r4;
                         turno2++;
-                        if (n2 > n4)
-                        {
+                        if (n2 > n4) {
                             T2.text = ("3");
+                            script_Player2.turno = 3;
+
                             T4.text = ("4");
-                            //Debug.Log("Tercer turno J2, Cuarto Turno J4");
-                        }
-                        else
-                        {
+                            script_Player4.turno = 4;
+                            Debug.Log("Tercer turno J2, Cuarto Turno J4");
+                        } else {
                             T4.text = ("3");
+                            script_Player4.turno = 3;
+
                             T2.text = ("4");
-                            //Debug.Log("Cuarto turno J4, Tercer Turno J2");
+                            script_Player2.turno = 4;
+                            Debug.Log("Cuarto turno J4, Tercer Turno J2");
                         }
                     }
-                }
-                else if (sit2==2)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 2) {
+                    if (turno2 == 1) {
                         r2 = UnityEngine.Random.Range(1, 4);
                         n2 = r2;
                         Nj2.text = "" + r2;
                         turno2++;
                         JD.text = ("Es turno del Jugador 2");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r4 = UnityEngine.Random.Range(1, 3);
                         n4 = r4;
-                        if (n2 == n4)
-                        {
-                            //Debug.Log("Se repitio el tiro del J4");
+                        if (n2 == n4) {
+                            Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 9;
                         }
                         Nj4.text = "" + r4;
                         turno2++;
-                        if (n2 > n4)
-                        {
+                        if (n2 > n4) {
                             T2.text = ("1");
+                            script_Player2.turno = 1;
+                            script_Player2.enTurno = true;
+
                             T4.text = ("2");
-                            //Debug.Log("Primer turno J2, Segundo Turno J4");
-                        }
-                        else
-                        {
+                            script_Player4.turno = 2;
+                            Debug.Log("Primer turno J2, Segundo Turno J4");
+                        } else {
                             T4.text = ("1");
+                            script_Player4.turno = 1;
+                            script_Player4.enTurno = true;
+
                             T2.text = ("2");
-                            //Debug.Log("Segundo turno J4, Primer Turno J2");
+                            script_Player2.turno = 2;
+                            Debug.Log("Segundo turno J4, Primer Turno J2");
                         }
                     }
-                }
-                else if (sit2 == 3)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 3) {
+                    if (turno2 == 1) {
                         r2 = UnityEngine.Random.Range(1, 4);
                         n2 = r2;
                         Nj2.text = "" + r2;
                         turno2++;
                         JD.text = ("Es turno del Jugador 2");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r4 = UnityEngine.Random.Range(1, 3);
                         n4 = r4;
-                        if (n2 == n4)
-                        {
-                            //Debug.Log("Se repitio el tiro del J4");
+                        if (n2 == n4) {
+                            Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 9;
                         }
                         Nj4.text = "" + r4;
                         turno2++;
-                        if (n2 > n4)
-                        {
+                        if (n2 > n4) {
                             T2.text = ("2");
+                            script_Player2.turno = 2;
+
                             T4.text = ("3");
-                            //Debug.Log("Segundo turno J2, Tercero Turno J4");
-                        }
-                        else
-                        {
+                            script_Player4.turno = 3;
+                            Debug.Log("Segundo turno J2, Tercero Turno J4");
+                        } else {
                             T4.text = ("2");
+                            script_Player4.turno = 2;
+
                             T2.text = ("3");
-                            //Debug.Log("Segundo turno J4, Tercero Turno J2");
+                            script_Player2.turno = 3;
+                            Debug.Log("Segundo turno J4, Tercero Turno J2");
                         }
                     }
                 }
                 break;
             case 10:
-                if (sit2 == 1)
-                {
-                    if (turno2 == 1)
-                    {
+                if (sit2 == 1) {
+                    if (turno2 == 1) {
                         r3 = UnityEngine.Random.Range(1, 4);
                         n3 = r3;
                         Nj3.text = "" + r3;
                         turno2++;
                         JD.text = ("Es turno del Jugador 4");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r4 = UnityEngine.Random.Range(1, 3);
                         n4 = r4;
-                        if (n3 == n4)
-                        {
-                            //Debug.Log("Se repitio el tiro del J4");
+                        if (n3 == n4) {
+                            Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 10;
                         }
                         Nj4.text = "" + r4;
-                        if (n3 > n4)
-                        {
+                        if (n3 > n4) {
                             T3.text = ("3");
+                            script_Player3.turno = 3;
+
                             T4.text = ("4");
-                            //Debug.Log("Tercer turno J3, Cuarto Turno J4");
-                        }
-                        else
-                        {
+                            script_Player4.turno = 4;
+                            Debug.Log("Tercer turno J3, Cuarto Turno J4");
+                        } else {
                             T4.text = ("3");
+                            script_Player4.turno = 3;
+
                             T3.text = ("4");
-                            //Debug.Log("Cuarto turno J4, Tercer Turno J3");
+                            script_Player3.turno = 4;
+                            Debug.Log("Cuarto turno J4, Tercer Turno J3");
                         }
                         turno2++;
                     }
-                }
-                else if (sit2 == 2)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 2) {
+                    if (turno2 == 1) {
                         r3 = UnityEngine.Random.Range(1, 4);
                         n3 = r3;
                         Nj3.text = "" + r3;
                         turno2++;
                         JD.text = ("Es turno del Jugador 4");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r4 = UnityEngine.Random.Range(1, 3);
                         n4 = r4;
-                        if (n3 == n4)
-                        {
-                            //Debug.Log("Se repitio el tiro del J4");
+                        if (n3 == n4) {
+                            Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 10;
                         }
                         Nj4.text = "" + r4;
-                        if (n3 > n4)
-                        {
+                        if (n3 > n4) {
                             T3.text = ("1");
+                            script_Player3.turno = 1;
+                            script_Player3.enTurno = true;
+
                             T4.text = ("2");
-                            //Debug.Log("Primer turno J3, Segundo Turno J4");
-                        }
-                        else
-                        {
+                            script_Player4.turno = 2;
+                            Debug.Log("Primer turno J3, Segundo Turno J4");
+                        } else {
                             T4.text = ("1");
+                            script_Player4.turno = 1;
+                            script_Player4.enTurno = true;
+
                             T3.text = ("2");
-                            //Debug.Log("Segundo turno J4, Primer Turno J3");
+                            script_Player3.turno = 2;
+                            Debug.Log("Segundo turno J4, Primer Turno J3");
                         }
                         turno2++;
                     }
-                }
-                else if (sit2 == 3)
-                {
-                    if (turno2 == 1)
-                    {
+                } else if (sit2 == 3) {
+                    if (turno2 == 1) {
                         r3 = UnityEngine.Random.Range(1, 4);
                         n3 = r3;
                         Nj3.text = "" + r3;
                         turno2++;
                         JD.text = ("Es turno del Jugador 4");
-                    }
-                    else if (turno2 == 2)
-                    {
+                    } else if (turno2 == 2) {
                         r4 = UnityEngine.Random.Range(1, 3);
                         n4 = r4;
-                        if (n3 == n4)
-                        {
-                            //Debug.Log("Se repitio el tiro del J4");
+                        if (n3 == n4) {
+                            Debug.Log("Se repitio el tiro del J4");
                             //Este Goto solo se ejecuta si el segundo numero lanzado es el mismo que el primero
                             goto case 10;
                         }
                         Nj4.text = "" + r4;
-                        if (n3 > n4)
-                        {
+                        if (n3 > n4) {
                             T3.text = ("2");
+                            script_Player3.turno = 2;
+
                             T4.text = ("3");
-                            //Debug.Log("Segundo turno J3, Tercero Turno J4");
-                        }
-                        else
-                        {
+                            script_Player4.turno = 3;
+                            Debug.Log("Segundo turno J3, Tercero Turno J4");
+                        } else {
                             T4.text = ("2");
+                            script_Player4.turno = 2;
+
                             T3.text = ("3");
-                            //Debug.Log("Segundo turno J4, Tercero Turno J3");
+                            script_Player3.turno = 3;
+                            Debug.Log("Segundo turno J4, Tercero Turno J3");
                         }
                         turno2++;
                     }
@@ -813,374 +771,415 @@ public class GCJuego_T3 : MonoBehaviour
 
     //Este metodo se encarga de definir los primeros,segundos,terceros y cuartos lugares dependiendo como hayan sido los dados hasta ahora y manda a los casos para repetir los tiros correspondientes
     //Segun los casos le da un valor a la variable sit2 para decidir los lugares que quedaron indefinidos
-    public void decidir_orden()
-    {
+    public void decidir_orden() {
         //sit es la variable que define que jugadores tuvieron un empate para definir el orden de lso otros dos
-        switch (sit)
-        {
+        switch (sit) {
             case 1:
-                if (n1 ==3)
-                {
-                    if (n3 > n4)
-                    {
+                if (n1 == 3) {
+                    if (n3 > n4) {
                         T3.text = ("3");
+                        script_Player3.turno = 3;
+
                         T4.text = ("4");
-                        //Debug.Log("Tercer turno J3, Cuarto Turno J4");
+                        script_Player4.turno = 4;
+                        Debug.Log("Tercer turno J3, Cuarto Turno J4");
                         sit2 = 2;
-                    }
-                    else
-                    {
+                    } else {
                         T4.text = ("3");
+                        script_Player4.turno = 3;
+
                         T3.text = ("4");
-                        //Debug.Log("Cuarto turno J4, Tercer Turno J3");
+                        script_Player3.turno = 4;
+
+                        Debug.Log("Cuarto turno J4, Tercer Turno J3");
                         sit2 = 2;
                     }
-                }
-                else if (n1==1)
-                {
-                    if (n3 > n4)
-                    {
+                } else if (n1 == 1) {
+                    if (n3 > n4) {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T4.text = ("2");
-                        //Debug.Log("Primer turno J3, Segundo Turno J4");
+                        script_Player4.turno = 2;
+                        Debug.Log("Primer turno J3, Segundo Turno J4");
                         sit2 = 1;
-                    }
-                    else
-                    {
+                    } else {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T3.text = ("2");
-                        //Debug.Log("Primer turno J4, Segundo Turno J3");
+                        script_Player3.turno = 2;
+                        Debug.Log("Primer turno J4, Segundo Turno J3");
                         sit2 = 1;
                     }
-                }
-                else if (n1 == 2)
-                {
-                    if (n3 > n4)
-                    {
+                } else if (n1 == 2) {
+                    if (n3 > n4) {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T4.text = ("4");
-                        //Debug.Log("Primer turno J3, Cuarto Turno J4");
+                        script_Player4.turno = 4;
+                        Debug.Log("Primer turno J3, Cuarto Turno J4");
                         sit2 = 3;
-                    }
-                    else
-                    {
+                    } else {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T3.text = ("4");
-                        //Debug.Log("Primer turno J4, Cuarto Turno J3");
+                        script_Player3.turno = 4;
+                        Debug.Log("Primer turno J4, Cuarto Turno J3");
                         sit2 = 3;
                     }
                 }
-                //Debug.Log("Jugadores 1 y 2 repiten tirada");
+                Debug.Log("Jugadores 1 y 2 repiten tirada");
                 JD.text = ("Es turno del Jugador 1");
                 turno = 5;
                 break;
             case 2:
-                if (n1==3)
-                {
-                    if (n2 > n4)
-                    {
+                if (n1 == 3) {
+                    if (n2 > n4) {
                         T2.text = ("3");
+                        script_Player2.turno = 3;
+
                         T4.text = ("4");
-                        //Debug.Log("Tercer turno J2, Cuarto Turno J4");
+                        script_Player4.turno = 4;
+                        Debug.Log("Tercer turno J2, Cuarto Turno J4");
                         sit2 = 2;
-                    }
-                    else
-                    {
+                    } else {
                         T4.text = ("3");
+                        script_Player4.turno = 3;
+
                         T2.text = ("4");
-                        //Debug.Log("Cuarto turno J4, Tercer Turno J2");
+                        script_Player2.turno = 4;
+                        Debug.Log("Cuarto turno J4, Tercer Turno J2");
                         sit2 = 2;
                     }
-                }
-                else if (n1==1)
-                {
-                    if (n2 > n4)
-                    {
+                } else if (n1 == 1) {
+                    if (n2 > n4) {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T4.text = ("2");
-                        //Debug.Log("Primer turno J2, Segundo Turno J4");
+                        script_Player4.turno = 2;
+                        Debug.Log("Primer turno J2, Segundo Turno J4");
                         sit2 = 1;
-                    }
-                    else
-                    {
+                    } else {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T2.text = ("2");
-                        //Debug.Log("Primer turno J4, Segundo Turno J2");
+                        script_Player2.turno = 2;
+                        Debug.Log("Primer turno J4, Segundo Turno J2");
                         sit2 = 1;
                     }
-                }
-                else if (n1 == 2)
-                {
-                    if (n2 > n4)
-                    {
+                } else if (n1 == 2) {
+                    if (n2 > n4) {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T4.text = ("4");
-                        //Debug.Log("Primer turno J2, Cuarto Turno J4");
+                        script_Player4.turno = 4;
+                        Debug.Log("Primer turno J2, Cuarto Turno J4");
                         sit2 = 3;
-                    }
-                    else
-                    {
+                    } else {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T2.text = ("4");
-                        //Debug.Log("Primer turno J4, Cuarto Turno J2");
+                        script_Player2.turno = 4;
+                        Debug.Log("Primer turno J4, Cuarto Turno J2");
                         sit2 = 3;
                     }
                 }
-                //Debug.Log("Jugadores 1 y 3 repiten tirada");
+                Debug.Log("Jugadores 1 y 3 repiten tirada");
                 turno = 6;
                 JD.text = ("Es turno del Jugador 1");
                 break;
             case 3:
-                if (n2==3)
-                {
-                    if (n1 > n4)
-                    {
+                if (n2 == 3) {
+                    if (n1 > n4) {
                         T1.text = ("3");
+                        script_Player1.turno = 3;
+
                         T4.text = ("4");
-                        //Debug.Log("Tercer turno J1, Cuarto Turno J4");
+                        script_Player4.turno = 4;
+                        Debug.Log("Tercer turno J1, Cuarto Turno J4");
                         sit2 = 2;
 
-                    }
-                    else
-                    {
+                    } else {
                         T4.text = ("3");
+                        script_Player4.turno = 3;
+
                         T1.text = ("4");
-                        //Debug.Log("Cuarto turno J4, Tercer Turno J1");
+                        script_Player1.turno = 4;
+                        Debug.Log("Cuarto turno J4, Tercer Turno J1");
                         sit2 = 2;
                     }
-                }
-                else if(n2==1)
-                {
-                    if (n1 > n4)
-                    {
+                } else if (n2 == 1) {
+                    if (n1 > n4) {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T4.text = ("2");
-                        //Debug.Log("Primer turno J1, Segundo Turno J4");
+                        script_Player4.turno = 2;
+                        Debug.Log("Primer turno J1, Segundo Turno J4");
                         sit2 = 1;
-                    }
-                    else
-                    {
+                    } else {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T1.text = ("2");
-                        //Debug.Log("Primer turno J4, Segundo Turno J1");
+                        script_Player1.turno = 2;
+                        Debug.Log("Primer turno J4, Segundo Turno J1");
                         sit2 = 1;
                     }
-                }
-                else if (n2 == 3)
-                {
-                    if (n1 > n4)
-                    {
+                } else if (n2 == 3) {
+                    if (n1 > n4) {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T4.text = ("4");
-                        //Debug.Log("Primer turno J1, Cuarto Turno J4");
+                        script_Player4.turno = 4;
+                        Debug.Log("Primer turno J1, Cuarto Turno J4");
                         sit2 = 3;
-                    }
-                    else
-                    {
+                    } else {
                         T4.text = ("1");
+                        script_Player4.turno = 1;
+                        script_Player4.enTurno = true;
+
                         T1.text = ("4");
-                        //Debug.Log("Primer turno J4, Cuarto Turno J1");
+                        script_Player1.turno = 4;
+                        Debug.Log("Primer turno J4, Cuarto Turno J1");
                         sit2 = 3;
                     }
                 }
-                //Debug.Log("Jugadores 2 y 3 repiten tirada");
+                Debug.Log("Jugadores 2 y 3 repiten tirada");
                 turno = 7;
                 JD.text = ("Es turno del Jugador 2");
                 break;
             case 4:
-                if (n1==3)
-                {
-                    if (n2 > n3)
-                    {
+                if (n1 == 3) {
+                    if (n2 > n3) {
                         T2.text = ("3");
+                        script_Player2.turno = 3;
+
                         T3.text = ("4");
-                        //Debug.Log("Tercer turno J2, Cuarto Turno J3");
+                        script_Player3.turno = 4;
+                        Debug.Log("Tercer turno J2, Cuarto Turno J3");
                         sit2 = 2;
-                    }
-                    else
-                    {
+                    } else {
                         T3.text = ("3");
+                        script_Player3.turno = 3;
+
                         T2.text = ("4");
-                        //Debug.Log("Cuarto turno J3, Tercer Turno J2");
+                        script_Player2.turno = 4;
+                        Debug.Log("Cuarto turno J3, Tercer Turno J2");
                         sit2 = 2;
                     }
-                }
-                else if(n1==1)
-                {
-                    if (n2 > n3)
-                    {
+                } else if (n1 == 1) {
+                    if (n2 > n3) {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T3.text = ("2");
-                        //Debug.Log("Primer turno J2, Segundo Turno J3");
+                        script_Player3.turno = 2;
+                        Debug.Log("Primer turno J2, Segundo Turno J3");
                         sit2 = 1;
-                    }
-                    else
-                    {
+                    } else {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T2.text = ("2");
-                        //Debug.Log("Primer turno J3, Segundo Turno J2");
+                        script_Player2.turno = 2;
+                        Debug.Log("Primer turno J3, Segundo Turno J2");
                         sit2 = 1;
                     }
-                }
-                else if (n1 == 2)
-                {
-                    if (n2 > n3)
-                    {
+                } else if (n1 == 2) {
+                    if (n2 > n3) {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T3.text = ("4");
-                        //Debug.Log("Primer turno J2, Cuarto Turno J3");
+                        script_Player3.turno = 4;
+                        Debug.Log("Primer turno J2, Cuarto Turno J3");
                         sit2 = 3;
-                    }
-                    else
-                    {
+                    } else {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T2.text = ("4");
-                        //Debug.Log("Primer turno J3, Cuarto Turno J2");
+                        script_Player2.turno = 4;
+                        Debug.Log("Primer turno J3, Cuarto Turno J2");
                         sit2 = 3;
                     }
                 }
-                //Debug.Log("Jugadores 1 y 4 repiten tirada");
+                Debug.Log("Jugadores 1 y 4 repiten tirada");
                 turno = 8;
                 JD.text = ("Es turno del Jugador 1");
                 break;
             case 5:
-                if (n4==3)
-                {
-                    if (n1 > n3)
-                    {
+                if (n4 == 3) {
+                    if (n1 > n3) {
                         T1.text = ("3");
+                        script_Player1.turno = 3;
+
                         T3.text = ("4");
-                        //Debug.Log("Tercer turno J1, Cuarto Turno J3");
+                        script_Player3.turno = 4;
+                        Debug.Log("Tercer turno J1, Cuarto Turno J3");
                         sit2 = 2;
-                    }
-                    else
-                    {
+                    } else {
                         T3.text = ("3");
+                        script_Player3.turno = 3;
+
                         T1.text = ("4");
-                        //Debug.Log("Cuarto turno J3, Tercer Turno J1");
+                        script_Player1.turno = 4;
+                        Debug.Log("Cuarto turno J3, Tercer Turno J1");
                         sit2 = 2;
                     }
-                }
-                else if(n4==1)
-                {
-                    if (n1 > n3)
-                    {
+                } else if (n4 == 1) {
+                    if (n1 > n3) {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T3.text = ("2");
-                        //Debug.Log("Primer turno J1, Segundo Turno J3");
+                        script_Player3.turno = 2;
+                        Debug.Log("Primer turno J1, Segundo Turno J3");
                         sit2 = 1;
-                    }
-                    else
-                    {
+                    } else {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T1.text = ("2");
-                        //Debug.Log("Primer turno J3, Segundo Turno J1");
+                        script_Player1.turno = 2;
+                        Debug.Log("Primer turno J3, Segundo Turno J1");
                         sit2 = 1;
                     }
-                }
-                else if (n4 == 2)
-                {
-                    if (n1 > n3)
-                    {
+                } else if (n4 == 2) {
+                    if (n1 > n3) {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T3.text = ("4");
-                        //Debug.Log("Primer turno J1, Segundo Turno J3");
+                        script_Player3.turno = 4;
+                        Debug.Log("Primer turno J1, Segundo Turno J3");
                         sit2 = 3;
-                    }
-                    else
-                    {
+                    } else {
                         T3.text = ("1");
+                        script_Player3.turno = 1;
+                        script_Player3.enTurno = true;
+
                         T1.text = ("4");
-                        //Debug.Log("Cuarto turno J3, Cuarto Turno J1");
+                        script_Player1.turno = 4;
+                        Debug.Log("Cuarto turno J3, Cuarto Turno J1");
                         sit2 = 3;
                     }
                 }
-                //Debug.Log("Jugadores 2 y 4 repiten tirada");
+                Debug.Log("Jugadores 2 y 4 repiten tirada");
                 turno = 9;
                 JD.text = ("Es turno del Jugador 2");
                 break;
             case 6:
-                if (n4==3)
-                {
-                    if (n1 > n2)
-                    {
+                if (n4 == 3) {
+                    if (n1 > n2) {
                         T1.text = ("3");
+                        script_Player1.turno = 3;
+
                         T2.text = ("4");
-                        //Debug.Log("Tercer turno J1, Cuarto Turno J2");
+                        script_Player2.turno = 4;
+                        Debug.Log("Tercer turno J1, Cuarto Turno J2");
                         sit2 = 2;
-                    }
-                    else
-                    {
+                    } else {
                         T2.text = ("3");
+                        script_Player2.turno = 3;
+
                         T1.text = ("4");
-                        //Debug.Log("Cuarto turno J2, Tercer Turno J1");
+                        script_Player1.turno = 4;
+                        Debug.Log("Cuarto turno J2, Tercer Turno J1");
                         sit2 = 2;
                     }
-                }
-                else if(n4==1)
-                {
-                    if(n1 > n2)
-                    {
+                } else if (n4 == 1) {
+                    if (n1 > n2) {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T2.text = ("2");
-                        //Debug.Log("Primer turno J1, Segundo Turno J2");
+                        script_Player2.turno = 2;
+                        Debug.Log("Primer turno J1, Segundo Turno J2");
                         sit2 = 1;
-                    }
-                    else
-                    {
+                    } else {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T1.text = ("2");
-                        //Debug.Log("Primer turno J2, Segundo Turno J1");
+                        script_Player1.turno = 2;
+                        Debug.Log("Primer turno J2, Segundo Turno J1");
                         sit2 = 1;
                     }
-                }
-                else if(n4==2)
-                {
-                    if (n1 > n2)
-                    {
+                } else if (n4 == 2) {
+                    if (n1 > n2) {
                         T1.text = ("1");
+                        script_Player1.turno = 1;
+                        script_Player1.enTurno = true;
+
                         T2.text = ("4");
-                        //Debug.Log("Primer turno J1, Cuarto Turno J2");
+                        script_Player2.turno = 4;
+                        Debug.Log("Primer turno J1, Cuarto Turno J2");
                         sit2 = 3;
-                    }
-                    else
-                    {
+                    } else {
                         T2.text = ("1");
+                        script_Player2.turno = 1;
+                        script_Player2.enTurno = true;
+
                         T1.text = ("4");
-                        //Debug.Log("Primer turno J2, Cuarto Turno J1");
+                        script_Player1.turno = 4;
+                        Debug.Log("Primer turno J2, Cuarto Turno J1");
                         sit2 = 3;
                     }
                 }
-                //Debug.Log("Jugadores 3 y 4 repiten tirada");
+                Debug.Log("Jugadores 3 y 4 repiten tirada");
                 turno = 10;
                 JD.text = ("Es turno del Jugador 3");
                 break;
         }
+        salir.SetActive(true);
     }
-    void Start()
-    {
+    void Start() {
         //Pone de antemano el nombre del primer jugador que tira los dados
-                JD.text = "Es turno del jugador 1";
+        JD.text = "Es turno del jugador 1";
 
     }
 
-    IEnumerator Close(float waitTime)
-    {
+    IEnumerator Close(float waitTime) {
         yield return new WaitForSeconds(waitTime);
         dados.gameObject.SetActive(false);
     }
 
-    void Update()
-    {
+    void Update() {
         //Enciende la ventana para activar el evento o la cierra
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            if (dados.gameObject.activeInHierarchy == false)
-            {
+        if (Input.GetKeyDown(KeyCode.O)) {
+            if (dados.gameObject.activeInHierarchy == false) {
                 dados.gameObject.SetActive(true);
-            }
-            else
-            {
+            } else {
                 dados.gameObject.SetActive(false);
             }
         }
