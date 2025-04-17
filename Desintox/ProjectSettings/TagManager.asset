@@ -17,6 +17,8 @@ TagManager:
   - Multiple
   - Ruleta
   - Info
+  - Retro
+  - Avanza
   layers:
   - Default
   - TransparentFX

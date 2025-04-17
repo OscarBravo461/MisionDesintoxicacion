@@ -11,9 +11,9 @@ using UnityEngine.UI;
 public class GCJuego_T3 : MonoBehaviour {
     //Obtener el script de los players
     public Player script_Player1;
-    public Player_2 script_Player2;
-    public Player_3 script_Player3;
-    public Player_4 script_Player4;
+    public Player script_Player2;
+    public Player script_Player3;
+    public Player script_Player4;
     public GameObject salir;
     //canva que se activa
     public Canvas dados;

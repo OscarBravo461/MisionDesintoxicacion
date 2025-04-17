@@ -3260,7 +3260,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9607844, g: 0.91372555, b: 0.5294118, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3356,16 +3356,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 253798304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: febc269aae88a4340ab33fad1d3d2f0d, type: 3}
+  m_Script: {fileID: 11500000, guid: dedbac7e85bf8ac4a9a7248629cf696a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script_Player1: {fileID: 1283408333}
-  script_Player2: {fileID: 1700172999}
+  script_Player2: {fileID: 1283408333}
+  script_Player3: {fileID: 1700172999}
   script_Player4: {fileID: 488358468}
   scriptOpcionMulti: {fileID: 1829217905}
   scriptCamara: {fileID: 1243833825}
   preguntas: {fileID: 163005760}
   Multi_op: {fileID: 2023136315}
+  SectorEscuela: {x: -7.65, y: 4.18, z: 0}
+  SectorCiudad: {x: 8.69, y: 3.53, z: 0}
+  SectorPlaza: {x: -16.33, y: -5.49, z: 0}
+  SectorParque: {x: 27.1, y: -9.95, z: 0}
+  VueltaAlPuente: {x: -2, y: -2, z: 0}
   rutaEscuela: {fileID: 1773888251}
   rutaCiudad: {fileID: 1036169329}
   rutaPlaza: {fileID: 1560376644}
@@ -3654,7 +3659,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (5)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4866,7 +4871,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.093639374, y: 0.44478798}
@@ -5258,7 +5263,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (18)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6020,7 +6025,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.87843144, g: 0.87843144, b: 0.87843144, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6039,7 +6044,7 @@ Transform:
   m_GameObject: {fileID: 488358462}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1, y: -2, z: 0}
+  m_LocalPosition: {x: 2, y: -2, z: 0}
   m_LocalScale: {x: 1.04965, y: 1.04965, z: 1.04965}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6116,16 +6121,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 488358462}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d69ddb5eb5fd4e4990e949487639548, type: 3}
+  m_Script: {fileID: 11500000, guid: dedbac7e85bf8ac4a9a7248629cf696a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script_Player1: {fileID: 1283408333}
-  script_Player2: {fileID: 1700172999}
-  script_Player3: {fileID: 253798310}
+  script_Player2: {fileID: 1283408333}
+  script_Player3: {fileID: 1700172999}
+  script_Player4: {fileID: 253798310}
   scriptOpcionMulti: {fileID: 1829217905}
   scriptCamara: {fileID: 1243833825}
   preguntas: {fileID: 163005760}
   Multi_op: {fileID: 2023136315}
+  SectorEscuela: {x: -13.15, y: 4.16, z: 0}
+  SectorCiudad: {x: 11.32, y: 3.53, z: 0}
+  SectorPlaza: {x: -13.41, y: -5.54, z: 0}
+  SectorParque: {x: 21.63, y: -9.95, z: 0}
+  VueltaAlPuente: {x: 2, y: -2, z: 0}
   rutaEscuela: {fileID: 1446777988}
   rutaCiudad: {fileID: 715773975}
   rutaPlaza: {fileID: 171940101}
@@ -6147,7 +6157,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (19)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6762,7 +6772,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (3)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6793,7 +6803,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (6)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6855,7 +6865,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (17)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7667,7 +7677,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (14)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7866,7 +7876,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (10)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8031,7 +8041,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (2)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8358,9 +8368,10 @@ GameObject:
   m_Component:
   - component: {fileID: 688952672}
   - component: {fileID: 688952673}
+  - component: {fileID: 688952674}
   m_Layer: 0
   m_Name: CasillaPa (18)
-  m_TagString: Untagged
+  m_TagString: Avanza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8432,6 +8443,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &688952674
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688952671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.062348366, y: 0.48203468}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.336519, y: 4.2711906}
+  m_EdgeRadius: 0
 --- !u!1 &706039695
 GameObject:
   m_ObjectHideFlags: 0
@@ -8691,7 +8747,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (11)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8952,7 +9008,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (8)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10156,7 +10212,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (16)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10612,7 +10668,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (4)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11028,7 +11084,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (13)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11718,7 +11774,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (11)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12162,7 +12218,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (9)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12863,7 +12919,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (1)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12987,7 +13043,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (12)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14074,7 +14130,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (9)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14200,6 +14256,11 @@ MonoBehaviour:
   scriptCamara: {fileID: 1243833825}
   preguntas: {fileID: 163005760}
   Multi_op: {fileID: 2023136315}
+  SectorEscuela: {x: -7.64, y: 5.98, z: 0}
+  SectorCiudad: {x: 8.71, y: 5.26, z: 0}
+  SectorPlaza: {x: -13.66, y: -3.7, z: 0}
+  SectorParque: {x: 21.66, y: -8.28, z: 0}
+  VueltaAlPuente: {x: -2, y: 2, z: 0}
   rutaEscuela: {fileID: 1686058510}
   rutaCiudad: {fileID: 1233733936}
   rutaPlaza: {fileID: 1566636299}
@@ -14591,7 +14652,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (5)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14964,7 +15025,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (6)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15858,8 +15919,8 @@ Transform:
   m_GameObject: {fileID: 1411442000}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.6, y: -14, z: 0}
-  m_LocalScale: {x: 29.61464, y: 29.61464, z: 29.61464}
+  m_LocalPosition: {x: 41.547, y: -20.27, z: 0}
+  m_LocalScale: {x: 48.286667, y: 48.286667, z: 48.286667}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1359349105}
@@ -15896,7 +15957,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0033869743, y: -0.007902682}
+  m_Offset: {x: -0.022821307, y: -0.0036361814}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -15907,7 +15968,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0338688, y: 0.86226726}
+  m_Size: {x: 1.4178505, y: 0.87080026}
   m_EdgeRadius: 0
 --- !u!1 &1418915905
 GameObject:
@@ -17334,7 +17395,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (20)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18254,7 +18315,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (10)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18799,7 +18860,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (8)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19932,7 +19993,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5019608, g: 0.8313726, b: 0.49803925, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -20028,16 +20089,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1700172993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0aaf5f675e28c5498fe06f31b0382ee, type: 3}
+  m_Script: {fileID: 11500000, guid: dedbac7e85bf8ac4a9a7248629cf696a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script_Player1: {fileID: 1283408333}
+  script_Player2: {fileID: 1283408333}
   script_Player3: {fileID: 253798310}
   script_Player4: {fileID: 488358468}
   scriptOpcionMulti: {fileID: 1829217905}
   scriptCamara: {fileID: 1243833825}
   preguntas: {fileID: 163005760}
   Multi_op: {fileID: 2023136315}
+  SectorEscuela: {x: -13.17, y: 5.96, z: 0}
+  SectorCiudad: {x: 11.32, y: 5.22, z: 0}
+  SectorPlaza: {x: -16.31, y: -3.67, z: 0}
+  SectorParque: {x: 27.09, y: -8.27, z: 0}
+  VueltaAlPuente: {x: 2, y: 2, z: 0}
   rutaEscuela: {fileID: 360923543}
   rutaCiudad: {fileID: 377162277}
   rutaPlaza: {fileID: 1003074008}
@@ -20385,7 +20451,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (2)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20500,7 +20566,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (15)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20727,7 +20793,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (13)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20758,7 +20824,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (1)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -21098,7 +21164,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (4)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -22172,7 +22238,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (3)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -22464,7 +22530,7 @@ Transform:
   m_GameObject: {fileID: 1904880030}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.89, y: 4.71, z: -3.0434165}
+  m_LocalPosition: {x: -8.89, y: 5.04, z: -3.0434165}
   m_LocalScale: {x: 4, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23261,7 +23327,7 @@ Transform:
   m_GameObject: {fileID: 1959194771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: -14.5, z: 0}
+  m_LocalPosition: {x: -14.94, y: -14.5, z: 0}
   m_LocalScale: {x: 29.61464, y: 29.61464, z: 29.61464}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23444,7 +23510,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (12)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -24659,9 +24725,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2062962401}
   - component: {fileID: 2062962402}
+  - component: {fileID: 2062962403}
   m_Layer: 0
   m_Name: CasillaPa (4)
-  m_TagString: Untagged
+  m_TagString: Retro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24733,6 +24800,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2062962403
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062962400}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.039150238, y: 0.39151168}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.35968, y: 4.366264}
+  m_EdgeRadius: 0
 --- !u!1 &2063563445
 GameObject:
   m_ObjectHideFlags: 0
@@ -24962,7 +25074,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.27726483, y: 0.13018537}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -24973,7 +25085,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5783803, y: 1.2603706}
   m_EdgeRadius: 0
 --- !u!1 &2068898874
 GameObject:
@@ -25018,7 +25130,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPl (7)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25257,7 +25369,7 @@ GameObject:
   m_Layer: 0
   m_Name: CasillaPa (7)
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

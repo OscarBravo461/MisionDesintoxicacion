@@ -7,18 +7,18 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     //Touch touch; --> Aspectos que podremos ocupar al momento de hacerlo para android
     //OpcionMulti_T3 PMultiples = new OpcionMulti_T3();
-    public Player_2 script_Player2;
-    public Player_3 script_Player3;
-    public Player_4 script_Player4;
+    public Player script_Player2;
+    public Player script_Player3;
+    public Player script_Player4;
     public OpcionMulti_T3 scriptOpcionMulti;
     public CCJuego_T3 scriptCamara;
     public Canvas preguntas;
     public Canvas Multi_op;
-    Vector3 SectorEscuela = new Vector3(-7.54f, 5.93f, 0f);
-    Vector3 SectorCiudad = new Vector3(8.67f, 5.21f, 0f);
-    Vector3 SectorPlaza = new Vector3(-13.66f, -3.7f, 0f);
-    Vector3 SectorParque = new Vector3(21.56f, -8.24f, 0f);
-    Vector3 VueltaAlPuente = new Vector3(-2f, 2f, 0f);
+    public Vector3 SectorEscuela = new Vector3(-7.54f, 5.93f, 0f);
+    public Vector3 SectorCiudad = new Vector3(8.67f, 5.21f, 0f);
+    public Vector3 SectorPlaza = new Vector3(-13.66f, -3.7f, 0f);
+    public Vector3 SectorParque = new Vector3(21.56f, -8.24f, 0f);
+    public Vector3 VueltaAlPuente = new Vector3(-2f, 2f, 0f);
     public Ruta rutaEscuela;
     public Ruta rutaCiudad;
     public Ruta rutaPlaza;
@@ -45,9 +45,9 @@ public class Player : MonoBehaviour {
                 {
                     if (Input.GetMouseButtonDown(1))// Input.touchcount > 0 --> Aspectos que podremos ocupar al momento de hacerlo para android
                                                     //touch = Input.GetTouch(0); --> Aspectos que podremos ocupar al momento de hacerlo para android
-                    {
                         if (pasos == 0)
                             pasos = Random.Range(1, 7);
+                    {
                         StartCoroutine(MovimientoDeSeccion());
                         StartCoroutine(primerMovimiento());
                         StartCoroutine(esperar());
@@ -320,7 +320,7 @@ public class Player : MonoBehaviour {
             if (SeccionObjetivo.x < -8 && SeccionObjetivo.x > -12 && SeccionObjetivo.y > -6 && SeccionObjetivo.y < -3) {
                 while (MoverDeCasilla(SectorPlaza)) { yield return null; }
             }
-            if (SeccionObjetivo.x > 8 && SeccionObjetivo.x < 12 && SeccionObjetivo.y > -6 && SeccionObjetivo.y < -3) {
+            if (SeccionObjetivo.x > 11.5 && SeccionObjetivo.x < 28 && SeccionObjetivo.y > -11 && SeccionObjetivo.y < -2) {
                 while (MoverDeCasilla(SectorParque)) { yield return null; }
             }
 
@@ -340,9 +340,51 @@ public class Player : MonoBehaviour {
         }
         return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, speed * Time.deltaTime));//Está línea evalua si la posición actual del jugador es distinta
                                                                                                                             //a la del objetivo, si si,
-                                                                                                                            //entonces devuelve el valor true y hace que se mueva
+                                                                                                                           //entonces devuelve el valor true y hace que se mueva
     }
 
+    public IEnumerator CasillaRetroceso()
+    {
+        if (seMueve)
+        {
+            yield break;
+        }
+        seMueve = true;
+
+        int pasosWhile = 2;
+        while (pasosWhile > 0)
+        {
+                posicionEnRuta--;
+                posicionEnRuta %= rutaParque.listaDeCasillas.Count;
+                Vector3 siguientePosicion = rutaParque.listaDeCasillas[posicionEnRuta].position;
+                while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                yield return new WaitForSeconds(0.2f);
+                pasos--;
+            pasosWhile--;
+        }
+        seMueve = false;
+    }
+    public IEnumerator CasillaAvanza()
+    {
+        if (seMueve)
+        {
+            yield break;
+        }
+        seMueve = true;
+
+        int pasosWhile = 2;
+        while (pasosWhile > 0)
+        {
+            posicionEnRuta++;
+            posicionEnRuta %= rutaParque.listaDeCasillas.Count;
+            Vector3 siguientePosicion = rutaParque.listaDeCasillas[posicionEnRuta].position;
+            while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+            yield return new WaitForSeconds(0.2f);
+            pasos--;
+            pasosWhile--;
+        }
+        seMueve = false;
+    }
     private void OnTriggerEnter2D(Collider2D collision) {
         switch (collision.tag) {
             case "Escuela":
@@ -382,6 +424,19 @@ public class Player : MonoBehaviour {
                     StartCoroutine(esperaCamara());
                 }
                 break;
+            case "Avanza":
+                if (!seMueve)
+                {
+                    Debug.Log("Entro a avanzar");
+                    StartCoroutine(CasillaAvanza());
+                }
+                break;
+            case "Retro":
+                if (!seMueve)
+                {
+                    StartCoroutine(CasillaRetroceso());
+                }
+                break;
         }
     }
     public IEnumerator esperaCamara() {
@@ -391,8 +446,7 @@ public class Player : MonoBehaviour {
     }
 
     public IEnumerator esperar() {
-        Debug.Log("Entro en P1");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         switch (turno) {
             case 1:
                 if (script_Player2.turno == 2) {
@@ -445,7 +499,6 @@ public class Player : MonoBehaviour {
         }
     }
     public IEnumerator primerMovimiento() {
-        Debug.Log("P1 se mueve hacia una seccion");
         yield return new WaitForSeconds(1);
         switch (seccionElegida) {
             case 1:
