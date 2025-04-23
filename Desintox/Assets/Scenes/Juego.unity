@@ -3379,7 +3379,9 @@ MonoBehaviour:
   gc: {fileID: 470811596}
   pasos: 0
   turno: 0
+  playerID: 3
   speed: 20
+  tiempoEsperaDinamico: 0
   enTurno: 0
   botonPresionado: 0
 --- !u!1 &265426405
@@ -6146,7 +6148,9 @@ MonoBehaviour:
   gc: {fileID: 470811596}
   pasos: 0
   turno: 0
+  playerID: 4
   speed: 20
+  tiempoEsperaDinamico: 0
   enTurno: 0
   botonPresionado: 0
 --- !u!1 &499763030
@@ -7490,7 +7494,7 @@ GameObject:
   - component: {fileID: 644841598}
   m_Layer: 0
   m_Name: CasillaPa (3)
-  m_TagString: Untagged
+  m_TagString: Multiple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7591,10 +7595,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.05824852, y: 0.40774727}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7605,7 +7609,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 8.22295, y: 4.087227}
   m_EdgeRadius: 0
 --- !u!1 &645534444
 GameObject:
@@ -14578,7 +14582,9 @@ MonoBehaviour:
   gc: {fileID: 470811596}
   pasos: 0
   turno: 1
+  playerID: 1
   speed: 20
+  tiempoEsperaDinamico: 0
   enTurno: 0
   botonPresionado: 0
 --- !u!58 &1283408334
@@ -20423,7 +20429,9 @@ MonoBehaviour:
   gc: {fileID: 470811596}
   pasos: 0
   turno: 0
+  playerID: 2
   speed: 20
+  tiempoEsperaDinamico: 0
   enTurno: 0
   botonPresionado: 0
 --- !u!1 &1705758972
@@ -25146,7 +25154,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.039150238, y: 0.39151168}
+  m_Offset: {x: -0.07239151, y: 0.39151168}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -25157,7 +25165,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.35968, y: 4.366264}
+  m_Size: {x: 8.426163, y: 4.366264}
   m_EdgeRadius: 0
 --- !u!1 &2063563445
 GameObject:

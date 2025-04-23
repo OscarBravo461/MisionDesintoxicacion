@@ -27,9 +27,11 @@ public class Player : MonoBehaviour
     public Ruta rutaPlaza;
     public Ruta rutaParque;
     public GCJuego gc;
-    public int pasos; //Esta variable es la que controla cuánto avanza el jugador ---> Cambiar por el dado
+    public int pasos = 0; //Esta variable es la que controla cuánto avanza el jugador ---> Cambiar por el dado
     public int turno;
+    public int playerID;
     public float speed = 20f; //Velocidad a la que se mueve el jugador
+    public float tiempoEsperaDinamico;
     public bool enTurno = false;
     public bool botonPresionado = false; //Para que no pueda tirar el dado más de 1 vez por turno
     int posicionEnRuta;
@@ -41,12 +43,15 @@ public class Player : MonoBehaviour
     bool vueltaCiudad = false;
     bool vueltaPlaza = false;
     bool vueltaParque = false;
+    bool puente = false;
 
     void Update()
     {
         switch (turno)
         {
             case 1:
+                if(enTurno)
+                    scriptCamara.objetivo_camara = playerID;
                 if (!isOnSeccion && enTurno == true) //Evualua si se seleccionó una sección
                 {
                     botonDados.interactable = false;
@@ -57,6 +62,8 @@ public class Player : MonoBehaviour
                 }
                 break;
             case 2:
+                if (enTurno)
+                    scriptCamara.objetivo_camara = playerID;
                 if (!isOnSeccion && enTurno == true)
                 {
                     botonDados.interactable = false;
@@ -67,6 +74,8 @@ public class Player : MonoBehaviour
                 }
                 break;
             case 3:
+                if (enTurno)
+                    scriptCamara.objetivo_camara = playerID;
                 if (!isOnSeccion && enTurno == true)
                 {
                     botonDados.interactable = false;
@@ -76,8 +85,9 @@ public class Player : MonoBehaviour
                     }
                 }
                 break;
-
             case 4:
+                if (enTurno)
+                    scriptCamara.objetivo_camara = playerID;
                 if (!isOnSeccion && enTurno == true)
                 {
                     botonDados.interactable = false;
@@ -120,6 +130,7 @@ public class Player : MonoBehaviour
                 isOnSeccion = false;
                 seccionElegida = 0;
                 botonDados.interactable = false;
+                puente = true;
             }
 
             if (posicionEnRuta % rutaEscuela.listaDeCasillas.Count == 0)//Evalua si se llego de nuevo al inicio de la sección para que el player vuelva al puente
@@ -159,6 +170,7 @@ public class Player : MonoBehaviour
                 isOnSeccion = false;
                 seccionElegida = 0;
                 botonDados.interactable = false;
+                puente = true;
             }
             if (posicionEnRuta % rutaCiudad.listaDeCasillas.Count == 0)
             {
@@ -198,6 +210,7 @@ public class Player : MonoBehaviour
                 isOnSeccion = false;
                 seccionElegida = 0;
                 botonDados.interactable = false;
+                puente = true;
             }
             if (posicionEnRuta % rutaPlaza.listaDeCasillas.Count == 0)
             {
@@ -228,6 +241,7 @@ public class Player : MonoBehaviour
 
                 yield return new WaitForSeconds(0.2f);
                 pasos--;
+                Debug.Log("Paseando " + pasosWhile);
             }
             pasosWhile--;
 
@@ -237,6 +251,7 @@ public class Player : MonoBehaviour
                 isOnSeccion = false;
                 seccionElegida = 0;
                 botonDados.interactable = false;
+                puente = true;
             }
             if (posicionEnRuta % rutaParque.listaDeCasillas.Count == 0)
             {
@@ -276,8 +291,15 @@ public class Player : MonoBehaviour
 
             yield return new WaitForSeconds(0.2f);
         }
-        botonDados.interactable = true;
-        seMueve = false;
+        if (pasos > 0)
+        {
+            ActivarMovimiento();
+        }
+        else
+        {
+            botonDados.interactable = true;
+            seMueve = false;
+        }
     }
 
     bool MoverDeCasilla(Vector3 objetivo) //Es el método que ejecuta el movimiento
@@ -398,6 +420,7 @@ public class Player : MonoBehaviour
     }
     public IEnumerator esperaCamara()
     {
+        valor_anterior = scriptCamara.objetivo_camara;
         scriptCamara.objetivo_camara = 0;
         yield return new WaitForSeconds(10);
         scriptCamara.objetivo_camara = valor_anterior;
@@ -405,7 +428,7 @@ public class Player : MonoBehaviour
 
     public IEnumerator esperar()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(tiempoEsperaDinamico);
         if (isOnSeccion == true)
         {
             switch (turno)
@@ -488,10 +511,31 @@ public class Player : MonoBehaviour
     public void ActivarMovimiento()
     {
         botonDados.interactable = false;
-        if (seMueve == false && isOnSeccion && enTurno == true && !botonPresionado)
+        if (seMueve == false && isOnSeccion && enTurno == true && !botonPresionado && puente == false)
         {
             botonPresionado = true;
             pasos = Random.Range(1, 7);
+            switch (pasos)
+            {
+                case 1:
+                    tiempoEsperaDinamico = 1.5f;
+                    break;
+                case 2:
+                    tiempoEsperaDinamico = 2;
+                    break;
+                case 3:
+                    tiempoEsperaDinamico= 2.5f;
+                    break;
+                case 4:
+                    tiempoEsperaDinamico = 3;
+                    break;
+                case 5:
+                    tiempoEsperaDinamico = 3.5f;
+                    break;
+                case 6:
+                    tiempoEsperaDinamico = 4;
+                    break;
+            }
             switch (seccionElegida)
             {
                 case 1:
@@ -509,7 +553,30 @@ public class Player : MonoBehaviour
             }
             StartCoroutine(esperar());
         }
+        else if (puente == true)
+        {
+            switch (seccionElegida)
+            {
+                case 1:
+                    seMueve = false;
+                    StartCoroutine(MovimientoSeccionEscuela());
+                    break;
+                case 2:
+                    seMueve = false;
+                    StartCoroutine(MovimientoSeccionCiudad());
+                    break;
+                case 3:
+                    seMueve = false;
+                    StartCoroutine(MovimientoSeccionPlaza());
+                    break;
+                case 4:
+                    seMueve = false;
+                    StartCoroutine(MovimientoSeccionParque());
+                    break;
+            }
+            StartCoroutine(esperar());
+            puente = false;
+        }
     }
-    //Ay dios
 }
 
