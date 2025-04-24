@@ -1343,7 +1343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 82489880}
   m_Layer: 0
-  m_Name: Seccion_Plaza
+  m_Name: Seccion_Escuela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2517,7 +2517,7 @@ GameObject:
   - component: {fileID: 171940100}
   - component: {fileID: 171940101}
   m_Layer: 0
-  m_Name: Seccion_Plaza_P4
+  m_Name: Seccion_Escuela_P4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3367,11 +3367,16 @@ MonoBehaviour:
   preguntas: {fileID: 163005760}
   Multi_op: {fileID: 2023136315}
   botonDados: {fileID: 744723811}
-  SectorEscuela: {x: -7.65, y: 4.18, z: 0}
+  sprite: {fileID: 253798305}
   SectorCiudad: {x: 8.69, y: 3.53, z: 0}
   SectorPlaza: {x: -16.33, y: -5.49, z: 0}
+  SectorEscuela: {x: -7.65, y: 4.18, z: 0}
   SectorParque: {x: 27.1, y: -9.95, z: 0}
   VueltaAlPuente: {x: -2, y: -2, z: 0}
+  puntoTPCafeCiudad: {x: -42.8, y: 19.3, z: 0}
+  puntoTPRosaEscuela: {x: -2.25, y: -21.5, z: 0}
+  puntoTPCafeParque: {x: 27.1, y: -26.33, z: 0}
+  puntoTPRosaParque: {x: 52.9, y: -37.4, z: 0}
   rutaEscuela: {fileID: 1773888251}
   rutaCiudad: {fileID: 1036169329}
   rutaPlaza: {fileID: 1560376644}
@@ -3384,6 +3389,8 @@ MonoBehaviour:
   tiempoEsperaDinamico: 0
   enTurno: 0
   botonPresionado: 0
+  posicionEnRuta: 0
+  seccionElegida: 0
 --- !u!1 &265426405
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,7 +4390,7 @@ GameObject:
   - component: {fileID: 360923542}
   - component: {fileID: 360923543}
   m_Layer: 0
-  m_Name: Seccion_Escuela_Player2
+  m_Name: Seccion_Ciudad_Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4493,7 +4500,7 @@ GameObject:
   - component: {fileID: 377162276}
   - component: {fileID: 377162277}
   m_Layer: 0
-  m_Name: Seccion_Ciudad_Player2
+  m_Name: Seccion_Plaza_Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4648,8 +4655,8 @@ GameObject:
   - component: {fileID: 393195778}
   - component: {fileID: 393195780}
   m_Layer: 0
-  m_Name: CollideCiudad
-  m_TagString: Ciudad
+  m_Name: ColliderPlaza
+  m_TagString: Plaza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5181,9 +5188,10 @@ GameObject:
   m_Component:
   - component: {fileID: 432036953}
   - component: {fileID: 432036954}
+  - component: {fileID: 432036955}
   m_Layer: 0
   m_Name: CasillaPa (15)
-  m_TagString: Untagged
+  m_TagString: Multiple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5244,7 +5252,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: cad9b5425b3935d4cb5b46d3e2c88dce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56608994236a4784b9cfa76d69ab457e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5255,6 +5263,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &432036955
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432036952}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07264614, y: 0.4213581}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.291639, y: 4.223362}
+  m_EdgeRadius: 0
 --- !u!1 &445346802
 GameObject:
   m_ObjectHideFlags: 0
@@ -5443,7 +5496,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: af8213bb543700d468fe5bedcb70c9ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df7abb5d59483674882486fbff70f2b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6136,11 +6189,16 @@ MonoBehaviour:
   preguntas: {fileID: 163005760}
   Multi_op: {fileID: 2023136315}
   botonDados: {fileID: 744723811}
-  SectorEscuela: {x: -13.15, y: 4.16, z: 0}
+  sprite: {fileID: 488358463}
   SectorCiudad: {x: 11.32, y: 3.53, z: 0}
   SectorPlaza: {x: -13.41, y: -5.54, z: 0}
+  SectorEscuela: {x: -13.15, y: 4.16, z: 0}
   SectorParque: {x: 21.63, y: -9.95, z: 0}
   VueltaAlPuente: {x: 2, y: -2, z: 0}
+  puntoTPCafeCiudad: {x: -48.2, y: 19.3, z: 0}
+  puntoTPRosaEscuela: {x: 0.67, y: -21.5, z: 0}
+  puntoTPCafeParque: {x: 21.64, y: -26.33, z: 0}
+  puntoTPRosaParque: {x: 47.35, y: -37.4, z: 0}
   rutaEscuela: {fileID: 1446777988}
   rutaCiudad: {fileID: 715773975}
   rutaPlaza: {fileID: 171940101}
@@ -6153,6 +6211,8 @@ MonoBehaviour:
   tiempoEsperaDinamico: 0
   enTurno: 0
   botonPresionado: 0
+  posicionEnRuta: 0
+  seccionElegida: 0
 --- !u!1 &499763030
 GameObject:
   m_ObjectHideFlags: 0
@@ -6309,9 +6369,10 @@ GameObject:
   m_Component:
   - component: {fileID: 516132565}
   - component: {fileID: 516132566}
+  - component: {fileID: 516132567}
   m_Layer: 0
   m_Name: CasillaPa (13)
-  m_TagString: Untagged
+  m_TagString: TP_RosaEnParque
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6372,7 +6433,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5440054e17a76624eb5b0ff5eb9bf4bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd09d8ef0c51500489e9ee4d21e6057e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6383,6 +6444,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &516132567
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516132564}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.036977768, y: 0.45106888}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.306644, y: 4.175865}
+  m_EdgeRadius: 0
 --- !u!1 &534352161
 GameObject:
   m_ObjectHideFlags: 0
@@ -6902,6 +7008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588141919}
   - component: {fileID: 588141920}
+  - component: {fileID: 588141921}
   m_Layer: 0
   m_Name: CasillaPa (12)
   m_TagString: Untagged
@@ -6965,7 +7072,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: df7abb5d59483674882486fbff70f2b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af8213bb543700d468fe5bedcb70c9ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6976,6 +7083,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &588141921
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588141918}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.96, y: 8.96}
+  m_EdgeRadius: 0
 --- !u!1 &592026940
 GameObject:
   m_ObjectHideFlags: 0
@@ -7494,7 +7646,7 @@ GameObject:
   - component: {fileID: 644841598}
   m_Layer: 0
   m_Name: CasillaPa (3)
-  m_TagString: Multiple
+  m_TagString: Grillete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7555,7 +7707,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 74270e7b92b8e884298f87e1573b6860, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5440054e17a76624eb5b0ff5eb9bf4bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7798,6 +7950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662432700}
   - component: {fileID: 662432701}
+  - component: {fileID: 662432702}
   m_Layer: 0
   m_Name: CasillaPl (4)
   m_TagString: Untagged
@@ -7872,6 +8025,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &662432702
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662432699}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &674162758
 GameObject:
   m_ObjectHideFlags: 0
@@ -8379,7 +8577,7 @@ GameObject:
   - component: {fileID: 688952674}
   m_Layer: 0
   m_Name: CasillaPa (18)
-  m_TagString: Avanza
+  m_TagString: TP_CafeEnParque
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8440,7 +8638,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b04c0484144249048aaf4951be7bfa7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74270e7b92b8e884298f87e1573b6860, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8613,7 +8811,7 @@ GameObject:
   - component: {fileID: 715773974}
   - component: {fileID: 715773975}
   m_Layer: 0
-  m_Name: Seccion_Ciudad_Player4
+  m_Name: Seccion_Plaza_Player4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9462,6 +9660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 774751728}
   - component: {fileID: 774751729}
+  - component: {fileID: 774751730}
   m_Layer: 0
   m_Name: CasillaPl (2)
   m_TagString: Untagged
@@ -9536,6 +9735,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &774751730
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774751727}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &775168194
 GameObject:
   m_ObjectHideFlags: 0
@@ -9702,7 +9946,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: cad9b5425b3935d4cb5b46d3e2c88dce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df7abb5d59483674882486fbff70f2b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10241,9 +10485,10 @@ GameObject:
   m_Component:
   - component: {fileID: 849176665}
   - component: {fileID: 849176666}
+  - component: {fileID: 849176667}
   m_Layer: 0
   m_Name: CasillaPa (9)
-  m_TagString: Untagged
+  m_TagString: Grillete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10304,7 +10549,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: af8213bb543700d468fe5bedcb70c9ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5440054e17a76624eb5b0ff5eb9bf4bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10315,6 +10560,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &849176667
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849176664}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.038700104, y: 0.4773264}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.314964, y: 4.341543}
+  m_EdgeRadius: 0
 --- !u!1 &863697246
 GameObject:
   m_ObjectHideFlags: 0
@@ -10418,9 +10708,10 @@ GameObject:
   m_Component:
   - component: {fileID: 878151763}
   - component: {fileID: 878151764}
+  - component: {fileID: 878151765}
   m_Layer: 0
   m_Name: CasillaPa (14)
-  m_TagString: Untagged
+  m_TagString: Retro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10481,7 +10772,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: cad9b5425b3935d4cb5b46d3e2c88dce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecfa8aff64b36c644a29e5fc5b33e492, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10492,6 +10783,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &878151765
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878151762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07599068, y: 0.39736176}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.286945, y: 4.3000793}
+  m_EdgeRadius: 0
 --- !u!1 &881722895
 GameObject:
   m_ObjectHideFlags: 0
@@ -10822,7 +11158,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: af8213bb543700d468fe5bedcb70c9ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df7abb5d59483674882486fbff70f2b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11406,7 +11742,7 @@ GameObject:
   - component: {fileID: 1003074007}
   - component: {fileID: 1003074008}
   m_Layer: 0
-  m_Name: Seccion_Plaza_P2
+  m_Name: Seccion_Escuela_P2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11778,7 +12114,7 @@ GameObject:
   - component: {fileID: 1036169328}
   - component: {fileID: 1036169329}
   m_Layer: 0
-  m_Name: Seccion_Ciudad_Player3
+  m_Name: Seccion_Plaza_Player3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13865,7 +14201,7 @@ GameObject:
   - component: {fileID: 1233733935}
   - component: {fileID: 1233733936}
   m_Layer: 0
-  m_Name: Seccion_Ciudad_Player1
+  m_Name: Seccion_Plaza_Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14050,9 +14386,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1243869633}
   - component: {fileID: 1243869634}
+  - component: {fileID: 1243869635}
   m_Layer: 0
   m_Name: CasillaPa (20)
-  m_TagString: Untagged
+  m_TagString: Corazon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14113,7 +14450,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: df7abb5d59483674882486fbff70f2b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cad9b5425b3935d4cb5b46d3e2c88dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14124,6 +14461,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1243869635
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243869632}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.034298897, y: 0.44165516}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.342596, y: 4.1494923}
+  m_EdgeRadius: 0
 --- !u!1 &1245448685
 GameObject:
   m_ObjectHideFlags: 0
@@ -14570,11 +14952,16 @@ MonoBehaviour:
   preguntas: {fileID: 163005760}
   Multi_op: {fileID: 2023136315}
   botonDados: {fileID: 744723811}
-  SectorEscuela: {x: -7.64, y: 5.98, z: 0}
+  sprite: {fileID: 1283408331}
   SectorCiudad: {x: 8.71, y: 5.26, z: 0}
   SectorPlaza: {x: -13.66, y: -3.7, z: 0}
+  SectorEscuela: {x: -7.64, y: 5.98, z: 0}
   SectorParque: {x: 21.66, y: -8.28, z: 0}
   VueltaAlPuente: {x: -2, y: 2, z: 0}
+  puntoTPCafeCiudad: {x: -42.8, y: 20.8, z: 0}
+  puntoTPRosaEscuela: {x: 0.5, y: -19.5, z: 0}
+  puntoTPCafeParque: {x: 21.64, y: -24.78, z: 0}
+  puntoTPRosaParque: {x: 47.35, y: -35.75, z: 0}
   rutaEscuela: {fileID: 1686058510}
   rutaCiudad: {fileID: 1233733936}
   rutaPlaza: {fileID: 1566636299}
@@ -14587,6 +14974,8 @@ MonoBehaviour:
   tiempoEsperaDinamico: 0
   enTurno: 0
   botonPresionado: 0
+  posicionEnRuta: 0
+  seccionElegida: 0
 --- !u!58 &1283408334
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14675,9 +15064,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1286077396}
   - component: {fileID: 1286077397}
+  - component: {fileID: 1286077398}
   m_Layer: 0
   m_Name: CasillaPl (5)
-  m_TagString: Untagged
+  m_TagString: TP_RosaEnEscuela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14749,6 +15139,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1286077398
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286077395}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1298157838
 GameObject:
   m_ObjectHideFlags: 0
@@ -15519,7 +15954,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: df7abb5d59483674882486fbff70f2b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af8213bb543700d468fe5bedcb70c9ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15559,7 +15994,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -15717,6 +16152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1378433197}
   - component: {fileID: 1378433198}
+  - component: {fileID: 1378433199}
   m_Layer: 0
   m_Name: CasillaPa (19)
   m_TagString: Untagged
@@ -15780,7 +16216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5440054e17a76624eb5b0ff5eb9bf4bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af8213bb543700d468fe5bedcb70c9ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15791,6 +16227,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1378433199
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378433196}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06235981, y: 0.4753933}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.294844, y: 4.2569656}
+  m_EdgeRadius: 0
 --- !u!1 &1381336240
 GameObject:
   m_ObjectHideFlags: 0
@@ -16728,7 +17209,7 @@ GameObject:
   - component: {fileID: 1446777987}
   - component: {fileID: 1446777988}
   m_Layer: 0
-  m_Name: Seccion_Escuela_Player4
+  m_Name: Seccion_Ciudad_Player4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16806,7 +17287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1449718156}
   m_Layer: 0
-  m_Name: Seccion_Escuela
+  m_Name: Seccion_Ciudad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16950,7 +17431,7 @@ GameObject:
   - component: {fileID: 1464839733}
   m_Layer: 0
   m_Name: CasillaPa (17)
-  m_TagString: Preguntas
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17011,7 +17492,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ecc34e201fd0d6d44aa3c5574da08260, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af8213bb543700d468fe5bedcb70c9ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17744,7 +18225,7 @@ GameObject:
   - component: {fileID: 1522642346}
   m_Layer: 0
   m_Name: CasillaPa (5)
-  m_TagString: Multiple
+  m_TagString: Corazon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17805,7 +18286,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 56608994236a4784b9cfa76d69ab457e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cad9b5425b3935d4cb5b46d3e2c88dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18374,7 +18855,7 @@ GameObject:
   - component: {fileID: 1560376643}
   - component: {fileID: 1560376644}
   m_Layer: 0
-  m_Name: Seccion_Plaza_P3
+  m_Name: Seccion_Escuela_P3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18476,7 +18957,7 @@ GameObject:
   - component: {fileID: 1566636298}
   - component: {fileID: 1566636299}
   m_Layer: 0
-  m_Name: Seccion_Plaza_P1
+  m_Name: Seccion_Escuela_P1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19681,9 +20162,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1667788785}
   - component: {fileID: 1667788786}
+  - component: {fileID: 1667788787}
   m_Layer: 0
   m_Name: CasillaPa (8)
-  m_TagString: Untagged
+  m_TagString: Avanza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19744,7 +20226,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 74270e7b92b8e884298f87e1573b6860, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a9e31e90e212ba4f8c886c7a6046167, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19755,6 +20237,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1667788787
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667788784}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08957291, y: 0.44785786}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.342949, y: 4.2425594}
+  m_EdgeRadius: 0
 --- !u!1 &1671053194
 GameObject:
   m_ObjectHideFlags: 0
@@ -20017,7 +20544,7 @@ GameObject:
   - component: {fileID: 1686058509}
   - component: {fileID: 1686058510}
   m_Layer: 0
-  m_Name: Seccion_Escuela_Player1
+  m_Name: Seccion_Ciudad_Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20095,9 +20622,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1688673362}
   - component: {fileID: 1688673363}
+  - component: {fileID: 1688673364}
   m_Layer: 0
   m_Name: CasillaPa (7)
-  m_TagString: Untagged
+  m_TagString: Preguntas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20158,7 +20686,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: af8213bb543700d468fe5bedcb70c9ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecc34e201fd0d6d44aa3c5574da08260, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20169,6 +20697,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1688673364
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688673361}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.091480255, y: 0.47265196}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.350121, y: 4.2334814}
+  m_EdgeRadius: 0
 --- !u!1 &1695372562
 GameObject:
   m_ObjectHideFlags: 0
@@ -20210,7 +20783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1696797085}
   m_Layer: 0
-  m_Name: Seccion_Ciudad
+  m_Name: Seccion_Plaza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20417,11 +20990,16 @@ MonoBehaviour:
   preguntas: {fileID: 163005760}
   Multi_op: {fileID: 2023136315}
   botonDados: {fileID: 744723811}
-  SectorEscuela: {x: -13.17, y: 5.96, z: 0}
+  sprite: {fileID: 1700172994}
   SectorCiudad: {x: 11.32, y: 5.22, z: 0}
   SectorPlaza: {x: -16.31, y: -3.67, z: 0}
+  SectorEscuela: {x: -13.17, y: 5.96, z: 0}
   SectorParque: {x: 27.09, y: -8.27, z: 0}
   VueltaAlPuente: {x: 2, y: 2, z: 0}
+  puntoTPCafeCiudad: {x: -48.2, y: 20.8, z: 0}
+  puntoTPRosaEscuela: {x: -2.2, y: -19.6, z: 0}
+  puntoTPCafeParque: {x: 27.1, y: -24.78, z: 0}
+  puntoTPRosaParque: {x: 52.9, y: -35.75, z: 0}
   rutaEscuela: {fileID: 360923543}
   rutaCiudad: {fileID: 377162277}
   rutaPlaza: {fileID: 1003074008}
@@ -20434,6 +21012,8 @@ MonoBehaviour:
   tiempoEsperaDinamico: 0
   enTurno: 0
   botonPresionado: 0
+  posicionEnRuta: 0
+  seccionElegida: 0
 --- !u!1 &1705758972
 GameObject:
   m_ObjectHideFlags: 0
@@ -20801,6 +21381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1728922727}
   - component: {fileID: 1728922728}
+  - component: {fileID: 1728922729}
   m_Layer: 0
   m_Name: CasillaPl (3)
   m_TagString: Untagged
@@ -20875,6 +21456,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1728922729
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728922726}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1739834986
 GameObject:
   m_ObjectHideFlags: 0
@@ -21290,7 +21916,7 @@ GameObject:
   - component: {fileID: 1773888250}
   - component: {fileID: 1773888251}
   m_Layer: 0
-  m_Name: Seccion_Escuela_Player3
+  m_Name: Seccion_Ciudad_Player3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23634,7 +24260,7 @@ GameObject:
   - component: {fileID: 1959194773}
   m_Layer: 0
   m_Name: ColliderPlaza
-  m_TagString: Plaza
+  m_TagString: Escuela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25050,7 +25676,7 @@ GameObject:
   - component: {fileID: 2062962403}
   m_Layer: 0
   m_Name: CasillaPa (4)
-  m_TagString: Retro
+  m_TagString: Corazon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25111,7 +25737,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 0e7c57695669cf942a855e96ee05e11c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cad9b5425b3935d4cb5b46d3e2c88dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25344,7 +25970,7 @@ GameObject:
   - component: {fileID: 2068224121}
   m_Layer: 0
   m_Name: ColliderEscuela
-  m_TagString: Escuela
+  m_TagString: Ciudad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25512,9 +26138,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2097694376}
   - component: {fileID: 2097694377}
+  - component: {fileID: 2097694378}
   m_Layer: 0
   m_Name: CasillaE (11)
-  m_TagString: Untagged
+  m_TagString: TP_CafeEnCiudad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25586,6 +26213,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2097694378
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097694375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.09825134, y: 0.49124908}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.370506, y: 4.3750076}
+  m_EdgeRadius: 0
 --- !u!1 &2100335494
 GameObject:
   m_ObjectHideFlags: 0

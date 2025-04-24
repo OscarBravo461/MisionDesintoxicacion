@@ -19,6 +19,12 @@ TagManager:
   - Info
   - Retro
   - Avanza
+  - Grillete
+  - Corazon
+  - TP_CafeEnParque
+  - TP_RosaEnParque
+  - TP_CafeEnCiudad
+  - TP_RosaEnEscuela
   layers:
   - Default
   - TransparentFX

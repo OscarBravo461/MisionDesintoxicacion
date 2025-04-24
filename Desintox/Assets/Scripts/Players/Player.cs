@@ -17,11 +17,16 @@ public class Player : MonoBehaviour
     public Canvas preguntas;
     public Canvas Multi_op;
     public Button botonDados;
-    public Vector3 SectorEscuela = new Vector3(-7.54f, 5.93f, 0f);
-    public Vector3 SectorCiudad = new Vector3(8.67f, 5.21f, 0f);
-    public Vector3 SectorPlaza = new Vector3(-13.66f, -3.7f, 0f);
+    public SpriteRenderer sprite;
+    public Vector3 SectorCiudad = new Vector3(-7.54f, 5.93f, 0f);
+    public Vector3 SectorPlaza = new Vector3(8.67f, 5.21f, 0f);
+    public Vector3 SectorEscuela = new Vector3(-13.66f, -3.7f, 0f);
     public Vector3 SectorParque = new Vector3(21.56f, -8.24f, 0f);
     public Vector3 VueltaAlPuente = new Vector3(-2f, 2f, 0f);
+    public Vector3 puntoTPCafeCiudad = new Vector3(-0f, 0f, 0f);
+    public Vector3 puntoTPRosaEscuela = new Vector3(-0f, 0f, 0f);
+    public Vector3 puntoTPCafeParque = new Vector3(0f, 0f, 0f);
+    public Vector3 puntoTPRosaParque = new Vector3(0f, 0f, 0f);
     public Ruta rutaEscuela;
     public Ruta rutaCiudad;
     public Ruta rutaPlaza;
@@ -34,9 +39,9 @@ public class Player : MonoBehaviour
     public float tiempoEsperaDinamico;
     public bool enTurno = false;
     public bool botonPresionado = false; //Para que no pueda tirar el dado más de 1 vez por turno
-    int posicionEnRuta;
+    public int posicionEnRuta;
     int valor_anterior;
-    int seccionElegida;
+    public int seccionElegida;
     bool seMueve = false;
     bool isOnSeccion;
     bool vueltaEscuela = false;
@@ -44,13 +49,15 @@ public class Player : MonoBehaviour
     bool vueltaPlaza = false;
     bool vueltaParque = false;
     bool puente = false;
+    bool tp = false;
+    bool evento = false;
 
     void Update()
     {
         switch (turno)
         {
             case 1:
-                if(enTurno)
+                if (enTurno)
                     scriptCamara.objetivo_camara = playerID;
                 if (!isOnSeccion && enTurno == true) //Evualua si se seleccionó una sección
                 {
@@ -100,7 +107,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public IEnumerator MovimientoSeccionEscuela()
+    public IEnumerator MovimientoSeccionCiudad()
     {
         if (seMueve)
         {
@@ -141,7 +148,7 @@ public class Player : MonoBehaviour
         seMueve = false;
     }
     //Todos los métodos tienen la misma lógica, solo adecuada a cada sección
-    public IEnumerator MovimientoSeccionCiudad()
+    public IEnumerator MovimientoSeccionPlaza()
     {
         if (seMueve)
         {
@@ -180,7 +187,7 @@ public class Player : MonoBehaviour
         }
         seMueve = false;
     }
-    public IEnumerator MovimientoSeccionPlaza()
+    public IEnumerator MovimientoSeccionEscuela()
     {
         if (seMueve)
         {
@@ -301,7 +308,58 @@ public class Player : MonoBehaviour
             seMueve = false;
         }
     }
+    public IEnumerator TP_CafeEnParque()
+    {
+        sprite.enabled = false;
+        if (seMueve)
+        {
+            yield break;
+        }
+        seMueve = true;
+        while (MovimientoAlTP(puntoTPCafeCiudad)) { yield return null; }
+        yield return new WaitForSeconds(10f);
+        seMueve = false;
 
+    }
+    public IEnumerator TP_CafeEnCiudad()
+    {
+        sprite.enabled = false;
+        if (seMueve)
+        {
+            yield break;
+        }
+        seMueve = true;
+        while (MovimientoAlTP(puntoTPCafeParque)) { yield return null; }
+        yield return new WaitForSeconds(10f);
+        seMueve = false;
+
+    }
+    public IEnumerator TP_RosaEnParque()
+    {
+        sprite.enabled = false;
+        if (seMueve)
+        {
+            yield break;
+        }
+        seMueve = true;
+        while (MovimientoAlTP(puntoTPRosaEscuela)) { yield return null; }
+        yield return new WaitForSeconds(10f);
+        seMueve = false;
+
+    }
+    public IEnumerator TP_RosaEnEscuela()
+    {
+        sprite.enabled = false;
+        if (seMueve)
+        {
+            yield break;
+        }
+        seMueve = true;
+        while (MovimientoAlTP(puntoTPRosaParque)) { yield return null; }
+        yield return new WaitForSeconds(10f);
+        seMueve = false;
+
+    }
     bool MoverDeCasilla(Vector3 objetivo) //Es el método que ejecuta el movimiento
     {
         if (vueltaEscuela || vueltaCiudad || vueltaPlaza || vueltaParque)
@@ -314,6 +372,10 @@ public class Player : MonoBehaviour
         return objetivo != (transform.position = Vector3.MoveTowards(transform.position, objetivo, speed * Time.deltaTime));//Está línea evalua si la posición actual del jugador es distinta
                                                                                                                             //a la del objetivo, si si,
                                                                                                                             //entonces devuelve el valor true y hace que se mueva
+    }
+    bool MovimientoAlTP(Vector3 waypointCafe)
+    {
+        return waypointCafe != (transform.position = Vector3.MoveTowards(transform.position, waypointCafe, speed * Time.deltaTime));
     }
 
     public IEnumerator CasillaRetroceso()
@@ -336,6 +398,7 @@ public class Player : MonoBehaviour
             pasosWhile--;
         }
         seMueve = false;
+        evento = false;
     }
     public IEnumerator CasillaAvanza()
     {
@@ -357,20 +420,21 @@ public class Player : MonoBehaviour
             pasosWhile--;
         }
         seMueve = false;
+        evento = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.tag)
         {
-            case "Escuela":
+            case "Ciudad":
                 isOnSeccion = true;
                 seccionElegida = 1;
                 break;
-            case "Ciudad":
+            case "Plaza":
                 isOnSeccion = true;
                 seccionElegida = 2;
                 break;
-            case "Plaza":
+            case "Escuela":
                 isOnSeccion = true;
                 seccionElegida = 3;
                 break;
@@ -386,11 +450,15 @@ public class Player : MonoBehaviour
         {
             case "Preguntas":
                 if (!seMueve)
+                {
+                    evento = true;
                     preguntas.gameObject.SetActive(true);
+                }
                 break;
             case "Multiple":
                 if (!seMueve)
                 {
+                    evento = true;
                     Multi_op.gameObject.SetActive(true);
                     scriptOpcionMulti.empiezar();
                     scriptOpcionMulti.reinicio();
@@ -400,20 +468,58 @@ public class Player : MonoBehaviour
                 if (!seMueve)
                 {
                     valor_anterior = scriptCamara.objetivo_camara;
+                    evento = true;
                     StartCoroutine(esperaCamara());
                 }
                 break;
             case "Avanza":
                 if (!seMueve)
                 {
-                    Debug.Log("Entro a avanzar");
+                    evento = true;
                     StartCoroutine(CasillaAvanza());
                 }
                 break;
             case "Retro":
                 if (!seMueve)
                 {
+                    evento = true;
                     StartCoroutine(CasillaRetroceso());
+                }
+                break;
+            case "TP_CafeEnParque":
+                if (!seMueve && tp == false)
+                {
+                    posicionEnRuta = 10;
+                    StartCoroutine(TP_CafeEnParque());
+                    sprite.enabled = true;
+                    tp = true;
+                }
+                break;
+            case "TP_RosaEnParque":
+                if (!seMueve && tp == false)
+                {
+                    posicionEnRuta = 4;
+                    StartCoroutine(TP_RosaEnParque());
+                    sprite.enabled = true;
+                    tp = true;
+                }
+                break;
+            case "TP_CafeEnCiudad":
+                if (!seMueve && tp == false)
+                {
+                    posicionEnRuta = 17;
+                    StartCoroutine(TP_CafeEnCiudad());
+                    sprite.enabled = true;
+                    tp = true;
+                }
+                break;
+            case "TP_RosaEnEscuela":
+                if (!seMueve && tp == false)
+                {
+                    posicionEnRuta = 12;
+                    StartCoroutine(TP_RosaEnEscuela());
+                    sprite.enabled = true;
+                    tp = true;
                 }
                 break;
         }
@@ -428,8 +534,32 @@ public class Player : MonoBehaviour
 
     public IEnumerator esperar()
     {
+        if(puente)
+        {
+            switch(pasos)
+            {
+                case 1:
+                    tiempoEsperaDinamico = 1.25f;
+                    break;
+                case 2:
+                    tiempoEsperaDinamico = 1.75f;
+                    break;
+                case 3:
+                    tiempoEsperaDinamico = 2.25f;
+                    break;
+                case 4:
+                    tiempoEsperaDinamico = 2.75f;
+                    break;
+                case 5:
+                    tiempoEsperaDinamico = 3.25f;
+                    break;
+                case 6:
+                    tiempoEsperaDinamico = 3.75f;
+                    break;
+            }
+        }
         yield return new WaitForSeconds(tiempoEsperaDinamico);
-        if (isOnSeccion == true)
+        if (isOnSeccion == true && puente == false)
         {
             switch (turno)
             {
@@ -518,34 +648,34 @@ public class Player : MonoBehaviour
             switch (pasos)
             {
                 case 1:
-                    tiempoEsperaDinamico = 1.5f;
+                    tiempoEsperaDinamico = 1.25f;
                     break;
                 case 2:
-                    tiempoEsperaDinamico = 2;
+                    tiempoEsperaDinamico = 1.75f;
                     break;
                 case 3:
-                    tiempoEsperaDinamico= 2.5f;
+                    tiempoEsperaDinamico = 2.25f;
                     break;
                 case 4:
-                    tiempoEsperaDinamico = 3;
+                    tiempoEsperaDinamico = 2.75f;
                     break;
                 case 5:
-                    tiempoEsperaDinamico = 3.5f;
+                    tiempoEsperaDinamico = 3.25f;
                     break;
                 case 6:
-                    tiempoEsperaDinamico = 4;
+                    tiempoEsperaDinamico = 3.75f;
                     break;
             }
             switch (seccionElegida)
             {
                 case 1:
-                    StartCoroutine(MovimientoSeccionEscuela());
-                    break;
-                case 2:
                     StartCoroutine(MovimientoSeccionCiudad());
                     break;
-                case 3:
+                case 2:
                     StartCoroutine(MovimientoSeccionPlaza());
+                    break;
+                case 3:
+                    StartCoroutine(MovimientoSeccionEscuela());
                     break;
                 case 4:
                     StartCoroutine(MovimientoSeccionParque());
@@ -559,15 +689,15 @@ public class Player : MonoBehaviour
             {
                 case 1:
                     seMueve = false;
-                    StartCoroutine(MovimientoSeccionEscuela());
+                    StartCoroutine(MovimientoSeccionCiudad());
                     break;
                 case 2:
                     seMueve = false;
-                    StartCoroutine(MovimientoSeccionCiudad());
+                    StartCoroutine(MovimientoSeccionPlaza());
                     break;
                 case 3:
                     seMueve = false;
-                    StartCoroutine(MovimientoSeccionPlaza());
+                    StartCoroutine(MovimientoSeccionEscuela());
                     break;
                 case 4:
                     seMueve = false;
@@ -577,6 +707,8 @@ public class Player : MonoBehaviour
             StartCoroutine(esperar());
             puente = false;
         }
+        if(tp == true)
+           tp = false;
     }
 }
 
