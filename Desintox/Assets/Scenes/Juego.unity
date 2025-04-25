@@ -731,7 +731,55 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 44619503}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1283408333}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: terminarEvento
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1700172999}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: terminarEvento
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 253798310}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: terminarEvento
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 488358468}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: terminarEvento
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &46919320
 GameObject:
   m_ObjectHideFlags: 0
@@ -3391,6 +3439,9 @@ MonoBehaviour:
   botonPresionado: 0
   posicionEnRuta: 0
   seccionElegida: 0
+  seMueve: 0
+  tp: 0
+  evento: 0
 --- !u!1 &265426405
 GameObject:
   m_ObjectHideFlags: 0
@@ -6213,6 +6264,9 @@ MonoBehaviour:
   botonPresionado: 0
   posicionEnRuta: 0
   seccionElegida: 0
+  seMueve: 0
+  tp: 0
+  evento: 0
 --- !u!1 &499763030
 GameObject:
   m_ObjectHideFlags: 0
@@ -6800,9 +6854,10 @@ GameObject:
   m_Component:
   - component: {fileID: 567088285}
   - component: {fileID: 567088286}
+  - component: {fileID: 567088287}
   m_Layer: 0
   m_Name: CasillaPl (6)
-  m_TagString: Untagged
+  m_TagString: Multiple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6874,6 +6929,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &567088287
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567088284}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &567454557
 GameObject:
   m_ObjectHideFlags: 0
@@ -7953,7 +8053,7 @@ GameObject:
   - component: {fileID: 662432702}
   m_Layer: 0
   m_Name: CasillaPl (4)
-  m_TagString: Untagged
+  m_TagString: Multiple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8353,6 +8453,54 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1283408333}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: terminarEvento
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1700172999}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: terminarEvento
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 253798310}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: terminarEvento
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 488358468}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: terminarEvento
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9663,7 +9811,7 @@ GameObject:
   - component: {fileID: 774751730}
   m_Layer: 0
   m_Name: CasillaPl (2)
-  m_TagString: Untagged
+  m_TagString: Multiple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11657,9 +11805,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1000301872}
   - component: {fileID: 1000301873}
+  - component: {fileID: 1000301874}
   m_Layer: 0
   m_Name: CasillaPl (7)
-  m_TagString: Untagged
+  m_TagString: Multiple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11731,6 +11880,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1000301874
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000301871}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1003074006
 GameObject:
   m_ObjectHideFlags: 0
@@ -14976,6 +15170,9 @@ MonoBehaviour:
   botonPresionado: 0
   posicionEnRuta: 0
   seccionElegida: 0
+  seMueve: 0
+  tp: 0
+  evento: 0
 --- !u!58 &1283408334
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15067,7 +15264,7 @@ GameObject:
   - component: {fileID: 1286077398}
   m_Layer: 0
   m_Name: CasillaPl (5)
-  m_TagString: TP_RosaEnEscuela
+  m_TagString: Multiple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21014,6 +21211,9 @@ MonoBehaviour:
   botonPresionado: 0
   posicionEnRuta: 0
   seccionElegida: 0
+  seMueve: 0
+  tp: 0
+  evento: 0
 --- !u!1 &1705758972
 GameObject:
   m_ObjectHideFlags: 0
@@ -21384,7 +21584,7 @@ GameObject:
   - component: {fileID: 1728922729}
   m_Layer: 0
   m_Name: CasillaPl (3)
-  m_TagString: Untagged
+  m_TagString: Multiple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -25,6 +25,7 @@ TagManager:
   - TP_RosaEnParque
   - TP_CafeEnCiudad
   - TP_RosaEnEscuela
+  - Recaida
   layers:
   - Default
   - TransparentFX

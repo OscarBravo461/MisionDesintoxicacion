@@ -41,16 +41,18 @@ public class Player : MonoBehaviour
     public bool botonPresionado = false; //Para que no pueda tirar el dado más de 1 vez por turno
     public int posicionEnRuta;
     int valor_anterior;
+    int corazones = 0;
     public int seccionElegida;
-    bool seMueve = false;
+    public bool seMueve = false;
     bool isOnSeccion;
     bool vueltaEscuela = false;
     bool vueltaCiudad = false;
     bool vueltaPlaza = false;
     bool vueltaParque = false;
     bool puente = false;
-    bool tp = false;
-    bool evento = false;
+    public bool tp = false;
+    public bool evento = false;
+    bool eventoAutomatico = false;
 
     void Update()
     {
@@ -248,7 +250,6 @@ public class Player : MonoBehaviour
 
                 yield return new WaitForSeconds(0.2f);
                 pasos--;
-                Debug.Log("Paseando " + pasosWhile);
             }
             pasosWhile--;
 
@@ -448,6 +449,26 @@ public class Player : MonoBehaviour
     {
         switch (collision.tag)
         {
+            case "Corazon":
+                if(!seMueve)
+                {
+                    if (corazones < 50)
+                    {
+                        eventoAutomatico = true;
+                        corazones++;
+                    }
+                }
+                break;
+            case "Grillete":
+                if (!seMueve)
+                {
+                    if (corazones > 0)
+                    {
+                        eventoAutomatico = true;
+                        corazones--;
+                    }
+                }
+                break;
             case "Preguntas":
                 if (!seMueve)
                 {
@@ -475,14 +496,14 @@ public class Player : MonoBehaviour
             case "Avanza":
                 if (!seMueve)
                 {
-                    evento = true;
+                    eventoAutomatico = true;
                     StartCoroutine(CasillaAvanza());
                 }
                 break;
             case "Retro":
                 if (!seMueve)
                 {
-                    evento = true;
+                    eventoAutomatico = true;
                     StartCoroutine(CasillaRetroceso());
                 }
                 break;
@@ -522,6 +543,21 @@ public class Player : MonoBehaviour
                     tp = true;
                 }
                 break;
+            case "Recaida":
+                if(!seMueve)
+                {
+                    eventoAutomatico = true;
+                    if(corazones > 0)
+                    {
+                        while(corazones > 0)
+                        {
+                            corazones--;
+                        }
+                    }
+                    else 
+                        corazones = 0;
+                }
+                break;
         }
     }
     public IEnumerator esperaCamara()
@@ -559,7 +595,8 @@ public class Player : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(tiempoEsperaDinamico);
-        if (isOnSeccion == true && puente == false)
+        botonPresionado = false;
+        if (isOnSeccion == true && puente == false && seMueve == false && evento == false && eventoAutomatico == false)
         {
             switch (turno)
             {
@@ -632,12 +669,248 @@ public class Player : MonoBehaviour
                     }
                     break;
             }
-            botonPresionado = false;
             botonDados.interactable = true;
         }
-
+        else if(tp == true)
+        {
+            yield return new WaitForSeconds(4);
+            switch (turno)
+            {
+                case 1:
+                    if (script_Player2.turno == 2)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 2)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+                case 2:
+                    if (script_Player2.turno == 3)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 3)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+                case 3:
+                    if (script_Player2.turno == 4)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 4)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player4.turno == 4)
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+                case 4:
+                    if (script_Player2.turno == 1)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 1)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+            }
+            botonDados.interactable = true;
+        }
+        else if(eventoAutomatico)
+        {
+            yield return new WaitForSeconds(2);
+            switch (turno)
+            {
+                case 1:
+                    if (script_Player2.turno == 2)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 2)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+                case 2:
+                    if (script_Player2.turno == 3)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 3)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+                case 3:
+                    if (script_Player2.turno == 4)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 4)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player4.turno == 4)
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+                case 4:
+                    if (script_Player2.turno == 1)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 1)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+            }
+            botonDados.interactable = true;
+            eventoAutomatico = false;
+        }
     }
 
+    public void terminarEvento()
+    {
+        StartCoroutine(eventos());
+    }
+
+    public IEnumerator eventos()
+    {
+        if(isOnSeccion && !seMueve && enTurno)
+        {
+            yield return new WaitForSeconds(0.5f);
+            switch (turno)
+            {
+                case 1:
+                    if (script_Player2.turno == 2)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 2)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+                case 2:
+                    if (script_Player2.turno == 3)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 3)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+                case 3:
+                    if (script_Player2.turno == 4)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 4)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player4.turno == 4)
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+                case 4:
+                    if (script_Player2.turno == 1)
+                    {
+                        script_Player2.enTurno = true;
+                        enTurno = false;
+                    }
+                    else if (script_Player3.turno == 1)
+                    {
+                        script_Player3.enTurno = true;
+                        enTurno = false;
+                    }
+                    else
+                    {
+                        script_Player4.enTurno = true;
+                        enTurno = false;
+                    }
+                    break;
+            }
+            botonDados.interactable = true;
+            evento = false;
+        }
+    }
     public void ActivarMovimiento()
     {
         botonDados.interactable = false;
