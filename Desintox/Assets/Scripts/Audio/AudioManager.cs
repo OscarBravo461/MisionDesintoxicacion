@@ -60,14 +60,10 @@ public class AudioManager : MonoBehaviour
         musicEventInstance.start();
     }
 
-    public void SetAmbienceParameter(string parameterName, float parameterValue)
+    public void SetMusicArea(int area)
     {
-        ambienceEventInstance.setParameterByName(parameterName, parameterValue);
-    }
-
-    public void SetMusicArea(MusicArea area)
-    {
-        musicEventInstance.setParameterByName("area", (float) area);
+        Debug.Log("Llego "+area);
+        musicEventInstance.setParameterByName("Tablero", (float) area);
     }
 
 
