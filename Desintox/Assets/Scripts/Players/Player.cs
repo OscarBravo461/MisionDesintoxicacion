@@ -44,15 +44,15 @@ public class Player : MonoBehaviour
     int corazones = 0;
     public int seccionElegida;
     public bool seMueve = false;
-    bool isOnSeccion;
+    public bool isOnSeccion;
     bool vueltaEscuela = false;
     bool vueltaCiudad = false;
     bool vueltaPlaza = false;
     bool vueltaParque = false;
-    bool puente = false;
+    public bool puente = false;
     public bool tp = false;
     public bool evento = false;
-    bool eventoAutomatico = false;
+    public bool eventoAutomatico = false;
 
     void Update()
     {
@@ -282,17 +282,17 @@ public class Player : MonoBehaviour
             Vector3 SeccionObjetivo = Camera.main.ScreenToWorldPoint(Input.mousePosition); //touch.position --> Aspectos que podremos ocupar al momento de hacerlo para android
             if (SeccionObjetivo.x < -8 && SeccionObjetivo.x > -12 && SeccionObjetivo.y > 3 && SeccionObjetivo.y < 6)
             {
-                while (MoverDeCasilla(SectorEscuela)) { yield return null; }
-            }
-            if (SeccionObjetivo.x > 8 && SeccionObjetivo.x < 12 && SeccionObjetivo.y > 3 && SeccionObjetivo.y < 6)
-            {
                 while (MoverDeCasilla(SectorCiudad)) { yield return null; }
+            }
+            if (SeccionObjetivo.x > -26 && SeccionObjetivo.x < -16 && SeccionObjetivo.y > -11 && SeccionObjetivo.y < 1.5)
+            {
+                while (MoverDeCasilla(SectorEscuela)) { yield return null; }
             }
             if (SeccionObjetivo.x < -8 && SeccionObjetivo.x > -12 && SeccionObjetivo.y > -6 && SeccionObjetivo.y < -3)
             {
                 while (MoverDeCasilla(SectorPlaza)) { yield return null; }
             }
-            if (SeccionObjetivo.x > 11.5 && SeccionObjetivo.x < 28 && SeccionObjetivo.y > -11 && SeccionObjetivo.y < -2)
+            if (SeccionObjetivo.x > 11.5 && SeccionObjetivo.x < 28 && SeccionObjetivo.y > -16 && SeccionObjetivo.y < -1.5)
             {
                 while (MoverDeCasilla(SectorParque)) { yield return null; }
             }
@@ -598,6 +598,7 @@ public class Player : MonoBehaviour
         botonPresionado = false;
         if (isOnSeccion == true && puente == false && seMueve == false && evento == false && eventoAutomatico == false)
         {
+            Debug.Log("Entre al if de cambio de turno");
             switch (turno)
             {
                 case 1:
@@ -749,6 +750,7 @@ public class Player : MonoBehaviour
         }
         else if(eventoAutomatico)
         {
+            Debug.Log("Entre en el if de cambio de turno automatico");
             yield return new WaitForSeconds(2);
             switch (turno)
             {
