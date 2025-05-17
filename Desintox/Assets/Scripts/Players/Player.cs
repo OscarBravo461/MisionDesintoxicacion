@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     public Vector3 puntoTPCafeCiudad = new Vector3(-0f, 0f, 0f);
     public Vector3 puntoTPRosaEscuela = new Vector3(-0f, 0f, 0f);
     public Vector3 puntoTPCafeParque = new Vector3(0f, 0f, 0f);
-    public Vector3 puntoTPRosaParque = new Vector3(0f, 0f, 0f);
+    public Vector3 puntoTPRosaPlaza = new Vector3(0f, 0f, 0f);
     public Ruta rutaEscuela;
     public Ruta rutaCiudad;
     public Ruta rutaPlaza;
@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public IEnumerator MovimientoSeccionCiudad()
+    public IEnumerator MovimientoSeccionEscuela()
     {
         if (seMueve)
         {
@@ -150,7 +150,7 @@ public class Player : MonoBehaviour
         seMueve = false;
     }
     //Todos los métodos tienen la misma lógica, solo adecuada a cada sección
-    public IEnumerator MovimientoSeccionPlaza()
+    public IEnumerator MovimientoSeccionCiudad()
     {
         if (seMueve)
         {
@@ -189,7 +189,7 @@ public class Player : MonoBehaviour
         }
         seMueve = false;
     }
-    public IEnumerator MovimientoSeccionEscuela()
+    public IEnumerator MovimientoSeccionPlaza()
     {
         if (seMueve)
         {
@@ -335,7 +335,7 @@ public class Player : MonoBehaviour
         seMueve = false;
 
     }
-    public IEnumerator TP_RosaEnParque()
+    public IEnumerator TP_RosaEnPlaza()
     {
         sprite.enabled = false;
         if (seMueve)
@@ -356,7 +356,7 @@ public class Player : MonoBehaviour
             yield break;
         }
         seMueve = true;
-        while (MovimientoAlTP(puntoTPRosaParque)) { yield return null; }
+        while (MovimientoAlTP(puntoTPRosaPlaza)) { yield return null; }
         yield return new WaitForSeconds(10f);
         seMueve = false;
 
@@ -388,15 +388,56 @@ public class Player : MonoBehaviour
         seMueve = true;
 
         int pasosWhile = 2;
-        while (pasosWhile > 0)
+        switch (seccionElegida)
         {
-            posicionEnRuta--;
-            posicionEnRuta %= rutaParque.listaDeCasillas.Count;
-            Vector3 siguientePosicion = rutaParque.listaDeCasillas[posicionEnRuta].position;
-            while (MoverDeCasilla(siguientePosicion)) { yield return null; }
-            yield return new WaitForSeconds(0.2f);
-            pasos--;
-            pasosWhile--;
+            case 1: //Ciudad
+                while (pasosWhile > 0)
+                {
+                    posicionEnRuta--;
+                    posicionEnRuta %= rutaCiudad.listaDeCasillas.Count;
+                    Vector3 siguientePosicion = rutaCiudad.listaDeCasillas[posicionEnRuta].position;
+                    while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                    yield return new WaitForSeconds(0.2f);
+                    pasos--;
+                    pasosWhile--;
+                }
+                break;
+            case 2: //Plaza
+                while (pasosWhile > 0)
+                {
+                    posicionEnRuta--;
+                    posicionEnRuta %= rutaPlaza.listaDeCasillas.Count;
+                    Vector3 siguientePosicion = rutaPlaza.listaDeCasillas[posicionEnRuta].position;
+                    while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                    yield return new WaitForSeconds(0.2f);
+                    pasos--;
+                    pasosWhile--;
+                }
+                break;
+            case 3: //Escuela
+                while (pasosWhile > 0)
+                {
+                    posicionEnRuta--;
+                    posicionEnRuta %= rutaEscuela.listaDeCasillas.Count;
+                    Vector3 siguientePosicion = rutaEscuela.listaDeCasillas[posicionEnRuta].position;
+                    while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                    yield return new WaitForSeconds(0.2f);
+                    pasos--;
+                    pasosWhile--;
+                }
+                break;
+            case 4: //Parque
+                while (pasosWhile > 0)
+                {
+                    posicionEnRuta--;
+                    posicionEnRuta %= rutaParque.listaDeCasillas.Count;
+                    Vector3 siguientePosicion = rutaParque.listaDeCasillas[posicionEnRuta].position;
+                    while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                    yield return new WaitForSeconds(0.2f);
+                    pasos--;
+                    pasosWhile--;
+                }
+                break;
         }
         seMueve = false;
         evento = false;
@@ -410,15 +451,56 @@ public class Player : MonoBehaviour
         seMueve = true;
 
         int pasosWhile = 2;
-        while (pasosWhile > 0)
+        switch(seccionElegida)
         {
-            posicionEnRuta++;
-            posicionEnRuta %= rutaParque.listaDeCasillas.Count;
-            Vector3 siguientePosicion = rutaParque.listaDeCasillas[posicionEnRuta].position;
-            while (MoverDeCasilla(siguientePosicion)) { yield return null; }
-            yield return new WaitForSeconds(0.2f);
-            pasos--;
-            pasosWhile--;
+            case 1: //Ciudad
+                while (pasosWhile > 0)
+                {
+                    posicionEnRuta++;
+                    posicionEnRuta %= rutaCiudad.listaDeCasillas.Count;
+                    Vector3 siguientePosicion = rutaCiudad.listaDeCasillas[posicionEnRuta].position;
+                    while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                    yield return new WaitForSeconds(0.2f);
+                    pasos--;
+                    pasosWhile--;
+                }
+            break;
+            case 2: //Plaza
+                while (pasosWhile > 0)
+                {
+                    posicionEnRuta++;
+                    posicionEnRuta %= rutaPlaza.listaDeCasillas.Count;
+                    Vector3 siguientePosicion = rutaPlaza.listaDeCasillas[posicionEnRuta].position;
+                    while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                    yield return new WaitForSeconds(0.2f);
+                    pasos--;
+                    pasosWhile--;
+                }
+            break;
+            case 3: //Escuela
+                while (pasosWhile > 0)
+                {
+                    posicionEnRuta++;
+                    posicionEnRuta %= rutaEscuela.listaDeCasillas.Count;
+                    Vector3 siguientePosicion = rutaEscuela.listaDeCasillas[posicionEnRuta].position;
+                    while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                    yield return new WaitForSeconds(0.2f);
+                    pasos--;
+                    pasosWhile--;
+                }
+            break;
+            case 4: //Parque
+                while (pasosWhile > 0)
+                {
+                    posicionEnRuta++;
+                    posicionEnRuta %= rutaParque.listaDeCasillas.Count;
+                    Vector3 siguientePosicion = rutaParque.listaDeCasillas[posicionEnRuta].position;
+                    while (MoverDeCasilla(siguientePosicion)) { yield return null; }
+                    yield return new WaitForSeconds(0.2f);
+                    pasos--;
+                    pasosWhile--;
+                }
+            break;
         }
         seMueve = false;
         evento = false;
@@ -516,11 +598,11 @@ public class Player : MonoBehaviour
                     tp = true;
                 }
                 break;
-            case "TP_RosaEnParque":
+            case "TP_RosaEnPlaza":
                 if (!seMueve && tp == false)
                 {
                     posicionEnRuta = 4;
-                    StartCoroutine(TP_RosaEnParque());
+                    StartCoroutine(TP_RosaEnPlaza());
                     sprite.enabled = true;
                     tp = true;
                 }
@@ -596,6 +678,8 @@ public class Player : MonoBehaviour
         }
         yield return new WaitForSeconds(tiempoEsperaDinamico);
         botonPresionado = false;
+        Debug.Log("Entre a la corrutina de esperar antes de la condicion");
+        yield return new WaitForSeconds(2f);
         if (isOnSeccion == true && puente == false && seMueve == false && evento == false && eventoAutomatico == false)
         {
             Debug.Log("Entre al if de cambio de turno");
@@ -919,7 +1003,8 @@ public class Player : MonoBehaviour
         if (seMueve == false && isOnSeccion && enTurno == true && !botonPresionado && puente == false)
         {
             botonPresionado = true;
-            pasos = Random.Range(1, 7);
+            //pasos = Random.Range(1, 7);
+            pasos = 3;
             switch (pasos)
             {
                 case 1:
