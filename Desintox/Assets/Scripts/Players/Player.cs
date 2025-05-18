@@ -601,7 +601,7 @@ public class Player : MonoBehaviour
             case "TP_RosaEnPlaza":
                 if (!seMueve && tp == false)
                 {
-                    posicionEnRuta = 4;
+                    posicionEnRuta = 9;
                     StartCoroutine(TP_RosaEnPlaza());
                     sprite.enabled = true;
                     tp = true;
@@ -619,7 +619,7 @@ public class Player : MonoBehaviour
             case "TP_RosaEnEscuela":
                 if (!seMueve && tp == false)
                 {
-                    posicionEnRuta = 12;
+                    posicionEnRuta = 11;
                     StartCoroutine(TP_RosaEnEscuela());
                     sprite.enabled = true;
                     tp = true;
