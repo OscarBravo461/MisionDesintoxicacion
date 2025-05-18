@@ -280,7 +280,7 @@ public class Player : MonoBehaviour
         while (!isOnSeccion)
         {
             Vector3 SeccionObjetivo = Camera.main.ScreenToWorldPoint(Input.mousePosition); //touch.position --> Aspectos que podremos ocupar al momento de hacerlo para android
-            if (SeccionObjetivo.x < -8 && SeccionObjetivo.x > -12 && SeccionObjetivo.y > 3 && SeccionObjetivo.y < 6)
+            if (SeccionObjetivo.x > -20 && SeccionObjetivo.x < -5 && SeccionObjetivo.y > 5 && SeccionObjetivo.y < 17)
             {
                 while (MoverDeCasilla(SectorCiudad)) { yield return null; }
             }
@@ -288,7 +288,7 @@ public class Player : MonoBehaviour
             {
                 while (MoverDeCasilla(SectorEscuela)) { yield return null; }
             }
-            if (SeccionObjetivo.x < -8 && SeccionObjetivo.x > -12 && SeccionObjetivo.y > -6 && SeccionObjetivo.y < -3)
+            if (SeccionObjetivo.x < 17 && SeccionObjetivo.x > 1 && SeccionObjetivo.y > 5 && SeccionObjetivo.y < 17)
             {
                 while (MoverDeCasilla(SectorPlaza)) { yield return null; }
             }
@@ -678,11 +678,11 @@ public class Player : MonoBehaviour
         }
         yield return new WaitForSeconds(tiempoEsperaDinamico);
         botonPresionado = false;
-        Debug.Log("Entre a la corrutina de esperar antes de la condicion");
+        //Debug.Log("Entre a la corrutina de esperar antes de la condicion");
         yield return new WaitForSeconds(2f);
         if (isOnSeccion == true && puente == false && seMueve == false && evento == false && eventoAutomatico == false)
         {
-            Debug.Log("Entre al if de cambio de turno");
+            //Debug.Log("Entre al if de cambio de turno");
             switch (turno)
             {
                 case 1:
@@ -834,7 +834,7 @@ public class Player : MonoBehaviour
         }
         else if(eventoAutomatico)
         {
-            Debug.Log("Entre en el if de cambio de turno automatico");
+            //Debug.Log("Entre en el if de cambio de turno automatico");
             yield return new WaitForSeconds(2);
             switch (turno)
             {
@@ -1003,8 +1003,8 @@ public class Player : MonoBehaviour
         if (seMueve == false && isOnSeccion && enTurno == true && !botonPresionado && puente == false)
         {
             botonPresionado = true;
-            //pasos = Random.Range(1, 7);
-            pasos = 3;
+            pasos = Random.Range(1, 7);
+            //pasos = 2;
             switch (pasos)
             {
                 case 1:

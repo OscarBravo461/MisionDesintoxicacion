@@ -439,10 +439,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -655,7 +655,7 @@ RectTransform:
   m_GameObject: {fileID: 312867455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1.8367707, y: 1.8367707, z: 1.8367707}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 188184553}
@@ -663,7 +663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3144.9094, y: 35.000153}
+  m_AnchoredPosition: {x: 1357.4999, y: -197.99902}
   m_SizeDelta: {x: 346.991, y: 458.028}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &312867458
@@ -843,7 +843,7 @@ RectTransform:
   m_GameObject: {fileID: 402803369}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.171, y: 5.171, z: 5.171}
+  m_LocalScale: {x: 1.7602905, y: 1.4669087, z: 1.4669087}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 683335778}
@@ -851,7 +851,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 79.898, y: 59.929}
+  m_AnchoredPosition: {x: -59, y: -68}
   m_SizeDelta: {x: 2090.104, y: 1118.711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402803371
@@ -874,7 +874,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4ce14f7a3ab459542b83465e8fccc8ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2daf94c88070e74390eb3e2571b8012, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -920,7 +920,7 @@ RectTransform:
   m_GameObject: {fileID: 518890523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1.8367707, y: 1.8367707, z: 1.8367707}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 77456779}
@@ -928,7 +928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91.391, y: 35.000122}
+  m_AnchoredPosition: {x: -44.720093, y: -197.99902}
   m_SizeDelta: {x: 346.991, y: 458.028}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518890526
@@ -1043,8 +1043,8 @@ Transform:
   m_GameObject: {fileID: 537494773}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7241, y: -854, z: 0}
-  m_LocalScale: {x: 3.143249, y: 3.143249, z: 3.143249}
+  m_LocalPosition: {x: -2285.7, y: -327.26593, z: 0}
+  m_LocalScale: {x: 0.89167655, y: 0.89167655, z: 0.89167655}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 902235238}
@@ -1139,16 +1139,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dedbac7e85bf8ac4a9a7248629cf696a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script_Player2: {fileID: 0}
+  script_Player3: {fileID: 0}
+  script_Player4: {fileID: 0}
   scriptOpcionMulti: {fileID: 0}
   scriptCamara: {fileID: 0}
   preguntas: {fileID: 0}
   Multi_op: {fileID: 0}
+  botonDados: {fileID: 0}
+  sprite: {fileID: 0}
+  SectorCiudad: {x: -7.54, y: 5.93, z: 0}
+  SectorPlaza: {x: 8.67, y: 5.21, z: 0}
+  SectorEscuela: {x: -13.66, y: -3.7, z: 0}
+  SectorParque: {x: 21.56, y: -8.24, z: 0}
+  VueltaAlPuente: {x: -2, y: 2, z: 0}
+  puntoTPCafeCiudad: {x: -0, y: 0, z: 0}
+  puntoTPRosaEscuela: {x: -0, y: 0, z: 0}
+  puntoTPCafeParque: {x: 0, y: 0, z: 0}
+  puntoTPRosaPlaza: {x: 0, y: 0, z: 0}
   rutaEscuela: {fileID: 0}
   rutaCiudad: {fileID: 0}
   rutaPlaza: {fileID: 0}
   rutaParque: {fileID: 0}
-  pasos: 0
   gc: {fileID: 0}
+  pasos: 0
+  turno: 0
+  playerID: 0
+  speed: 20
+  tiempoEsperaDinamico: 0
+  enTurno: 0
+  botonPresionado: 0
+  posicionEnRuta: 0
+  seccionElegida: 0
+  seMueve: 0
+  isOnSeccion: 0
+  puente: 0
+  tp: 0
+  evento: 0
+  eventoAutomatico: 0
 --- !u!212 &537494779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1228,14 +1256,14 @@ RectTransform:
   m_GameObject: {fileID: 683335777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.9849288, y: 3.9849288, z: 3.9849288}
+  m_LocalScale: {x: 3.3207738, y: 3.984929, z: 3.984929}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 402803370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: 423}
+  m_AnchoredPosition: {x: 15, y: 423.00003}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683335779
@@ -1526,7 +1554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SALIR
+  m_text: Regresar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1664,7 +1692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.69707435, b: 0, a: 1}
+  m_Color: {r: 0.5254902, g: 0.6901961, b: 0.68235296, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1718,8 +1746,8 @@ Transform:
   m_GameObject: {fileID: 943821270}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7229.0215, y: -854.00024, z: 0}
-  m_LocalScale: {x: 3.143249, y: 3.143249, z: 3.143249}
+  m_LocalPosition: {x: -2282.3, y: -327.26593, z: 0}
+  m_LocalScale: {x: 0.89167655, y: 0.89167655, z: 0.89167655}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 902235238}
@@ -1798,12 +1826,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0aaf5f675e28c5498fe06f31b0382ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script_Player1: {fileID: 0}
+  script_Player3: {fileID: 0}
+  script_Player4: {fileID: 0}
+  scriptOpcionMulti: {fileID: 0}
+  scriptCamara: {fileID: 0}
+  preguntas: {fileID: 0}
+  Multi_op: {fileID: 0}
   rutaEscuela: {fileID: 0}
   rutaCiudad: {fileID: 0}
   rutaPlaza: {fileID: 0}
   rutaParque: {fileID: 0}
-  pasos: 0
   gc: {fileID: 0}
+  pasos: 0
+  turno: 0
+  speed: 20
+  enTurno: 0
 --- !u!212 &943821275
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1884,7 +1922,7 @@ RectTransform:
   m_GameObject: {fileID: 1092849921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1.8367707, y: 1.8367707, z: 1.8367707}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 696554664}
@@ -1892,7 +1930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2962.1255, y: 35}
+  m_AnchoredPosition: {x: -1447, y: -198}
   m_SizeDelta: {x: 341.438, y: 458.028}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1092849923
@@ -2007,7 +2045,7 @@ RectTransform:
   m_GameObject: {fileID: 1251107776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.1741, y: 4.1741, z: 4.1741}
+  m_LocalScale: {x: 1.508554, y: 1.508554, z: 1.508554}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 108823039}
@@ -2015,7 +2053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3981.0178, y: -2280.1216}
+  m_AnchoredPosition: {x: -10, y: -1038}
   m_SizeDelta: {x: 469.184, y: 91.933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251107778
@@ -2170,8 +2208,8 @@ Transform:
   m_GameObject: {fileID: 1291399397}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7241, y: -865.9785, z: 0}
-  m_LocalScale: {x: 3.143249, y: 3.143249, z: 3.143249}
+  m_LocalPosition: {x: -2285.7, y: -330.65594, z: 0}
+  m_LocalScale: {x: 0.89167655, y: 0.89167655, z: 0.89167655}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 902235238}
@@ -2250,12 +2288,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febc269aae88a4340ab33fad1d3d2f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script_Player1: {fileID: 0}
+  script_Player2: {fileID: 0}
+  script_Player4: {fileID: 0}
+  scriptOpcionMulti: {fileID: 0}
+  scriptCamara: {fileID: 0}
+  preguntas: {fileID: 0}
+  Multi_op: {fileID: 0}
   rutaEscuela: {fileID: 0}
   rutaCiudad: {fileID: 0}
   rutaPlaza: {fileID: 0}
   rutaParque: {fileID: 0}
-  pasos: 0
   gc: {fileID: 0}
+  pasos: 0
+  turno: 0
+  speed: 20
+  enTurno: 0
 --- !u!212 &1291399402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2426,8 +2474,8 @@ Transform:
   m_GameObject: {fileID: 1533156413}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.213, y: -16.384, z: 19.08}
-  m_LocalScale: {x: 4.1741, y: 4.1741, z: 4.1741}
+  m_LocalPosition: {x: -235.89, y: -89.64695, z: 5.4126}
+  m_LocalScale: {x: 1.1841083, y: 1.1841083, z: 1.1841083}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 902235238}
@@ -2538,7 +2586,7 @@ RectTransform:
   m_GameObject: {fileID: 1769519481}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.1741, y: 4.1741, z: 4.1741}
+  m_LocalScale: {x: 1.4457961, y: 1.6445931, z: 1.4457961}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 805593908}
@@ -2546,7 +2594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3798.2346, y: -2280.1216}
+  m_AnchoredPosition: {x: 1554, y: 1056}
   m_SizeDelta: {x: 469.184, y: 91.933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769519483
@@ -2737,12 +2785,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d69ddb5eb5fd4e4990e949487639548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script_Player1: {fileID: 0}
+  script_Player2: {fileID: 0}
+  script_Player3: {fileID: 0}
+  scriptOpcionMulti: {fileID: 0}
+  scriptCamara: {fileID: 0}
+  preguntas: {fileID: 0}
+  Multi_op: {fileID: 0}
   rutaEscuela: {fileID: 0}
   rutaCiudad: {fileID: 0}
   rutaPlaza: {fileID: 0}
   rutaParque: {fileID: 0}
-  pasos: 0
   gc: {fileID: 0}
+  pasos: 0
+  turno: 0
+  speed: 20
+  enTurno: 0
 --- !u!212 &2031359888
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2804,8 +2862,8 @@ Transform:
   m_GameObject: {fileID: 2031359884}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7229.0215, y: -865.9785, z: 0}
-  m_LocalScale: {x: 3.143249, y: 3.143249, z: 3.143249}
+  m_LocalPosition: {x: -2282.3, y: -330.65594, z: 0}
+  m_LocalScale: {x: 0.89167655, y: 0.89167655, z: 0.89167655}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 902235238}
